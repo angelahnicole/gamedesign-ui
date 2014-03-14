@@ -2,7 +2,7 @@ package com.csci491.cardsagainsthumanity;
 
 public class Card {
 	
-	private final int MINDEX = 5;
+	private final int MINDEX = 6;
 	private String content;
 	private boolean mature;
 	private int type;		// 0 = white card :::: 1 = black card

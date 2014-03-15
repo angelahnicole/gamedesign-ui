@@ -9,15 +9,22 @@
 
 package com.csci491.cardsagainsthumanity;
 
-import android.os.Bundle;
+import java.util.ArrayList;
+
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
 
 public class MainActivity extends Activity {
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		FileIO myFileIO = new FileIO();
+		((GlobalVariables) this.getApplication()).setWhiteCards(myFileIO.createWhiteCards());
+		((GlobalVariables) this.getApplication()).setBlackCards(myFileIO.createBlackCards());
+		
 		setContentView(R.layout.activity_main);
 	}
 

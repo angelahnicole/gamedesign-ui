@@ -3,7 +3,7 @@ package com.csci491.cardsagainsthumanity;
 import android.app.Application;
 import java.util.ArrayList;
 
-public class GlobalVariables extends Application {
+public class Globals extends Application {
 
 	private ArrayList<Card> blackCards = new ArrayList<Card>();
 	private ArrayList<Card> whiteCards = new ArrayList<Card>();

@@ -13,10 +13,7 @@ import java.util.Scanner;
  * ======================================================================== */
 
 public class FileIO {
-
-	private final int WHITE = 0;
-	private final int BLACK = 1;
-
+	
 	public ArrayList<Card> createWhiteCards() throws Exception {
 		ArrayList<Card> whiteCards = new ArrayList<Card>();
 		

@@ -9,6 +9,7 @@
 
 package com.csci491.cardsagainsthumanity;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import android.app.Activity;
@@ -20,12 +21,21 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
 		
 		FileIO myFileIO = new FileIO();
-		((GlobalVariables) this.getApplication()).setWhiteCards(myFileIO.createWhiteCards());
-		((GlobalVariables) this.getApplication()).setBlackCards(myFileIO.createBlackCards());
+		GlobalVariables globalVars = (GlobalVariables) getApplicationContext();
 		
-		setContentView(R.layout.activity_main);
+		try {
+			
+			globalVars.setWhiteCards(myFileIO.createWhiteCards());
+			globalVars.setBlackCards(myFileIO.createBlackCards());
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+				
 	}
 
 	@Override

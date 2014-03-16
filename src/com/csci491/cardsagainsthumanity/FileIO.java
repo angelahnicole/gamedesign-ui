@@ -7,6 +7,10 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/* ========================================================================
+ * This is the file input and output class
+ * It reads the card file in, as well as the user config file
+ * ======================================================================== */
 
 public class FileIO {
 

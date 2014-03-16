@@ -31,7 +31,7 @@ public class FileIO {
 		return whiteCards;
 	}
 	
-	public ArrayList<Card> createBlackCards() throws FileNotFoundException {
+	public ArrayList<Card> createBlackCards() throws Exception {
 		ArrayList<Card> blackCards = new ArrayList<Card>();
 	
 		try {

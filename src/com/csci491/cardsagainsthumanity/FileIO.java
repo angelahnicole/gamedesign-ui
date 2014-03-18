@@ -50,12 +50,17 @@ public class FileIO extends Activity {
 		ArrayList<Card> blackCards = new ArrayList<Card>();
 	
 		try {
-			BufferedReader BR = new BufferedReader(new FileReader(new File("BLACK_CARDS.dat")));
+			//BufferedReader br = new BufferedReader(new FileReader(new File("BLACK_CARDS.dat")));
+			
+			BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("WHITE_CARDS.dat")));
 			String line;
 			
-			while ((line = BR.readLine()) != null) {
+			while ((line = br.readLine()) != null) {
 				blackCards.add(new BlackCard(line));
 			}
+			
+			br.close();
+			
 		}
 		catch (Exception e) {
 			

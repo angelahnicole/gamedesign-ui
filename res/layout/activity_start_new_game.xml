@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="fill_parent" >
 
     <TableLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" >
+        android:layout_height="wrap_content" >
 
         <TableRow
             android:id="@+id/tableRow1"
@@ -24,9 +23,10 @@
                 android:id="@+id/editText1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10" >
+                android:ems="10"
+                android:inputType="text" >
 
-                <requestFocus />
+                <!-- <requestFocus /> -->
             </EditText>
         </TableRow>
 
@@ -47,8 +47,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/gameType_array" />
-
-            <requestFocus />
         </TableRow>
 
         <TextView
@@ -137,12 +135,11 @@
                 android:text="@string/idle_time_limit"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
-            <EditText
-                android:id="@+id/editText5"
+            <Spinner
+                android:id="@+id/spinner2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
-                android:text="30" />
+                android:entries="@array/timeLimit_array" />
         </TableRow>
 
         <TableRow
@@ -184,18 +181,30 @@
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/editText8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="numberPassword" />
         </TableRow>
 
-        <Button
-            android:id="@+id/button1"
+        <TableRow
+            android:id="@+id/tableRow9"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/create_game" />
+            android:layout_height="wrap_content" >
+
+            <Button
+                android:id="@+id/buttonCancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cancel" />
+
+            <Button
+                android:id="@+id/buttonCreateGame"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create_game" />
+        </TableRow>
     </TableLayout>
 
-</LinearLayout>
+</ScrollView>

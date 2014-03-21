@@ -12,6 +12,7 @@ public final class R {
         /**  Start New Game screen 
          */
         public static final int gameType_array=0x7f060000;
+        public static final int timeLimit_array=0x7f060001;
     }
     public static final class attr {
     }
@@ -29,8 +30,9 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f09001e;
-        public static final int button1=0x7f09001d;
+        public static final int action_settings=0x7f090021;
+        public static final int buttonCancel=0x7f09001f;
+        public static final int buttonCreateGame=0x7f090020;
         public static final int buttonHow=0x7f090006;
         public static final int buttonJoin=0x7f090004;
         public static final int buttonStart=0x7f090002;
@@ -39,8 +41,9 @@ public final class R {
         public static final int editText2=0x7f09000c;
         public static final int editText3=0x7f090010;
         public static final int editText4=0x7f090013;
-        public static final int editText5=0x7f090016;
+        public static final int editText8=0x7f09001d;
         public static final int spinner1=0x7f090009;
+        public static final int spinner2=0x7f090016;
         public static final int tableRow1=0x7f090001;
         public static final int tableRow2=0x7f090003;
         public static final int tableRow3=0x7f090005;
@@ -49,6 +52,7 @@ public final class R {
         public static final int tableRow6=0x7f090014;
         public static final int tableRow7=0x7f090017;
         public static final int tableRow8=0x7f09001b;
+        public static final int tableRow9=0x7f09001e;
         public static final int textView1=0x7f090000;
         public static final int textView2=0x7f090008;
         public static final int textView2_1=0x7f09000a;
@@ -71,6 +75,7 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int cancel=0x7f05000f;
         public static final int create_game=0x7f05000e;
         public static final int family_friendly=0x7f05000c;
         public static final int game_name=0x7f050006;
@@ -84,9 +89,9 @@ public final class R {
         public static final int point_limit=0x7f050008;
         public static final int round_limit=0x7f050009;
         public static final int start_new_game=0x7f050003;
-        public static final int start_new_game_family_friendly_description=0x7f050011;
-        public static final int start_new_game_game_type_description=0x7f05000f;
-        public static final int start_new_game_point_limit_description=0x7f050010;
+        public static final int start_new_game_family_friendly_description=0x7f050012;
+        public static final int start_new_game_game_type_description=0x7f050010;
+        public static final int start_new_game_point_limit_description=0x7f050011;
     }
     public static final class style {
         /** 

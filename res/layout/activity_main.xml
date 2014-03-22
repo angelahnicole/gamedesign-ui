@@ -17,30 +17,18 @@
     <TableLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom" 
-        android:stretchColumns="*">
+        android:layout_gravity="bottom"
+        android:stretchColumns="*" >
 
         <TableRow
             android:id="@+id/tableRow1"
-            android:layout_width="fill_parent">
+            android:layout_width="fill_parent" >
 
             <Button
                 android:id="@+id/buttonStart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/start_new_game" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/buttonJoin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/join_multiplayer_game" />
         </TableRow>
 
         <TableRow

@@ -7,23 +7,23 @@ public class Globals extends Application {
 
 	private ArrayList<Card> blackCards = new ArrayList<Card>();
 	private ArrayList<Card> whiteCards = new ArrayList<Card>();
-	private boolean familyFilter;
-	private int test;
+	private String userName = new String();
+	private int pointLimit;
 
-	public int getTest() {
-		return test;
+	public int getPointLimit() {
+		return pointLimit;
 	}
 
-	public void setTest(int test) {
-		this.test = test;
+	public void setPointLimit(int pointLimit) {
+		this.pointLimit = pointLimit;
 	}
 
-	public boolean isFamilyFilter() {
-		return familyFilter;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setFamilyFilter(boolean familyFilter) {
-		this.familyFilter = familyFilter;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public ArrayList<Card> getBlackCards() {

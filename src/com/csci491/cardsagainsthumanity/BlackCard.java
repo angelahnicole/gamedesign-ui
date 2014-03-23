@@ -12,11 +12,6 @@ public class BlackCard extends Card {
 	public void setContent(String content) {
 		int numBlanks = 0;
 		
-		if (content.startsWith("NSFW:"))
-			super.setMature(true);
-		else
-			super.setMature(false);
-		
 		if (content.contains("<blank>"))
 		{
 			String[] words = content.split(" ");
@@ -30,7 +25,7 @@ public class BlackCard extends Card {
 		}
 		
 		setBlanks(numBlanks);
-		super.content = content.substring(super.MINDEX);
+		super.content = content;
 		
 	}
 	

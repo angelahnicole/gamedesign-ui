@@ -27,20 +27,15 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		System.out.println("Before the try");
 		try {
-			System.out.println("In the try before everything");
-			FileIO reader = new FileIO();
+			FileIO cardMaker = new FileIO();
 			Globals globals = (Globals) this.getApplicationContext();
-			globals.setWhiteCards(reader.createWhiteCards());
-			// globals.setBlackCards(reader.createBlackCards());
+			globals.setWhiteCards(cardMaker.hardCodedWhiteCards());
+			globals.setBlackCards(cardMaker.hardCodedBlackCards());
 			System.out.println(globals.getWhiteCards().size());
-			for (int i = 0; i < globals.getWhiteCards().size(); i++) {
-				System.out.println(globals.getWhiteCards().get(i).getContent());
-			}
-			System.out.println("In the try after everything");
+
 		} catch (Exception e) {
-			System.out.println("Something went wrong somewhere");
+
 		}
-		System.out.println("after the try / catch");
 
 		Button buttonStart = (Button) findViewById(R.id.buttonStart);
 		buttonStart.setOnClickListener(new OnClickListener() {

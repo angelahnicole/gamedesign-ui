@@ -27,6 +27,15 @@ public class StartNewGameActivity extends Activity {
 			}
 		});
 
+		Button buttonStartGame = (Button) findViewById(R.id.buttonStartGame);
+		buttonStartGame.setOnClickListener(new OnClickListener() {
+			public void onClick(View v) {
+				Intent intent = new Intent(StartNewGameActivity.this,
+						StartNewRoundActivity.class);
+				startActivity(intent);
+				// finish();
+			}
+		});
 	}
 }
 //

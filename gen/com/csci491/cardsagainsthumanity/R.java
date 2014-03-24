@@ -24,11 +24,11 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080013;
+        public static final int action_settings=0x7f080014;
         public static final int buttonCancel=0x7f080011;
-        public static final int buttonCreateStartGame=0x7f080012;
         public static final int buttonHow=0x7f080004;
         public static final int buttonStart=0x7f080002;
+        public static final int buttonStartGame=0x7f080012;
         public static final int editText2=0x7f080006;
         public static final int editText4=0x7f08000a;
         public static final int editText5=0x7f08000e;
@@ -38,6 +38,7 @@ public final class R {
         public static final int tableRow5=0x7f08000c;
         public static final int tableRow9=0x7f080010;
         public static final int textView1=0x7f080000;
+        public static final int textView2=0x7f080013;
         public static final int textView3=0x7f080005;
         public static final int textView3_1=0x7f080007;
         public static final int textView4=0x7f080009;
@@ -48,6 +49,7 @@ public final class R {
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int activity_start_new_game=0x7f030001;
+        public static final int activity_start_new_round=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -64,6 +66,9 @@ public final class R {
         public static final int max_players=0x7f050008;
         public static final int password=0x7f05000a;
         public static final int point_limit=0x7f050006;
+        /**  New Round screen 
+         */
+        public static final int round=0x7f05000f;
         public static final int round_limit=0x7f050007;
         public static final int start_game=0x7f050009;
         public static final int start_new_game=0x7f050003;

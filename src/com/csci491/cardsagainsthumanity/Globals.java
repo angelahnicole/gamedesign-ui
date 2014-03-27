@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class Globals extends Application {
 
-	private ArrayList<Card> blackCards = new ArrayList<Card>();
-	private ArrayList<Card> whiteCards = new ArrayList<Card>();
+	private ArrayList<BlackCard> blackCards = new ArrayList<BlackCard>();
+	private ArrayList<WhiteCard> whiteCards = new ArrayList<WhiteCard>();
 	private String userName = new String();
 	private int pointLimit;
 	private int numPlayers;
@@ -35,19 +35,19 @@ public class Globals extends Application {
 		this.userName = userName;
 	}
 
-	public ArrayList<Card> getBlackCards() {
+	public ArrayList<BlackCard> getBlackCards() {
 		return blackCards;
 	}
 
-	public void setBlackCards(ArrayList<Card> blackCards) {
+	public void setBlackCards(ArrayList<BlackCard> blackCards) {
 		this.blackCards = blackCards;
 	}
 
-	public ArrayList<Card> getWhiteCards() {
+	public ArrayList<WhiteCard> getWhiteCards() {
 		return whiteCards;
 	}
 
-	public void setWhiteCards(ArrayList<Card> whiteCards) {
+	public void setWhiteCards(ArrayList<WhiteCard> whiteCards) {
 		this.whiteCards = whiteCards;
 	}
 

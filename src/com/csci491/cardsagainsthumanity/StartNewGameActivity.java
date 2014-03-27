@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.app.Activity;
 import android.content.Intent;
 
@@ -17,6 +18,8 @@ public class StartNewGameActivity extends Activity {
 		setContentView(R.layout.activity_start_new_game);
 		// rest of the code
 
+		final Globals globals = (Globals) this.getApplicationContext();
+		
 		Button buttonCancel = (Button) findViewById(R.id.buttonCancel);
 		buttonCancel.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -26,12 +29,11 @@ public class StartNewGameActivity extends Activity {
 				// finish();
 			}
 		});
-
+		
 		Button buttonStartGame = (Button) findViewById(R.id.buttonStartGame);
 		buttonStartGame.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(StartNewGameActivity.this,
-						StartNewRoundActivity.class);
+				Intent intent = new Intent(StartNewGameActivity.this, StartNewRoundActivity.class);
 				startActivity(intent);
 				// finish();
 			}

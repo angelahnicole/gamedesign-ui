@@ -25,17 +25,15 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		System.out.println("Before the try");
-		try {
-			FileIO cardMaker = new FileIO();
-			Globals globals = (Globals) this.getApplicationContext();
-			globals.setWhiteCards(cardMaker.hardCodedWhiteCards());
-			globals.setBlackCards(cardMaker.hardCodedBlackCards());
-			System.out.println(globals.getWhiteCards().size());
+		
+		System.out.println("Before where the try used to be...");
 
-		} catch (Exception e) {
+		FileIO cardMaker = new FileIO();
+		Globals globals = (Globals) this.getApplicationContext();
+		globals.setWhiteCards(cardMaker.hardCodedWhiteCards());
+		globals.setBlackCards(cardMaker.hardCodedBlackCards());
+		System.out.println(globals.getWhiteCards().size());
 
-		}
 
 		Button buttonStart = (Button) findViewById(R.id.buttonStart);
 		buttonStart.setOnClickListener(new OnClickListener() {

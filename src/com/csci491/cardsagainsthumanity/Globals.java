@@ -9,6 +9,15 @@ public class Globals extends Application {
 	private ArrayList<Card> whiteCards = new ArrayList<Card>();
 	private String userName = new String();
 	private int pointLimit;
+	private int numPlayers;
+
+	public int getNumPlayers() {
+		return numPlayers;
+	}
+
+	public void setNumPlayers(int numPlayers) {
+		this.numPlayers = numPlayers;
+	}
 
 	public int getPointLimit() {
 		return pointLimit;

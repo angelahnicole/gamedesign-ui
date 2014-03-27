@@ -8,17 +8,18 @@
     <string name="how_to_play">How to play</string>
 
     <!-- Start New Game screen -->
-    <string name="game_name">Game name:</string>
     <string name="point_limit">Point Limit:</string>
-    <string name="round_limit">Round limit:</string>
-    <string name="max_players">Max players:</string>
-    
-    <string name="start_game">Start Game</string><string name="password">Password:</string>
+    <string name="max_players">Number players:</string>
+    <string name="start_game">Start Game</string>
     <string name="cancel">Cancel</string>
     <string name="start_new_game_point_limit_description">The game is over once a player reaches this score. Tap the button to change the point limit.</string>
     <string name="start_new_game_max_players_description">How many players should be playing with you.</string>
-    <string name="start_new_game_round_limit_description">The game is over once the round limit is reached. Tap the button to change the point limit.</string>
-    
+
     <!-- New Round screen -->
-	<string name="round">Round</string>
+    <string name="round">Round</string>
+    <string name="skip">Skip</string>
+    
+    <string name="left">&lt;</string>
+    <string name="right">&gt;</string>
+
 </resources>

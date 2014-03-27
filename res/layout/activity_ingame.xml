@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textViewQuestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="When I am President of the United States, I will create the department of __________ ."
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+
+        <TextView
+            android:id="@+id/textView3.1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tap a card to select it to play. Swipe left/right or tap arrows to scroll through your cards."
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/buttonLeft"
+                android:layout_width="0dip"
+                android:layout_height="200dip"
+                android:layout_weight="1"
+                android:text="@string/left" />
+
+            <Button
+                android:id="@+id/buttonMiddle"
+                android:layout_width="100dip"
+                android:layout_height="200dip"
+                android:layout_weight="2"
+                android:text="Pretending to care." />
+
+            <Button
+                android:id="@+id/buttonRight"
+                android:layout_width="0dip"
+                android:layout_height="200dip"
+                android:layout_weight="1"
+                android:text="@string/right" />
+        </LinearLayout>
+
+        <TableRow
+            android:id="@+id/tableRow9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ProgressBar
+                android:id="@+id/progressBar1"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        
+        </TableRow>
+    </TableLayout>
+
+</ScrollView>

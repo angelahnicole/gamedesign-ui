@@ -29,9 +29,10 @@
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="300dip"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
+            android:background="@drawable/bg"
             android:orientation="horizontal" >
 
             <Button
@@ -42,11 +43,13 @@
                 android:text="@string/left" />
 
             <Button
-                android:id="@+id/buttonMiddle"
+                android:id="@+id/buttonCard"
                 android:layout_width="100dip"
-                android:layout_height="200dip"
+                android:layout_height="300dip"
                 android:layout_weight="2"
-                android:text="Pretending to care." />
+                android:background="@color/whiteT"
+                android:text="Pretending to care."
+                android:textColor="@color/black" />
 
             <Button
                 android:id="@+id/buttonRight"
@@ -55,20 +58,6 @@
                 android:layout_weight="1"
                 android:text="@string/right" />
         </LinearLayout>
-
-        <TableRow
-            android:id="@+id/tableRow9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <ProgressBar
-                android:id="@+id/progressBar1"
-                style="?android:attr/progressBarStyleLarge"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        
-        </TableRow>
     </TableLayout>
 
 </ScrollView>

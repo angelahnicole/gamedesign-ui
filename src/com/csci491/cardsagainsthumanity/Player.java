@@ -7,9 +7,8 @@ import android.app.Activity;
 
 public class Player extends Activity {
 
-	private Globals globals;
-	private ArrayList<WhiteCard> whiteCards;
-	private ArrayList<BlackCard> blackCards;
+//	private ArrayList<WhiteCard> whiteCards;
+//	private ArrayList<BlackCard> blackCards;
 	private ArrayList<WhiteCard> myHand;
 	private String name;
 	private boolean isHuman;
@@ -42,11 +41,9 @@ public class Player extends Activity {
 	}
 
 	public Player() {
-		init();
 	}
 	
 	public Player(String name) {
-		init();
 		setName(name);
 	}
 
@@ -73,8 +70,8 @@ public class Player extends Activity {
 	}
 	
 	public void draw() {
-		if (!whiteCards.isEmpty()) {
-			myHand.add(whiteCards.remove(0));
+		if (!Globals.getWhiteCards().isEmpty()) {
+			myHand.add(Globals.getWhiteCards().remove(0));
 		}
 		else {
 			shuffleWhiteCards();
@@ -84,14 +81,8 @@ public class Player extends Activity {
 	
 	private void shuffleWhiteCards() {
 		FileIO myFileIO = new FileIO();
-		globals.setWhiteCards(myFileIO.hardCodedWhiteCards());
-		whiteCards = globals.getWhiteCards();
-	}
-
-	private void init() {
-		globals = (Globals) this.getApplicationContext();
-		whiteCards = globals.getWhiteCards();
-		blackCards = globals.getBlackCards();
+		Globals.setWhiteCards(myFileIO.hardCodedWhiteCards());
+		//whiteCards = Globals.getWhiteCards();
 	}
 	
 }

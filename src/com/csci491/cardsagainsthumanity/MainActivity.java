@@ -29,12 +29,12 @@ public class MainActivity extends Activity {
 		System.out.println("Before where the try used to be...");
 
 		FileIO cardMaker = new FileIO();
-		Globals globals = (Globals) this.getApplicationContext();
-		globals.setWhiteCards(cardMaker.hardCodedWhiteCards());
-		globals.setBlackCards(cardMaker.hardCodedBlackCards());
-		System.out.println(globals.getWhiteCards().size());
-
-
+		
+		Globals.setWhiteCards(cardMaker.hardCodedWhiteCards());
+		Globals.setBlackCards(cardMaker.hardCodedBlackCards());
+		
+//		System.out.println(Globals.getWhiteCards().size());
+		
 		Button buttonStart = (Button) findViewById(R.id.buttonStart);
 		buttonStart.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {

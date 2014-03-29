@@ -1,54 +1,61 @@
 package com.csci491.cardsagainsthumanity;
 
-import android.app.Application;
 import java.util.ArrayList;
+
+import android.app.Application;
 
 public class Globals extends Application {
 
-	private ArrayList<BlackCard> blackCards = new ArrayList<BlackCard>();
-	private ArrayList<WhiteCard> whiteCards = new ArrayList<WhiteCard>();
-	private String userName = new String();
-	private int pointLimit;
-	private int numPlayers;
+	private static ArrayList<BlackCard> blackCards = new ArrayList<BlackCard>();
+	private static ArrayList<WhiteCard> whiteCards = new ArrayList<WhiteCard>();
+	private static String userName = new String();
+	private static int pointLimit;
+	private static int numPlayers;
 
-	public int getNumPlayers() {
+	private Globals() {
+		Globals.blackCards = new ArrayList<BlackCard>();
+		Globals.whiteCards = new ArrayList<WhiteCard>();
+		Globals.userName = new String();
+	}
+	
+	static int getNumPlayers() {
 		return numPlayers;
 	}
 
-	public void setNumPlayers(int numPlayers) {
-		this.numPlayers = numPlayers;
+	static void setNumPlayers(int numPlayers) {
+		Globals.numPlayers = numPlayers;
 	}
 
-	public int getPointLimit() {
+	static int getPointLimit() {
 		return pointLimit;
 	}
 
-	public void setPointLimit(int pointLimit) {
-		this.pointLimit = pointLimit;
+	static void setPointLimit(int pointLimit) {
+		Globals.pointLimit = pointLimit;
 	}
 
-	public String getUserName() {
+	static String getUserName() {
 		return userName;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	static void setUserName(String userName) {
+		Globals.userName = userName;
 	}
 
-	public ArrayList<BlackCard> getBlackCards() {
+	static ArrayList<BlackCard> getBlackCards() {
 		return blackCards;
 	}
 
-	public void setBlackCards(ArrayList<BlackCard> blackCards) {
-		this.blackCards = blackCards;
+	static void setBlackCards(ArrayList<BlackCard> blackCards) {
+		Globals.blackCards = blackCards;
 	}
 
-	public ArrayList<WhiteCard> getWhiteCards() {
+	static ArrayList<WhiteCard> getWhiteCards() {
 		return whiteCards;
 	}
 
-	public void setWhiteCards(ArrayList<WhiteCard> whiteCards) {
-		this.whiteCards = whiteCards;
+	static void setWhiteCards(ArrayList<WhiteCard> whiteCards) {
+		Globals.whiteCards = whiteCards;
 	}
 
 }

@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
 import android.app.Activity;
 import android.content.Intent;
 
@@ -18,8 +17,6 @@ public class StartNewGameActivity extends Activity {
 		setContentView(R.layout.activity_start_new_game);
 		// rest of the code
 
-		final Globals globals = (Globals) this.getApplicationContext();
-		
 		Button buttonCancel = (Button) findViewById(R.id.buttonCancel);
 		buttonCancel.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {

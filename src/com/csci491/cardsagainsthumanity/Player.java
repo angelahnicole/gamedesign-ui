@@ -12,8 +12,35 @@ public class Player extends Activity {
 	private ArrayList<BlackCard> blackCards;
 	private ArrayList<WhiteCard> myHand;
 	private String name;
+	private boolean isHuman;
+	private int score;
+	private int numPlayers; // awareness of other players
 	
 	
+	public boolean isHuman() {
+		return isHuman;
+	}
+
+	public void setHuman(boolean isHuman) {
+		this.isHuman = isHuman;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public int getNumPlayers() {
+		return numPlayers;
+	}
+
+	public void setNumPlayers(int numPlayers) {
+		this.numPlayers = numPlayers;
+	}
+
 	public Player() {
 		init();
 	}

@@ -25,15 +25,19 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-		System.out.println("Before where the try used to be...");
 
 		FileIO cardMaker = new FileIO();
 		
 		Globals.setWhiteCards(cardMaker.hardCodedWhiteCards());
 		Globals.setBlackCards(cardMaker.hardCodedBlackCards());
 		
-//		System.out.println(Globals.getWhiteCards().size());
+		
+		// Method calls to read in the files
+//		Globals.setWhiteCards(cardMaker.readWhiteCards());
+//		Globals.setBlackCards(cardMaker.readBlackCards());
+		
+		
+		System.out.println(Globals.getWhiteCards().size());
 		
 		Button buttonStart = (Button) findViewById(R.id.buttonStart);
 		buttonStart.setOnClickListener(new OnClickListener() {

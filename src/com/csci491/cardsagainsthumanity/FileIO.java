@@ -40,7 +40,7 @@ public class FileIO extends Activity {
 		try {
 		    //BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("WHITE_CARDS.txt"), "UTF-8"));
 			
-		    String file = "raw/WHITE_CARDS.txt";
+		    String file = "raw/whitecards.txt";
 		    InputStream in = this.getClass().getClassLoader().getResourceAsStream(file);
 		    InputStreamReader isr = new InputStreamReader(in);
 		    BufferedReader reader = new BufferedReader(isr);

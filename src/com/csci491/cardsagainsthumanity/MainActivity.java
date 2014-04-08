@@ -28,12 +28,12 @@ public class MainActivity extends Activity {
 
 		FileIO cardMaker = new FileIO();
 		
-		Globals.setWhiteCards(cardMaker.hardCodedWhiteCards());
-		Globals.setBlackCards(cardMaker.hardCodedBlackCards());
+//		Globals.setWhiteCards(cardMaker.hardCodedWhiteCards());
+//		Globals.setBlackCards(cardMaker.hardCodedBlackCards());
 		
 		
 		// Method calls to read in the files
-//		Globals.setWhiteCards(cardMaker.readWhiteCards());
+		Globals.setWhiteCards(cardMaker.readWhiteCards());
 //		Globals.setBlackCards(cardMaker.readBlackCards());
 		
 		

@@ -36,7 +36,6 @@ public class MainActivity extends Activity {
 		Globals.setWhiteCards(cardMaker.readWhiteCards());
 		Globals.setBlackCards(cardMaker.readBlackCards());
 		
-		
 		System.out.println("Num White Cards: " + Globals.getWhiteCards().size());
 		System.out.println("Num Black Cards: " + Globals.getBlackCards().size());
 		

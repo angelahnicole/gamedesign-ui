@@ -19,6 +19,10 @@ public class FileIO extends Activity {
 	
 	private Context c;
 	
+	public FileIO() {
+		this.c = getApplicationContext();
+	}
+	
 	public FileIO(Context c) {
 		this.c = c;
 	}

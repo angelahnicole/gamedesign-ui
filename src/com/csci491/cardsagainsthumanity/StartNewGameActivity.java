@@ -1,6 +1,7 @@
 package com.csci491.cardsagainsthumanity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import com.csci491.cardsagainsthumanity.R;
 
@@ -45,19 +46,29 @@ public class StartNewGameActivity extends Activity {
 				} else {
 
 					// store variables
-					Globals.setPointLimit(Integer.parseInt(editTextPointLimit
-							.getText().toString()));
-					Globals.setNumPlayers(Integer.parseInt(editTextPlayers
-							.getText().toString()));
+					Globals.setPointLimit(Integer.parseInt(editTextPointLimit.getText().toString()));
+					Globals.setNumPlayers(Integer.parseInt(editTextPlayers.getText().toString()));
 
 					// creating players
-					ArrayList<Player> custArr = new ArrayList<Player>();
+//					ArrayList<Player> custArr = new ArrayList<Player>();
+//					for (int i = 1; i <= Globals.getNumPlayers(); i++) {
+//						custArr.add(new Player());
+//					}
+
+//					System.out.println("Num Players: " + custArr.size());
+					
+					// if the parameter being passed into the Player constructor is true,
+					// then the player is a human player.
+					Globals.getPlayers().add(new Player(true));
 					for (int i = 1; i <= Globals.getNumPlayers(); i++) {
-						custArr.add(new Player());
+						// if the parameter in the Player constructor is false,
+						// then the player is a computer
+						Globals.getPlayers().add(new Player(false));
 					}
 
-					System.out.println("Num Players: " + custArr.size());
-
+					System.out.println("Score Limit: " + Globals.getPointLimit());
+					System.out.println("Num Players: " + Globals.getNumPlayers());
+					
 					Intent intent = new Intent(StartNewGameActivity.this,
 							StartNewRoundActivity.class);
 					startActivity(intent);

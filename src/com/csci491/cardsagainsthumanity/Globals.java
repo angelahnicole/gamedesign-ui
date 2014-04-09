@@ -8,14 +8,25 @@ public class Globals extends Application {
 
 	private static ArrayList<BlackCard> blackCards = new ArrayList<BlackCard>();
 	private static ArrayList<WhiteCard> whiteCards = new ArrayList<WhiteCard>();
+	private static ArrayList<Player> players = new ArrayList<Player>();
 	private static String userName = new String();
 	private static int pointLimit;
 	private static int numPlayers;
+	private static int roundNum = 1;
 
 	private Globals() {
 		Globals.blackCards = new ArrayList<BlackCard>();
 		Globals.whiteCards = new ArrayList<WhiteCard>();
 		Globals.userName = new String();
+		Globals.roundNum = 1;
+	}
+	
+	static int getRoundNum() {
+		return roundNum;
+	}
+	
+	static void setRoundNum(int roundNum) {
+		Globals.roundNum = roundNum;
 	}
 	
 	static int getNumPlayers() {
@@ -42,6 +53,14 @@ public class Globals extends Application {
 		Globals.userName = userName;
 	}
 
+	static ArrayList<Player> getPlayers() {
+		return players;
+	}
+	
+	static void setPlayers(ArrayList<Player> players) {
+		Globals.players = players;
+	}
+	
 	static ArrayList<BlackCard> getBlackCards() {
 		return blackCards;
 	}

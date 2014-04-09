@@ -17,6 +17,15 @@ public class Player extends Activity {
 	private int numPlayers; // awareness of other players
 	private Context c;
 	
+	public Player() {}
+	
+	public Player(boolean isHuman) {
+		setHuman(isHuman);
+	}
+	
+	public Player(String name) {
+		setName(name);
+	}
 	
 	public boolean isHuman() {
 		return isHuman;
@@ -40,13 +49,6 @@ public class Player extends Activity {
 
 	public void setNumPlayers(int numPlayers) {
 		this.numPlayers = numPlayers;
-	}
-
-	public Player() {
-	}
-	
-	public Player(String name) {
-		setName(name);
 	}
 
 	public ArrayList<WhiteCard> getMyHand() {

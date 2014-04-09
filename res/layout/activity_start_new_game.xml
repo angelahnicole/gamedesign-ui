@@ -20,7 +20,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/editTextPointLimit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -49,7 +49,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/editTextPlayers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"

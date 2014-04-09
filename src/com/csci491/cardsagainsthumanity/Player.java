@@ -2,6 +2,7 @@ package com.csci491.cardsagainsthumanity;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Context;
 
 
 
@@ -14,6 +15,7 @@ public class Player extends Activity {
 	private boolean isHuman;
 	private int score;
 	private int numPlayers; // awareness of other players
+	private Context c;
 	
 	
 	public boolean isHuman() {
@@ -80,7 +82,7 @@ public class Player extends Activity {
 	}
 	
 	private void shuffleWhiteCards() {
-		FileIO myFileIO = new FileIO();
+		FileIO myFileIO = new FileIO(this.c);
 		Globals.setWhiteCards(myFileIO.hardCodedWhiteCards());
 		//whiteCards = Globals.getWhiteCards();
 	}

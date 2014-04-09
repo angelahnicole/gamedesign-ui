@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		FileIO cardMaker = new FileIO();
+		FileIO cardMaker = new FileIO(this);
 		
 //		Globals.setWhiteCards(cardMaker.hardCodedWhiteCards());
 //		Globals.setBlackCards(cardMaker.hardCodedBlackCards());
@@ -34,10 +34,11 @@ public class MainActivity extends Activity {
 		
 		// Method calls to read in the files
 		Globals.setWhiteCards(cardMaker.readWhiteCards());
-//		Globals.setBlackCards(cardMaker.readBlackCards());
+		Globals.setBlackCards(cardMaker.readBlackCards());
 		
 		
-		System.out.println(Globals.getWhiteCards().size());
+		System.out.println("Num White Cards: " + Globals.getWhiteCards().size());
+		System.out.println("Num Black Cards: " + Globals.getBlackCards().size());
 		
 		Button buttonStart = (Button) findViewById(R.id.buttonStart);
 		buttonStart.setOnClickListener(new OnClickListener() {

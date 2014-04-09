@@ -1,6 +1,5 @@
 package com.csci491.cardsagainsthumanity;
 
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -8,6 +7,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.res.AssetManager;
 
 /* ========================================================================
  * This is the file input and output class
@@ -15,6 +16,12 @@ import android.app.Activity;
  * ======================================================================== */
 
 public class FileIO extends Activity {
+	
+	private Context c;
+	
+	public FileIO(Context c) {
+		this.c = c;
+	}
 	
 	public ArrayList<WhiteCard> hardCodedWhiteCards() {
 		ArrayList<WhiteCard> whiteCards = new ArrayList<WhiteCard>();
@@ -38,13 +45,32 @@ public class FileIO extends Activity {
 		ArrayList<WhiteCard> whiteCards = new ArrayList<WhiteCard>();
 		
 		try {
-		    //BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("WHITE_CARDS.txt"), "UTF-8"));
+		    // Various methods to try to get something to read in...
 			
-		    String file = "raw/whitecards.txt";
-		    InputStream in = this.getClass().getClassLoader().getResourceAsStream(file);
+//			InputStream in = getAssets().open("whitecards.txt");
+			
+//			AssetManager assetManager = getApplicationContext().getAssets();
+//			InputStream in = assetManager.open("whitecards.txt");
+			
+			/* If I pass in this input stream from the calling class (MainActivity.java)
+			 * and pass it as a parameter in the InputStreamReader, it will actually work.
+			 * The problem with that is my Player class also calls the FileIO class to 
+			 * re-read in the deck and shuffle it (when the deck is empty).  So, if I do
+			 * it the way that works, I'll have to pass in this InputStream to each player
+			 * to pass in to their instances of the FileIO class for the thing to work.
+			 * It needs to be more decoupled. 
+			 */
+//		    InputStream in = getResources().openRawResource(R.raw.whitecards);
+			
+//			AssetManager assetManager = getResources().getAssets();
+//			InputStream in = assetManager.open("whitecards.txt");
+			
+			AssetManager assetManager = c.getAssets();
+			InputStream in = assetManager.open("whitecards.txt");
+			
 		    InputStreamReader isr = new InputStreamReader(in);
 		    BufferedReader reader = new BufferedReader(isr);
-		    
+			
 		    // do reading, usually loop until end of file reading
 		    String mLine;
 		    while ((mLine = reader.readLine()) != null) {
@@ -64,8 +90,12 @@ public class FileIO extends Activity {
 		ArrayList<BlackCard> blackCards = new ArrayList<BlackCard>();
 		
 		try {
-		    BufferedReader reader = new BufferedReader(new InputStreamReader(getAssets().open("BLACK_CARDS.txt"), "UTF-8")); 
-
+			AssetManager assetManager = c.getAssets();
+			InputStream in = assetManager.open("blackcards.txt");
+			
+		    InputStreamReader isr = new InputStreamReader(in);
+		    BufferedReader reader = new BufferedReader(isr);
+			
 		    // do reading, usually loop until end of file reading
 		    String mLine;
 		    while ((mLine = reader.readLine()) != null) {

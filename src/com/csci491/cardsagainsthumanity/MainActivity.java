@@ -26,8 +26,14 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		// Hacky way - potential memory leak
 		FileIO cardMaker = new FileIO(this);
 		
+		// Preferred Way - better decoupling
+//		FileIO cardMaker = new FileIO();
+		
+		
+		// Last resort methods
 //		Globals.setWhiteCards(cardMaker.hardCodedWhiteCards());
 //		Globals.setBlackCards(cardMaker.hardCodedBlackCards());
 		

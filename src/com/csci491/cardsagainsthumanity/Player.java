@@ -85,6 +85,7 @@ public class Player extends Activity {
 	
 	private void shuffleWhiteCards() {
 		FileIO myFileIO = new FileIO(this.c);
+//		FileIO myFileIO = new FileIO();
 		Globals.setWhiteCards(myFileIO.hardCodedWhiteCards());
 		//whiteCards = Globals.getWhiteCards();
 	}

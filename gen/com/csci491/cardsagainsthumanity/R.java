@@ -44,12 +44,12 @@ public final class R {
         public static final int editTextPlayers=0x7f0a000e;
         public static final int editTextPointLimit=0x7f0a000b;
         public static final int imageViewLogo=0x7f0a0009;
+        public static final int lblRoundNum=0x7f0a0014;
         public static final int tableRow1=0x7f0a0000;
         public static final int tableRow3=0x7f0a0007;
         public static final int tableRow5=0x7f0a000c;
         public static final int tableRow9=0x7f0a0010;
         public static final int textView1=0x7f0a0013;
-        public static final int textView2=0x7f0a0014;
         public static final int textView3=0x7f0a000a;
         public static final int textView3_1=0x7f0a0002;
         public static final int textView5=0x7f0a000d;

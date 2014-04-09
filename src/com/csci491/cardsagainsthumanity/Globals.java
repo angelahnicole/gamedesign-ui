@@ -6,19 +6,21 @@ import android.app.Application;
 
 public class Globals extends Application {
 
+	private final static int ROUND = 1;
+	
 	private static ArrayList<BlackCard> blackCards = new ArrayList<BlackCard>();
 	private static ArrayList<WhiteCard> whiteCards = new ArrayList<WhiteCard>();
 	private static ArrayList<Player> players = new ArrayList<Player>();
 	private static String userName = new String();
 	private static int pointLimit;
 	private static int numPlayers;
-	private static int roundNum = 1;
+	private static int roundNum = ROUND;
 
 	private Globals() {
 		Globals.blackCards = new ArrayList<BlackCard>();
 		Globals.whiteCards = new ArrayList<WhiteCard>();
 		Globals.userName = new String();
-		Globals.roundNum = 1;
+		Globals.roundNum = ROUND;
 	}
 	
 	static int getRoundNum() {

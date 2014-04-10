@@ -17,8 +17,8 @@ public class StartNewRoundActivity extends Activity {
 		setContentView(R.layout.activity_start_new_round);
 		// rest of the code
 
-		TextView t = (TextView) findViewById(R.id.lblRoundNum);
-		t.setText(" " + Globals.getRoundNum());
+		TextView round = (TextView) findViewById(R.id.lblRoundNum);
+		round.setText(" " + Globals.getRoundNum());
 		
 		Globals.setRoundNum(Globals.getRoundNum() + 1);
 		

@@ -1,5 +1,6 @@
 package com.csci491.cardsagainsthumanity;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import android.app.Activity;
 import android.content.Context;
@@ -17,14 +18,18 @@ public class Player extends Activity {
 	private int numPlayers; // awareness of other players
 	private Context c;
 	
-	public Player() {}
+	public Player() {
+		myHand = new ArrayList<WhiteCard>();
+	}
 	
 	public Player(boolean isHuman) {
 		setHuman(isHuman);
+		myHand = new ArrayList<WhiteCard>();
 	}
 	
 	public Player(String name) {
 		setName(name);
+		myHand = new ArrayList<WhiteCard>();
 	}
 	
 	public boolean isHuman() {
@@ -74,6 +79,8 @@ public class Player extends Activity {
 	}
 	
 	public void draw() {
+//		System.out.println("In Player: WhiteCards: " + Globals.getWhiteCards().size());
+		
 		if (!Globals.getWhiteCards().isEmpty()) {
 			myHand.add(Globals.getWhiteCards().remove(0));
 		}
@@ -87,7 +94,7 @@ public class Player extends Activity {
 		FileIO myFileIO = new FileIO(this.c);
 //		FileIO myFileIO = new FileIO();
 		Globals.setWhiteCards(myFileIO.hardCodedWhiteCards());
-		//whiteCards = Globals.getWhiteCards();
+		Collections.shuffle(Globals.getWhiteCards());
 	}
 	
 }

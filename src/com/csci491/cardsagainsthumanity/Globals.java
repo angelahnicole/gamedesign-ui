@@ -7,7 +7,7 @@ import android.app.Application;
 public class Globals extends Application {
 
 	private final static int ROUND = 1;
-	
+	private final static int HANDSIZE = 7;
 	private static ArrayList<BlackCard> blackCards = new ArrayList<BlackCard>();
 	private static ArrayList<WhiteCard> whiteCards = new ArrayList<WhiteCard>();
 	private static ArrayList<Player> players = new ArrayList<Player>();
@@ -21,6 +21,10 @@ public class Globals extends Application {
 		Globals.whiteCards = new ArrayList<WhiteCard>();
 		Globals.userName = new String();
 		Globals.roundNum = ROUND;
+	}
+	
+	static int getHandSize() {
+		return HANDSIZE;
 	}
 	
 	static int getRoundNum() {

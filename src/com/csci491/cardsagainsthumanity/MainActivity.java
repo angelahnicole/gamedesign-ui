@@ -9,6 +9,8 @@
 
 package com.csci491.cardsagainsthumanity;
 
+import java.util.Collections;
+
 import com.csci491.cardsagainsthumanity.R;
 
 import android.app.Activity;
@@ -37,10 +39,13 @@ public class MainActivity extends Activity {
 //		Globals.setWhiteCards(cardMaker.hardCodedWhiteCards());
 //		Globals.setBlackCards(cardMaker.hardCodedBlackCards());
 		
-		
 		// Method calls to read in the files
 		Globals.setWhiteCards(cardMaker.readWhiteCards());
 		Globals.setBlackCards(cardMaker.readBlackCards());
+		
+		// Shuffles the decks of cards
+		Collections.shuffle(Globals.getWhiteCards());
+		Collections.shuffle(Globals.getBlackCards());
 		
 		System.out.println("Num White Cards: " + Globals.getWhiteCards().size());
 		System.out.println("Num Black Cards: " + Globals.getBlackCards().size());

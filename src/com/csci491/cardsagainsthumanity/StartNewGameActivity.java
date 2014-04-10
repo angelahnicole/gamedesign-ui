@@ -49,6 +49,10 @@ public class StartNewGameActivity extends Activity {
 					Globals.setPointLimit(Integer.parseInt(editTextPointLimit.getText().toString()));
 					Globals.setNumPlayers(Integer.parseInt(editTextPlayers.getText().toString()));
 
+
+					System.out.println("Score Limit: " + Globals.getPointLimit());
+					System.out.println("Num Players: " + Globals.getNumPlayers());
+					
 					// creating players
 //					ArrayList<Player> custArr = new ArrayList<Player>();
 //					for (int i = 1; i <= Globals.getNumPlayers(); i++) {
@@ -57,17 +61,33 @@ public class StartNewGameActivity extends Activity {
 
 //					System.out.println("Num Players: " + custArr.size());
 					
-					// if the parameter being passed into the Player constructor is true,
-					// then the player is a human player.
+					System.out.println("Creating the players...");
 					Globals.getPlayers().add(new Player(true));
-					for (int i = 1; i <= Globals.getNumPlayers(); i++) {
-						// if the parameter in the Player constructor is false,
+					for (int i = 0; i < Globals.getNumPlayers(); i++) {
+						// if the parameter being passed into the Player constructor is true,
+						// then the player is a human player.	
+						
+						// else if the parameter in the Player constructor is false,
 						// then the player is a computer
-						Globals.getPlayers().add(new Player(false));
+						if (i == 0) {
+							Globals.getPlayers().add(new Player(true));	
+						} else {
+							Globals.getPlayers().add(new Player(false));
+						}
+						
 					}
-
-					System.out.println("Score Limit: " + Globals.getPointLimit());
-					System.out.println("Num Players: " + Globals.getNumPlayers());
+					System.out.println("Players successfully created!");
+					
+					
+					System.out.println("Dealing out the cards...");
+					// Deal out cards to each player
+					// TODO fix this... the draw method is messed up
+					for (int i = 0; i < Globals.getHandSize(); i++) {
+						for (int j = 0; j < Globals.getPlayers().size(); j++) {
+							Globals.getPlayers().get(j).draw();
+						}
+					}
+					System.out.println("Cards successfully dealt!");
 					
 					Intent intent = new Intent(StartNewGameActivity.this,
 							StartNewRoundActivity.class);

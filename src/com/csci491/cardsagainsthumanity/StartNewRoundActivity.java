@@ -22,6 +22,8 @@ public class StartNewRoundActivity extends Activity {
 		
 		Globals.setRoundNum(Globals.getRoundNum() + 1);
 		
+		System.out.println("Next Round Number: " + Globals.getRoundNum());
+		
 		Button buttonSkip = (Button) findViewById(R.id.buttonSkip);
 		buttonSkip.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {

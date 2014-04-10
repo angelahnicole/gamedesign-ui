@@ -1,18 +1,12 @@
 package com.csci491.cardsagainsthumanity;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
-import com.csci491.cardsagainsthumanity.R;
-
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.*;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class StartNewGameActivity extends Activity {
 	@Override
@@ -74,16 +68,13 @@ public class StartNewGameActivity extends Activity {
 						} else {
 							Globals.getPlayers().add(new Player(false));
 						}
-						
 					}
 					System.out.println("Players successfully created!");
 					
-					
 					System.out.println("Dealing out the cards...");
 					// Deal out cards to each player
-					// TODO fix this... the draw method is messed up
 					for (int i = 0; i < Globals.getHandSize(); i++) {
-						for (int j = 0; j < Globals.getPlayers().size(); j++) {
+						for (int j = 0; j < Globals.getPlayers().size() - 1; j++) {
 							Globals.getPlayers().get(j).draw();
 						}
 					}

@@ -15,6 +15,7 @@ public class Globals extends Application {
 	private static int pointLimit;
 	private static int numPlayers;
 	private static int roundNum = ROUND;
+	private static int indexWhiteCard = 0;
 
 	private Globals() {
 		Globals.blackCards = new ArrayList<BlackCard>();
@@ -81,6 +82,14 @@ public class Globals extends Application {
 
 	static void setWhiteCards(ArrayList<WhiteCard> whiteCards) {
 		Globals.whiteCards = whiteCards;
+	}
+
+	public static int getIndexWhiteCard() {
+		return indexWhiteCard;
+	}
+
+	public static void setIndexWhiteCard(int indexWhiteCard) {
+		Globals.indexWhiteCard = indexWhiteCard;
 	}
 
 }

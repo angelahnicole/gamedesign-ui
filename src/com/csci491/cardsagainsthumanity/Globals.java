@@ -3,6 +3,7 @@ package com.csci491.cardsagainsthumanity;
 import java.util.ArrayList;
 
 import android.app.Application;
+import android.content.Context;
 
 public class Globals extends Application {
 
@@ -15,13 +16,30 @@ public class Globals extends Application {
 	private static int pointLimit;
 	private static int numPlayers;
 	private static int roundNum = ROUND;
+<<<<<<< HEAD
 	private static int indexWhiteCard = 0;
+=======
+	private static FileIO cardMaker = new FileIO();
+>>>>>>> 572a2f3fed8cf05428ebabbc23eb2d41edfe075c
 
 	private Globals() {
 		Globals.blackCards = new ArrayList<BlackCard>();
 		Globals.whiteCards = new ArrayList<WhiteCard>();
 		Globals.userName = new String();
 		Globals.roundNum = ROUND;
+		cardMaker = new FileIO();
+	}
+	
+	static FileIO getCardMaker() {
+		return cardMaker;
+	}
+	
+	static void setCardMaker(FileIO cardMaker) {
+		Globals.cardMaker = cardMaker;
+	}
+	
+	static void setCardMakerContext(Context c) {
+		Globals.cardMaker.setContext(c);
 	}
 	
 	static int getHandSize() {

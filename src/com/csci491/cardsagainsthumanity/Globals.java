@@ -16,11 +16,8 @@ public class Globals extends Application {
 	private static int pointLimit;
 	private static int numPlayers;
 	private static int roundNum = ROUND;
-<<<<<<< HEAD
 	private static int indexWhiteCard = 0;
-=======
 	private static FileIO cardMaker = new FileIO();
->>>>>>> 572a2f3fed8cf05428ebabbc23eb2d41edfe075c
 
 	private Globals() {
 		Globals.blackCards = new ArrayList<BlackCard>();
@@ -29,31 +26,31 @@ public class Globals extends Application {
 		Globals.roundNum = ROUND;
 		cardMaker = new FileIO();
 	}
-	
+
 	static FileIO getCardMaker() {
 		return cardMaker;
 	}
-	
+
 	static void setCardMaker(FileIO cardMaker) {
 		Globals.cardMaker = cardMaker;
 	}
-	
+
 	static void setCardMakerContext(Context c) {
 		Globals.cardMaker.setContext(c);
 	}
-	
+
 	static int getHandSize() {
 		return HANDSIZE;
 	}
-	
+
 	static int getRoundNum() {
 		return roundNum;
 	}
-	
+
 	static void setRoundNum(int roundNum) {
 		Globals.roundNum = roundNum;
 	}
-	
+
 	static int getNumPlayers() {
 		return numPlayers;
 	}
@@ -81,11 +78,11 @@ public class Globals extends Application {
 	static ArrayList<Player> getPlayers() {
 		return players;
 	}
-	
+
 	static void setPlayers(ArrayList<Player> players) {
 		Globals.players = players;
 	}
-	
+
 	static ArrayList<BlackCard> getBlackCards() {
 		return blackCards;
 	}

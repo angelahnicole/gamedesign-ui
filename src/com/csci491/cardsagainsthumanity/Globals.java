@@ -12,6 +12,7 @@ public class Globals extends Application {
 	private static ArrayList<BlackCard> blackCards = new ArrayList<BlackCard>();
 	private static ArrayList<WhiteCard> whiteCards = new ArrayList<WhiteCard>();
 	private static ArrayList<Player> players = new ArrayList<Player>();
+	private static ArrayList<Integer> plays = new ArrayList<Integer>();
 	private static String userName = new String();
 	private static int pointLimit;
 	private static int numPlayers;
@@ -83,6 +84,14 @@ public class Globals extends Application {
 		Globals.players = players;
 	}
 
+	static ArrayList<Integer> getPlays() {
+		return plays;
+	}
+	
+	static void setPlays(ArrayList<Integer> plays) {
+		Globals.plays = plays;
+	}
+	
 	static ArrayList<BlackCard> getBlackCards() {
 		return blackCards;
 	}

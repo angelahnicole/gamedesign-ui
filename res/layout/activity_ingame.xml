@@ -16,7 +16,7 @@
                 android:id="@+id/textViewQuestion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="When I am President of the United States, I will create the department of __________ ."
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </TableRow>
 
@@ -24,7 +24,7 @@
             android:id="@+id/textView3.1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tap a card to select it to play. Swipe left/right or tap arrows to scroll through your cards."
+            android:text="@string/helperInGame"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <LinearLayout
@@ -48,7 +48,7 @@
                 android:layout_height="300dip"
                 android:layout_weight="2"
                 android:background="@color/whiteT"
-                android:text="Pretending to care."
+                android:text=""
                 android:textColor="@color/black" />
 
             <Button

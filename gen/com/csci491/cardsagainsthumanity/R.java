@@ -72,25 +72,27 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
-        public static final int cancel=0x7f060008;
+        public static final int cancel=0x7f060009;
         public static final int hello_world=0x7f060002;
+        public static final int helperInGame=0x7f060010;
         public static final int how_to_play=0x7f060004;
         /**  In-game screen 
          */
-        public static final int left=0x7f06000d;
-        public static final int max_players=0x7f060006;
+        public static final int left=0x7f06000e;
+        public static final int logo=0x7f060005;
+        public static final int max_players=0x7f060007;
         /**  Start New Game screen 
          */
-        public static final int point_limit=0x7f060005;
-        public static final int right=0x7f06000e;
+        public static final int point_limit=0x7f060006;
+        public static final int right=0x7f06000f;
         /**  New Round screen 
          */
-        public static final int round=0x7f06000b;
-        public static final int skip=0x7f06000c;
-        public static final int start_game=0x7f060007;
+        public static final int round=0x7f06000c;
+        public static final int skip=0x7f06000d;
+        public static final int start_game=0x7f060008;
         public static final int start_new_game=0x7f060003;
-        public static final int start_new_game_max_players_description=0x7f06000a;
-        public static final int start_new_game_point_limit_description=0x7f060009;
+        public static final int start_new_game_max_players_description=0x7f06000b;
+        public static final int start_new_game_point_limit_description=0x7f06000a;
     }
     public static final class style {
         /** 

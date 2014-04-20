@@ -107,14 +107,6 @@ public class PlayerActivity extends Activity {
 		spinner.setLayoutParams(new TableRow.LayoutParams(
 				TableRow.LayoutParams.FILL_PARENT,
 				TableRow.LayoutParams.WRAP_CONTENT));
-		
-		Display display = getWindowManager().getDefaultDisplay();
-		Point size = new Point();
-		display.getSize(size);
-		int width = size.x;
-		int height = size.y;
-		
-		spinner(width/2);
 
 		return spinner;
 	}

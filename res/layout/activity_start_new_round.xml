@@ -31,6 +31,14 @@
         </TableRow>
     </TableLayout>
 
+    <TableLayout
+        android:id="@+id/tablePlayers"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:stretchColumns="*" >
+    </TableLayout>
+
     <Button
         android:id="@+id/buttonSkip"
         android:layout_width="wrap_content"

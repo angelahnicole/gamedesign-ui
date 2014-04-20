@@ -46,9 +46,9 @@ public class StartNewGameActivity extends Activity {
 							"Player limit cannot be left blank!",
 							Toast.LENGTH_SHORT).show();
 				} else if (Integer.parseInt(editTextPlayers.getText()
-						.toString()) < 3) {
+						.toString()) < 2) {
 					Toast.makeText(getBaseContext(),
-							"You need at least 3 players", Toast.LENGTH_SHORT)
+							"You need at least 3 players: You and 2 more", Toast.LENGTH_SHORT)
 							.show();
 				} else if (Integer.parseInt(editTextPlayers.getText()
 						.toString()) > 20) {

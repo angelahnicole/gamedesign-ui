@@ -33,19 +33,22 @@ public final class R {
     }
     public static final class id {
         public static final int Table1=0x7f0a000a;
-        public static final int action_settings=0x7f0a0016;
+        public static final int action_endgame=0x7f0a0019;
+        public static final int action_leavegame=0x7f0a0018;
+        public static final int action_settings=0x7f0a0017;
         public static final int buttonCancel=0x7f0a0012;
         public static final int buttonCard=0x7f0a0004;
         public static final int buttonHow=0x7f0a0008;
         public static final int buttonLeft=0x7f0a0003;
         public static final int buttonNext=0x7f0a0013;
         public static final int buttonRight=0x7f0a0005;
-        public static final int buttonSkip=0x7f0a0015;
+        public static final int buttonSkip=0x7f0a0016;
         public static final int buttonStart=0x7f0a0006;
         public static final int editTextPlayers=0x7f0a0010;
         public static final int editTextPointLimit=0x7f0a000c;
         public static final int imageViewLogo=0x7f0a0009;
         public static final int lblRoundNum=0x7f0a0014;
+        public static final int tablePlayers=0x7f0a0015;
         public static final int tableRow1=0x7f0a0000;
         public static final int tableRow2=0x7f0a000e;
         public static final int tableRow3=0x7f0a0007;
@@ -64,7 +67,7 @@ public final class R {
         public static final int activity_start_new_round=0x7f030004;
     }
     public static final class menu {
-        public static final int main=0x7f090000;
+        public static final int ingame=0x7f090000;
     }
     public static final class raw {
         public static final int blackcards=0x7f040000;

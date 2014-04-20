@@ -11,10 +11,14 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
-        public static final int black=0x7f070001;
+        public static final int black=0x7f070002;
         public static final int blackT=0x7f070003;
+        public static final int green=0x7f070004;
+        public static final int greenT=0x7f070005;
+        public static final int red=0x7f070006;
+        public static final int redT=0x7f070007;
         public static final int white=0x7f070000;
-        public static final int whiteT=0x7f070002;
+        public static final int whiteT=0x7f070001;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 

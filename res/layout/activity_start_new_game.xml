@@ -70,12 +70,14 @@
                 android:id="@+id/buttonCancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/redT"
                 android:text="@string/cancel" />
 
             <Button
                 android:id="@+id/buttonNext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@color/greenT"
                 android:text="@string/next" />
         </TableRow>
     </TableLayout>

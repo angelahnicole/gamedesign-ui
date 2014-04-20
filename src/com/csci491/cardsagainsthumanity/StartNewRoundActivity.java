@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -65,18 +66,12 @@ public class StartNewRoundActivity extends Activity {
 		textView.setTextAppearance(getApplicationContext(),
 				android.R.style.TextAppearance_Medium);
 		if (showName) {
-			textView.setText("Player" + i);
+			textView.setText("Player " + i);
+
 		} else {
 			textView.setText(Globals.getPlayers().get(i).getScore() + " points");
+			textView.setGravity(Gravity.RIGHT);
 		}
-
-		// Display display = getWindowManager().getDefaultDisplay();
-		// Point size = new Point();
-		// display.getSize(size);
-		// int width = size.x;
-		// int height = size.y;
-
-		// textView.setWidth(width/2);
 
 		return textView;
 	}

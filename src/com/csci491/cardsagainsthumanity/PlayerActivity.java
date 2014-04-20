@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.Display;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -28,7 +29,7 @@ public class PlayerActivity extends Activity {
 
 		// Find Tablelayout defined in xml
 		TableLayout tl = (TableLayout) findViewById(R.id.Table1);
-		// Create new rows to be added. 
+		// Create new rows to be added.
 		for (int i = 0; i < Globals.getPlayers().size(); i++) {
 			TableRow tr = new TableRow(this);
 			tr.setLayoutParams(new TableRow.LayoutParams(
@@ -37,7 +38,7 @@ public class PlayerActivity extends Activity {
 			// Add controls to row
 			tr.addView(CreateEditText(i + 1));
 			tr.addView(CreateSpinner(i));
-			//Add row to TableLayout
+			// Add row to TableLayout
 			// tr.setBackgroundResource(R.drawable.sf_gradient_03);
 			tl.addView(tr, new TableLayout.LayoutParams(
 					TableLayout.LayoutParams.FILL_PARENT,
@@ -47,6 +48,7 @@ public class PlayerActivity extends Activity {
 		// Create StartNewGame button
 		Button buttonStartNewGame = new Button(this);
 		buttonStartNewGame.setText("Start Game");
+		buttonStartNewGame.setBackgroundColor(getBaseContext().getResources().getColor(R.color.greenT));
 
 		buttonStartNewGame.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -75,15 +77,15 @@ public class PlayerActivity extends Activity {
 		EditText editText = new EditText(getApplicationContext());
 		editText.setTextAppearance(getApplicationContext(),
 				android.R.style.TextAppearance_Medium);
-		editText.setText("Player" + i);
-		
+		editText.setText("Player " + i);
+
 		Display display = getWindowManager().getDefaultDisplay();
 		Point size = new Point();
 		display.getSize(size);
 		int width = size.x;
 		int height = size.y;
-		
-		editText.setWidth(width/2);
+
+		editText.setWidth(width / 2);
 
 		return editText;
 	}
@@ -107,7 +109,6 @@ public class PlayerActivity extends Activity {
 		spinner.setLayoutParams(new TableRow.LayoutParams(
 				TableRow.LayoutParams.FILL_PARENT,
 				TableRow.LayoutParams.WRAP_CONTENT));
-
 		return spinner;
 	}
 }

@@ -28,8 +28,12 @@
     <string name="helperInGame">Tap arrows to scroll through your cards. Tap a card to select it to play.</string>
 
     <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
     <color name="whiteT">#99FFFFFF</color>
+    <color name="black">#000000</color>
     <color name="blackT">#99000000</color>
+    <color name="green">#339933</color>
+    <color name="greenT">#99339933</color>
+    <color name="red">#FF0000</color>
+    <color name="redT">#99FF0000</color>
 
 </resources>

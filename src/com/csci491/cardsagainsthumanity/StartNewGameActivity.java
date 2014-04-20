@@ -32,7 +32,7 @@ public class StartNewGameActivity extends Activity {
 		Button buttonNext = (Button) findViewById(R.id.buttonNext);
 		buttonNext.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				// find controlsﬂ
+				// find controls
 				EditText editTextPointLimit = (EditText) findViewById(R.id.editTextPointLimit);
 				EditText editTextPlayers = (EditText) findViewById(R.id.editTextPlayers);
 
@@ -49,6 +49,11 @@ public class StartNewGameActivity extends Activity {
 						.toString()) < 3) {
 					Toast.makeText(getBaseContext(),
 							"You need at least 3 players", Toast.LENGTH_SHORT)
+							.show();
+				} else if (Integer.parseInt(editTextPlayers.getText()
+						.toString()) > 20) {
+					Toast.makeText(getBaseContext(),
+							"There's too many players! The limit is 20.", Toast.LENGTH_SHORT)
 							.show();
 				} else {
 					// store variables and create a game

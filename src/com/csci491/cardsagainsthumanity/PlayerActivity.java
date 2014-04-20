@@ -4,11 +4,14 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Point;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -23,18 +26,18 @@ public class PlayerActivity extends Activity {
 		setContentView(R.layout.activity_player);
 		// rest of the code
 
-		/* Find Tablelayout defined in main.xml */
+		// Find Tablelayout defined in xml
 		TableLayout tl = (TableLayout) findViewById(R.id.Table1);
-		/* Create new rows to be added. */
+		// Create new rows to be added. 
 		for (int i = 0; i < Globals.getPlayers().size(); i++) {
 			TableRow tr = new TableRow(this);
 			tr.setLayoutParams(new TableRow.LayoutParams(
 					TableRow.LayoutParams.FILL_PARENT,
 					TableRow.LayoutParams.WRAP_CONTENT));
-			/* Add Button to row. */
-			tr.addView(CreateTextView(i + 1));
+			// Add controls to row
+			tr.addView(CreateEditText(i + 1));
 			tr.addView(CreateSpinner(i));
-			/* Add row to TableLayout. */
+			//Add row to TableLayout
 			// tr.setBackgroundResource(R.drawable.sf_gradient_03);
 			tl.addView(tr, new TableLayout.LayoutParams(
 					TableLayout.LayoutParams.FILL_PARENT,
@@ -68,13 +71,21 @@ public class PlayerActivity extends Activity {
 		System.out.println("Cards successfully dealt!");
 	}
 
-	private TextView CreateTextView(int i) {
-		TextView tv = new TextView(getApplicationContext());
-		tv.setTextAppearance(getApplicationContext(),
+	private TextView CreateEditText(int i) {
+		EditText editText = new EditText(getApplicationContext());
+		editText.setTextAppearance(getApplicationContext(),
 				android.R.style.TextAppearance_Medium);
-		tv.setText("Player" + i);
+		editText.setText("Player" + i);
+		
+		Display display = getWindowManager().getDefaultDisplay();
+		Point size = new Point();
+		display.getSize(size);
+		int width = size.x;
+		int height = size.y;
+		
+		editText.setWidth(width/2);
 
-		return tv;
+		return editText;
 	}
 
 	private Spinner CreateSpinner(int i) {
@@ -86,7 +97,7 @@ public class PlayerActivity extends Activity {
 			spinner.setEnabled(false);
 		} else {
 
-			spinnerArray.add("COMP");
+			spinnerArray.add("COMPUTER");
 			spinnerArray.add("HUMAN");
 		}
 		ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(
@@ -96,6 +107,14 @@ public class PlayerActivity extends Activity {
 		spinner.setLayoutParams(new TableRow.LayoutParams(
 				TableRow.LayoutParams.FILL_PARENT,
 				TableRow.LayoutParams.WRAP_CONTENT));
+		
+		Display display = getWindowManager().getDefaultDisplay();
+		Point size = new Point();
+		display.getSize(size);
+		int width = size.x;
+		int height = size.y;
+		
+		spinner(width/2);
 
 		return spinner;
 	}

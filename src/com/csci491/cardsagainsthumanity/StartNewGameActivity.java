@@ -94,8 +94,8 @@ public class StartNewGameActivity extends Activity {
 		System.out.println("Players successfully created!");
 
 		
-//		Intent intent = new Intent(StartNewGameActivity.this, PlayerActivity.class);
-		Intent intent = new Intent(StartNewGameActivity.this, StartNewRoundActivity.class);
+		Intent intent = new Intent(StartNewGameActivity.this, PlayerActivity.class);
+//		Intent intent = new Intent(StartNewGameActivity.this, StartNewRoundActivity.class);
 		startActivity(intent);
 		// finish();
 

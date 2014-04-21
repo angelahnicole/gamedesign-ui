@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class InGameActivity extends Activity {
 	@Override
@@ -32,16 +33,7 @@ public class InGameActivity extends Activity {
 				// turn the visibility of the "submit" button to TRUE
 				
 				// but for now, show that the button even works by displaying a popup
-//				AlertDialog myAlert = new AlertDialog.Builder(getApplicationContext()).create();
-//				myAlert.setTitle("You tapped the card");
-//				myAlert.setMessage("Are you sure?");
-//				myAlert.setButton("OK", new DialogInterface.OnClickListener() {
-//					public void onClick(DialogInterface dialog, int which) {
-//						
-//					}
-//				});
-//				myAlert.setIcon(R.drawable.logo);
-//				myAlert.show();
+				Toast.makeText(getApplicationContext(), Globals.getPlayers().get(0).getMyHand().get(Globals.getIndexWhiteCard()).getContent(), Toast.LENGTH_SHORT).show();
 			}
 		});
 		

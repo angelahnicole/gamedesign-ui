@@ -77,7 +77,6 @@ public class StartNewGameActivity extends Activity {
 		// creating players
 
 		System.out.println("Creating the players...");
-		Globals.getPlayers().add(new Player(true));
 		for (int i = 0; i < Globals.getNumPlayers(); i++) {
 			// if the parameter being passed into the Player
 			// constructor is true,

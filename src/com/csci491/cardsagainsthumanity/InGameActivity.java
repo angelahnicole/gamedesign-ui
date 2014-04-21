@@ -32,8 +32,19 @@ public class InGameActivity extends Activity {
 			public void onClick(View v) {
 				// turn the visibility of the "submit" button to TRUE
 				
-				// but for now, show that the button even works by displaying a popup
-				Toast.makeText(getApplicationContext(), Globals.getPlayers().get(0).getMyHand().get(Globals.getIndexWhiteCard()).getContent(), Toast.LENGTH_SHORT).show();
+				Button submit = (Button) findViewById(R.id.buttonSubmit);
+				
+				if (submit.getVisibility() == View.GONE){
+					submit.setVisibility(View.VISIBLE);
+				} else {
+					submit.setVisibility(View.GONE);
+				}
+				
+				submit.setOnClickListener(new OnClickListener() {
+					public void onClick(View arg0) {
+						Toast.makeText(getBaseContext(), "You clicked submit on: " + Globals.getPlayers().get(0).getMyHand().get(Globals.getIndexWhiteCard()).getContent(), Toast.LENGTH_SHORT).show();
+					}
+				});
 			}
 		});
 		
@@ -46,6 +57,10 @@ public class InGameActivity extends Activity {
 					Globals.setIndexWhiteCard(Globals.getIndexWhiteCard() - 1);
 					Button card = (Button) findViewById(R.id.buttonCard);
 					card.setText(Globals.getPlayers().get(0).getMyHand().get(Globals.getIndexWhiteCard()).getContent());
+					
+					Button submit = (Button) findViewById(R.id.buttonSubmit);
+					submit.setVisibility(View.GONE);
+					
 				}
 			}
 		});
@@ -58,11 +73,15 @@ public class InGameActivity extends Activity {
 					Button card = (Button) findViewById(R.id.buttonCard);
 					Globals.setIndexWhiteCard(Globals.getIndexWhiteCard() + 1);
 					card.setText(Globals.getPlayers().get(0).getMyHand().get(Globals.getIndexWhiteCard()).getContent());
+					
+					Button submit = (Button) findViewById(R.id.buttonSubmit);
+					submit.setVisibility(View.GONE);
 				}
 			}
 		});
 
 	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

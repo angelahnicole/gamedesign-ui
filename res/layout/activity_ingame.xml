@@ -71,7 +71,8 @@
 					    android:layout_centerHorizontal="true"
 					    android:background="@color/green"
 					    android:text="@string/submit"
-					    android:textColor="@color/white" />
+					    android:textColor="@color/white"
+					    android:visibility="gone" />
 
 				</RelativeLayout>
 				

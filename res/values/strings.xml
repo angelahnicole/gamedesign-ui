@@ -35,5 +35,7 @@
     <color name="greenT">#99339933</color>
     <color name="red">#FF0000</color>
     <color name="redT">#99FF0000</color>
+    
+    <string name="submit">Submit</string>
 
 </resources>

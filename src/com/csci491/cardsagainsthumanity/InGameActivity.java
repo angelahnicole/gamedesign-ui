@@ -15,32 +15,31 @@ public class InGameActivity extends Activity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ingame);
-		// rest of the code
 
 		System.out.println("InGameActivity: WhiteCards: " + Globals.getWhiteCards().size());
 		System.out.println("InGameActivity: BlackCards: " + Globals.getBlackCards().size());
 
+		//Set question and make sure it won't appear again in the same game
 		TextView question = (TextView) findViewById(R.id.textViewQuestion);
 		question.setText(Globals.getBlackCards().get(0).getContent());
 		Globals.getBlackCards().remove(0);
 
-		Button card = (Button) findViewById(R.id.buttonCard);
-		card.setText(Globals.getPlayers().get(0).getMyHand().get(0).getContent());
+		//Set Card based on player's hand
+		Button buttonCard = (Button) findViewById(R.id.buttonCard);
+		buttonCard.setText(Globals.getPlayers().get(0).getMyHand().get(0).getContent());
 
-		card.setOnClickListener(new OnClickListener() {
-//			@SuppressWarnings("deprecation")
+		buttonCard.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				// turn the visibility of the "submit" button to TRUE
+				Button buttonSubmit = (Button) findViewById(R.id.buttonSubmit);
 				
-				Button submit = (Button) findViewById(R.id.buttonSubmit);
-				
-				if (submit.getVisibility() == View.GONE){
-					submit.setVisibility(View.VISIBLE);
+				if (buttonSubmit.getVisibility() == View.GONE){
+					buttonSubmit.setVisibility(View.VISIBLE);
 				} else {
-					submit.setVisibility(View.GONE);
+					buttonSubmit.setVisibility(View.GONE);
 				}
 				
-				submit.setOnClickListener(new OnClickListener() {
+				buttonSubmit.setOnClickListener(new OnClickListener() {
 					public void onClick(View arg0) {
 						Toast.makeText(getBaseContext(), "You clicked submit on: " + Globals.getPlayers().get(0).getMyHand().get(Globals.getIndexWhiteCard()).getContent(), Toast.LENGTH_SHORT).show();
 					}
@@ -48,7 +47,7 @@ public class InGameActivity extends Activity {
 			}
 		});
 		
-		// navigation
+		// navigation (white cards)
 		Button buttonLeft = (Button) findViewById(R.id.buttonLeft);
 		buttonLeft.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {

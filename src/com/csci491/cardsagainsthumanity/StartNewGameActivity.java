@@ -17,7 +17,6 @@ public class StartNewGameActivity extends Activity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_start_new_game);
-		// rest of the code
 
 		Button buttonCancel = (Button) findViewById(R.id.buttonCancel);
 		buttonCancel.setOnClickListener(new OnClickListener() {
@@ -75,9 +74,12 @@ public class StartNewGameActivity extends Activity {
 		System.out.println("Num Players: " + Globals.getNumPlayers());
 
 		// creating players
-
 		System.out.println("Creating the players...");
-		for (int i = 0; i < Globals.getNumPlayers(); i++) {
+		
+		//cleans the variable that stores players
+		Globals.setPlayers(new  ArrayList<Player>());
+		
+		for (int i = 0; i < Globals.getNumPlayers(); i++) {			
 			// if the parameter being passed into the Player
 			// constructor is true,
 			// then the player is a human player.

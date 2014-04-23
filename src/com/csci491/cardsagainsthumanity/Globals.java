@@ -21,13 +21,18 @@ public class Globals extends Application {
 	private static FileIO cardMaker = new FileIO();
 
 	private Globals() {
+		resetGlobals();
+	}
+	
+	static void resetGlobals(){
 		Globals.blackCards = new ArrayList<BlackCard>();
 		Globals.whiteCards = new ArrayList<WhiteCard>();
 		Globals.userName = new String();
 		Globals.roundNum = ROUND;
+		Globals.players = new ArrayList<Player>();
 		cardMaker = new FileIO();
 	}
-
+	
 	static FileIO getCardMaker() {
 		return cardMaker;
 	}

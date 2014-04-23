@@ -9,7 +9,7 @@
         android:id="@+id/action_leavegame"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="Leave Game"/>
+        android:title="@string/leave_game"/>
     <item
         android:id="@+id/action_endgame"
         android:orderInCategory="100"

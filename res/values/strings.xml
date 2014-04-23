@@ -8,6 +8,8 @@
     <string name="how_to_play">How to play</string>
     <string name="logo">Logo</string>
     <string name="players">Setting up Players</string>
+    <string name="leave_game">Leave Game</string>
+    <string name="leave_game_message">Are you sure you want to leave the game?</string>
 
     <!-- Start New Game screen -->
     <string name="point_limit">Point Limit:</string>

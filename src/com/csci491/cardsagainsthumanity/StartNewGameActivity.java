@@ -1,6 +1,7 @@
 package com.csci491.cardsagainsthumanity;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -55,12 +56,16 @@ public class StartNewGameActivity extends Activity {
 							"There's too many players! The limit is 10.", Toast.LENGTH_SHORT)
 							.show();
 				} else {
+					//Reset everything, to make sure there is nothing from a possible previous game
+					Globals.resetGlobals();
+					
 					// store variables and create a game
 					Globals.setPointLimit(Integer.parseInt(editTextPointLimit
 							.getText().toString()));
 					Globals.setNumPlayers(Integer.parseInt(editTextPlayers
 							.getText().toString()));
-					CreateGame();
+					createCards();
+					createGame();
 				}
 			}
 
@@ -68,16 +73,13 @@ public class StartNewGameActivity extends Activity {
 
 	}
 
-	private void CreateGame() {
+	private void createGame() {
 
 		System.out.println("Score Limit: " + Globals.getPointLimit());
 		System.out.println("Num Players: " + Globals.getNumPlayers());
 
 		// creating players
 		System.out.println("Creating the players...");
-		
-		//cleans the variable that stores players
-		Globals.setPlayers(new  ArrayList<Player>());
 		
 		for (int i = 0; i < Globals.getNumPlayers(); i++) {			
 			// if the parameter being passed into the Player
@@ -101,6 +103,34 @@ public class StartNewGameActivity extends Activity {
 		startActivity(intent);
 		// finish();
 
+	}
+	
+	private void createCards(){
+		// Hacky way - potential memory leak
+//		FileIO cardMaker = new FileIO(this);
+		
+		// Preferred Way - better decoupling
+//		FileIO cardMaker = new FileIO();
+		
+		
+		// Last resort methods
+//		Globals.setWhiteCards(cardMaker.hardCodedWhiteCards());
+//		Globals.setBlackCards(cardMaker.hardCodedBlackCards());
+		
+		Globals.getCardMaker().setContext(this);
+		Globals.setWhiteCards(Globals.getCardMaker().readWhiteCards());
+		Globals.setBlackCards(Globals.getCardMaker().readBlackCards());
+		
+		// Method calls to read in the files
+//		Globals.setWhiteCards(cardMaker.readWhiteCards());
+//		Globals.setBlackCards(cardMaker.readBlackCards());
+		
+		// Shuffles the decks of cards
+		Collections.shuffle(Globals.getWhiteCards());
+		Collections.shuffle(Globals.getBlackCards());
+		
+		System.out.println("Num White Cards: " + Globals.getWhiteCards().size());
+		System.out.println("Num Black Cards: " + Globals.getBlackCards().size());
 	}
 
 }

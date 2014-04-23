@@ -58,8 +58,7 @@ public class InGameActivity extends Activity {
 					card.setText(Globals.getPlayers().get(0).getMyHand().get(Globals.getIndexWhiteCard()).getContent());
 					
 					Button submit = (Button) findViewById(R.id.buttonSubmit);
-					submit.setVisibility(View.GONE);
-					
+					submit.setVisibility(View.GONE);					
 				}
 			}
 		});

@@ -71,6 +71,13 @@ public class PlayerActivity extends Activity {
 			}
 		}
 		System.out.println("Cards successfully dealt!");
+		
+		/////////////////////////
+		/// SKIPPING
+		
+		Intent intent = new Intent(PlayerActivity.this,
+				StartNewRoundActivity.class);
+		startActivity(intent);
 	}
 
 	private TextView CreateEditText(int i) {

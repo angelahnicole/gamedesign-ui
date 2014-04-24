@@ -32,6 +32,12 @@ public class Player extends Activity {
 		myHand = new ArrayList<WhiteCard>();
 	}
 	
+	public Player(String name, boolean isHuman) {
+		setName(name);
+		setHuman(isHuman);
+		myHand = new ArrayList<WhiteCard>();
+	}
+	
 	public boolean isHuman() {
 		return isHuman;
 	}

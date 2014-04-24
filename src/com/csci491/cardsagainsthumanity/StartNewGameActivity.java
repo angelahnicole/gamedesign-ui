@@ -90,13 +90,12 @@ public class StartNewGameActivity extends Activity {
 			// false,
 			// then the player is a computer
 			if (i == 0) {
-				Globals.getPlayers().add(new Player(true));
+				Globals.getPlayers().add(new Player("You", true));
 			} else {
-				Globals.getPlayers().add(new Player(false));
+				Globals.getPlayers().add(new Player(Globals.generateRandomName(), false));
 			}
 		}
 		System.out.println("Players successfully created!");
-
 		
 		Intent intent = new Intent(StartNewGameActivity.this, PlayerActivity.class);
 //		Intent intent = new Intent(StartNewGameActivity.this, StartNewRoundActivity.class);

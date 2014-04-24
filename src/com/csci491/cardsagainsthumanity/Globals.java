@@ -38,8 +38,7 @@ public class Globals extends Application {
 	}
 	
 	static String generateRandomName() {
-		int index = Globals.myRand.nextInt(Globals.names.length);
-		return Globals.names[index];
+		return Globals.names[Globals.myRand.nextInt(Globals.names.length)];
 	}
 	
 	static FileIO getCardMaker() {

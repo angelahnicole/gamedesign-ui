@@ -78,6 +78,12 @@ public class Player extends Activity {
 		return play;
 	}
 	
+	public WhiteCard playWhiteCard(int index) {
+		WhiteCard play = myHand.remove(index);
+		draw();
+		return play;
+	}
+	
 	public void draw() {
 //		System.out.println("In Player: WhiteCards: " + Globals.getWhiteCards().size());
 		

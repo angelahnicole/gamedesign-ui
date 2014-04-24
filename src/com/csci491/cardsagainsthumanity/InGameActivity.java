@@ -48,21 +48,14 @@ public class InGameActivity extends Activity {
 					buttonSubmit.setVisibility(View.GONE);
 				}
 
-				buttonSubmit.setOnClickListener(new OnClickListener() {
-					public void onClick(View arg0) {
-//						Toast.makeText(getBaseContext(), "You clicked submit on: " + Globals.getPlayers().get(0).getMyHand().get(Globals.getIndexWhiteCard()).getContent(), Toast.LENGTH_SHORT).show();
-						Globals.getPlays().add(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().remove(Globals.getIndexWhiteCard()));
-						
-						for (int i = 0; i < Globals.getPlayers().size(); i++) {
-							if (i != Globals.getIndexHumanPlayer()) {
-								
-							} else {
-								
-							}
-						}
-						
-					}
-				});
+//				buttonSubmit.setOnClickListener(new OnClickListener() {
+//					public void onClick(View arg0) {
+////					Toast.makeText(getBaseContext(), "You clicked submit on: " + Globals.getPlayers().get(0).getMyHand().get(Globals.getIndexWhiteCard()).getContent(), Toast.LENGTH_SHORT).show();
+//						submitPlays();
+//					}
+//				});
+				
+				buttonSubmit.setOnClickListener(submit);
 			}
 		});
 
@@ -101,6 +94,20 @@ public class InGameActivity extends Activity {
 
 	}
 
+	// Submit Plays from All Players
+	private static void submitPlays() {
+		
+	}
+	
+	private OnClickListener submit = new OnClickListener() {
+
+		@Override
+		public void onClick(View arg0) {
+			Toast.makeText(getBaseContext(), "You clicked submit on: " + Globals.getPlayers().get(0).getMyHand().get(Globals.getIndexWhiteCard()).getContent(), Toast.LENGTH_SHORT).show();
+		}
+		
+	};
+	
 	// Show menu
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

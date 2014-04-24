@@ -1,12 +1,15 @@
 package com.csci491.cardsagainsthumanity;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import android.app.Application;
 import android.content.Context;
 
 public class Globals extends Application {
 
+	private final static String[] names = {"Collen", "Catarina", "Haydee", "Russell", "Prince", "Tarra", "Cara", "Christopher", "Don", "Larae", "Hye", "Sharee", "Ellen", "Pearline", "Yun", "Marna", "Rosia", "Brittanie", "Terrence", "Tamara", "Dennise", "Houston", "Korey", "Mollie", "Sherron", "Gerard", "Clare", "Jason", "Jasmin", "Karlene", "Irvin", "Wilber", "Mignon", "Willis", "Shela", "Bobby", "Susana", "Kristel", "Harriett", "Katrice", "Elfrieda", "Yvonne", "Krystyna", "Tyrone", "Randa", "Ying", "Annemarie", "Zoila", "Adalberto", "Monika", "Halley", "Thora", "Melodi", "Zetta", "Nicola", "Jan", "Alethea", "Hoa", "Theo", "Annie", "Dean", "Kaitlyn", "Stephani", "Hilton", "Valery", "Elke", "Kimber", "Muoi", "Effie", "Daphine", "Olive", "Carolyne", "Ashlea", "Casandra", "May", "Marvin", "Pansy", "Viola", "Ai", "Cecily", "Leone", "Jeff", "Karolyn", "Delcie", "Linsey", "Shawnee", "Tiffaney", "Coleman", "Dusty", "Len", "Collin", "Paula", "Carmella", "Trina", "Jolynn", "Cedric", "Lashandra", "Kittie", "Temeka", "Verdell"};
+	private final static Random myRand = new Random();
 	private final static int ROUND = 1;
 	private final static int HANDSIZE = 7;
 	private static ArrayList<BlackCard> blackCards = new ArrayList<BlackCard>();
@@ -25,13 +28,18 @@ public class Globals extends Application {
 		resetGlobals();
 	}
 	
-	static void resetGlobals(){
+	static void resetGlobals() {
 		Globals.blackCards = new ArrayList<BlackCard>();
 		Globals.whiteCards = new ArrayList<WhiteCard>();
 		Globals.userName = new String();
 		Globals.roundNum = ROUND;
 		Globals.players = new ArrayList<Player>();
 		cardMaker = new FileIO();
+	}
+	
+	static String generateRandomName() {
+		int index = Globals.myRand.nextInt(Globals.names.length);
+		return Globals.names[index];
 	}
 	
 	static FileIO getCardMaker() {

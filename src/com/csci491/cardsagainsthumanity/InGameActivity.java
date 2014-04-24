@@ -28,13 +28,14 @@ public class InGameActivity extends Activity {
 
 		// Set question and make sure it won't appear again in the same game
 		TextView question = (TextView) findViewById(R.id.textViewQuestion);
-		question.setText(Globals.getBlackCards().get(0).getContent());
-		Globals.getBlackCards().remove(0);
-
+		question.setText(Globals.getBlackCards().remove(0).getContent());
+//		question.setText(Globals.getBlackCards().get(0).getContent());
+//		Globals.getBlackCards().remove(0);
+		
+		
 		// Set Card based on player's hand
 		Button buttonCard = (Button) findViewById(R.id.buttonCard);
-		buttonCard.setText(Globals.getPlayers().get(0).getMyHand().get(0)
-				.getContent());
+		buttonCard.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(0).getContent());
 
 		buttonCard.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
@@ -49,17 +50,17 @@ public class InGameActivity extends Activity {
 
 				buttonSubmit.setOnClickListener(new OnClickListener() {
 					public void onClick(View arg0) {
-						Toast.makeText(
-								getBaseContext(),
-								"You clicked submit on: "
-										+ Globals
-												.getPlayers()
-												.get(0)
-												.getMyHand()
-												.get(Globals
-														.getIndexWhiteCard())
-												.getContent(),
-								Toast.LENGTH_SHORT).show();
+//						Toast.makeText(getBaseContext(), "You clicked submit on: " + Globals.getPlayers().get(0).getMyHand().get(Globals.getIndexWhiteCard()).getContent(), Toast.LENGTH_SHORT).show();
+						Globals.getPlays().add(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().remove(Globals.getIndexWhiteCard()));
+						
+						for (int i = 0; i < Globals.getPlayers().size(); i++) {
+							if (i != Globals.getIndexHumanPlayer()) {
+								
+							} else {
+								
+							}
+						}
+						
 					}
 				});
 			}
@@ -73,7 +74,7 @@ public class InGameActivity extends Activity {
 				if (Globals.getIndexWhiteCard() > 0) {
 					Globals.setIndexWhiteCard(Globals.getIndexWhiteCard() - 1);
 					Button card = (Button) findViewById(R.id.buttonCard);
-					card.setText(Globals.getPlayers().get(0).getMyHand()
+					card.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand()
 							.get(Globals.getIndexWhiteCard()).getContent());
 
 					Button submit = (Button) findViewById(R.id.buttonSubmit);
@@ -89,7 +90,7 @@ public class InGameActivity extends Activity {
 				if (Globals.getIndexWhiteCard() < 6) {
 					Button card = (Button) findViewById(R.id.buttonCard);
 					Globals.setIndexWhiteCard(Globals.getIndexWhiteCard() + 1);
-					card.setText(Globals.getPlayers().get(0).getMyHand()
+					card.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand()
 							.get(Globals.getIndexWhiteCard()).getContent());
 
 					Button submit = (Button) findViewById(R.id.buttonSubmit);

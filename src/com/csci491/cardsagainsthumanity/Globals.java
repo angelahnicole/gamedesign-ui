@@ -12,12 +12,13 @@ public class Globals extends Application {
 	private static ArrayList<BlackCard> blackCards = new ArrayList<BlackCard>();
 	private static ArrayList<WhiteCard> whiteCards = new ArrayList<WhiteCard>();
 	private static ArrayList<Player> players = new ArrayList<Player>();
-	private static ArrayList<Integer> plays = new ArrayList<Integer>();
+	private static ArrayList<WhiteCard> plays = new ArrayList<WhiteCard>();
 	private static String userName = new String();
 	private static int pointLimit;
 	private static int numPlayers;
 	private static int roundNum = ROUND;
 	private static int indexWhiteCard = 0;
+	private static int indexHumanPlayer = 0;
 	private static FileIO cardMaker = new FileIO();
 
 	private Globals() {
@@ -89,11 +90,11 @@ public class Globals extends Application {
 		Globals.players = players;
 	}
 
-	static ArrayList<Integer> getPlays() {
+	static ArrayList<WhiteCard> getPlays() {
 		return plays;
 	}
 	
-	static void setPlays(ArrayList<Integer> plays) {
+	static void setPlays(ArrayList<WhiteCard> plays) {
 		Globals.plays = plays;
 	}
 	
@@ -113,12 +114,20 @@ public class Globals extends Application {
 		Globals.whiteCards = whiteCards;
 	}
 
-	public static int getIndexWhiteCard() {
+	static int getIndexWhiteCard() {
 		return indexWhiteCard;
 	}
 
-	public static void setIndexWhiteCard(int indexWhiteCard) {
+	static void setIndexWhiteCard(int indexWhiteCard) {
 		Globals.indexWhiteCard = indexWhiteCard;
+	}
+	
+	static int getIndexHumanPlayer() {
+		return indexHumanPlayer;
+	}
+	
+	static void setIndexHumanPlayer(int indexHumanPlayer) {
+		Globals.indexHumanPlayer = indexHumanPlayer;
 	}
 
 }

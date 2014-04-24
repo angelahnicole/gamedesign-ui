@@ -75,7 +75,6 @@ public class InGameActivity extends Activity {
 				submit.setVisibility(View.GONE);
 			}
 		}
-
 	};
 
 	private OnClickListener cardListener = new OnClickListener() {

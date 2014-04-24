@@ -69,6 +69,8 @@
 					    android:layout_height="wrap_content"
 					    android:layout_alignParentBottom="true"
 					    android:layout_centerHorizontal="true"
+					    android:paddingLeft="15dip"
+					    android:paddingRight="15dip"
 					    android:background="@color/green"
 					    android:text="@string/submit"
 					    android:textColor="@color/white"

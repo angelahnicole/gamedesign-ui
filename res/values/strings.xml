@@ -28,6 +28,7 @@
     <string name="left">&lt;</string>
     <string name="right">&gt;</string>
     <string name="helperInGame">Tap arrows to scroll through your cards. Tap a card to select it to play.</string>
+    <string name="submit">Submit</string>
 
     <color name="white">#FFFFFF</color>
     <color name="whiteT">#99FFFFFF</color>
@@ -37,7 +38,5 @@
     <color name="greenT">#99339933</color>
     <color name="red">#FF0000</color>
     <color name="redT">#99FF0000</color>
-    
-    <string name="submit">Submit</string>
 
 </resources>

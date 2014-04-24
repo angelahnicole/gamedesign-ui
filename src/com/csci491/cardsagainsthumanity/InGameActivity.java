@@ -126,8 +126,7 @@ public class InGameActivity extends Activity {
 					new DialogInterface.OnClickListener() {
 						public void onClick(DialogInterface dialog, int id) {
 							// Leave Game
-							Intent intent = new Intent(InGameActivity.this,
-									MainActivity.class);
+							Intent intent = new Intent(InGameActivity.this, MainActivity.class);
 							startActivity(intent);
 						}
 					});

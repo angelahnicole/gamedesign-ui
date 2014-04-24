@@ -106,24 +106,9 @@ public class StartNewGameActivity extends Activity {
 	}
 	
 	private void createCards(){
-		// Hacky way - potential memory leak
-//		FileIO cardMaker = new FileIO(this);
-		
-		// Preferred Way - better decoupling
-//		FileIO cardMaker = new FileIO();
-		
-		
-		// Last resort methods
-//		Globals.setWhiteCards(cardMaker.hardCodedWhiteCards());
-//		Globals.setBlackCards(cardMaker.hardCodedBlackCards());
-		
 		Globals.getCardMaker().setContext(this);
 		Globals.setWhiteCards(Globals.getCardMaker().readWhiteCards());
 		Globals.setBlackCards(Globals.getCardMaker().readBlackCards());
-		
-		// Method calls to read in the files
-//		Globals.setWhiteCards(cardMaker.readWhiteCards());
-//		Globals.setBlackCards(cardMaker.readBlackCards());
 		
 		// Shuffles the decks of cards
 		Collections.shuffle(Globals.getWhiteCards());

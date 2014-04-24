@@ -31,8 +31,7 @@ public class MainActivity extends Activity {
 		Button buttonStart = (Button) findViewById(R.id.buttonStart);
 		buttonStart.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this,
-						StartNewGameActivity.class);
+				Intent intent = new Intent(MainActivity.this, StartNewGameActivity.class);
 				startActivity(intent);
 				// finish();
 			}

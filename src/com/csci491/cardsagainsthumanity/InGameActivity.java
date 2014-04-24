@@ -21,92 +21,88 @@ public class InGameActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ingame);
 
-		System.out.println("InGameActivity: WhiteCards: "
-				+ Globals.getWhiteCards().size());
-		System.out.println("InGameActivity: BlackCards: "
-				+ Globals.getBlackCards().size());
+		System.out.println("InGameActivity: WhiteCards: " + Globals.getWhiteCards().size());
+		System.out.println("InGameActivity: BlackCards: " + Globals.getBlackCards().size());
 
 		// Set question and make sure it won't appear again in the same game
 		TextView question = (TextView) findViewById(R.id.textViewQuestion);
-		question.setText(Globals.getBlackCards().remove(0).getContent());
-//		question.setText(Globals.getBlackCards().get(0).getContent());
-//		Globals.getBlackCards().remove(0);
-		
+		question.setText(Globals.getBlackCards().remove(0).getContent());		
 		
 		// Set Card based on player's hand
 		Button buttonCard = (Button) findViewById(R.id.buttonCard);
 		buttonCard.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(0).getContent());
-
-		buttonCard.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				// turn the visibility of the "submit" button to TRUE
-				Button buttonSubmit = (Button) findViewById(R.id.buttonSubmit);
-
-				if (buttonSubmit.getVisibility() == View.GONE) {
-					buttonSubmit.setVisibility(View.VISIBLE);
-				} else {
-					buttonSubmit.setVisibility(View.GONE);
-				}
-
-//				buttonSubmit.setOnClickListener(new OnClickListener() {
-//					public void onClick(View arg0) {
-////					Toast.makeText(getBaseContext(), "You clicked submit on: " + Globals.getPlayers().get(0).getMyHand().get(Globals.getIndexWhiteCard()).getContent(), Toast.LENGTH_SHORT).show();
-//						submitPlays();
-//					}
-//				});
-				
-				buttonSubmit.setOnClickListener(submit);
-			}
-		});
+		buttonCard.setOnClickListener(cardListener);
 
 		// navigation (white cards)
 		Button buttonLeft = (Button) findViewById(R.id.buttonLeft);
-		buttonLeft.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				// verify if it's possible to go back
-				if (Globals.getIndexWhiteCard() > 0) {
-					Globals.setIndexWhiteCard(Globals.getIndexWhiteCard() - 1);
-					Button card = (Button) findViewById(R.id.buttonCard);
-					card.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand()
-							.get(Globals.getIndexWhiteCard()).getContent());
-
-					Button submit = (Button) findViewById(R.id.buttonSubmit);
-					submit.setVisibility(View.GONE);
-				}
-			}
-		});
-
 		Button buttonRight = (Button) findViewById(R.id.buttonRight);
-		buttonRight.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				// verify if it's possible to go further
-				if (Globals.getIndexWhiteCard() < 6) {
-					Button card = (Button) findViewById(R.id.buttonCard);
-					Globals.setIndexWhiteCard(Globals.getIndexWhiteCard() + 1);
-					card.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand()
-							.get(Globals.getIndexWhiteCard()).getContent());
-
-					Button submit = (Button) findViewById(R.id.buttonSubmit);
-					submit.setVisibility(View.GONE);
-				}
-			}
-		});
-
-	}
-
-	// Submit Plays from All Players
-	private static void submitPlays() {
 		
+		// Set listeners on navigation
+		buttonLeft.setOnClickListener(leftListener);
+		buttonRight.setOnClickListener(rightListener);
+
 	}
 	
-	private OnClickListener submit = new OnClickListener() {
+	// ========================================================================
+	//                              BUTTON LISTENERS
+	// ========================================================================
+	
+	private OnClickListener leftListener = new OnClickListener() {
+		public void onClick(View v) {
+			// verify if it's possible to go back
+			if (Globals.getIndexWhiteCard() > 0) {
+				Globals.setIndexWhiteCard(Globals.getIndexWhiteCard() - 1);
+				Button card = (Button) findViewById(R.id.buttonCard);
+				card.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand()
+						.get(Globals.getIndexWhiteCard()).getContent());
 
-		@Override
+				Button submit = (Button) findViewById(R.id.buttonSubmit);
+				submit.setVisibility(View.GONE);
+			}
+		}
+	};
+	
+	private OnClickListener rightListener = new OnClickListener() {
+		public void onClick(View v) {
+			// verify if it's possible to go further
+			if (Globals.getIndexWhiteCard() < 6) {
+				Button card = (Button) findViewById(R.id.buttonCard);
+				Globals.setIndexWhiteCard(Globals.getIndexWhiteCard() + 1);
+				card.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand()
+						.get(Globals.getIndexWhiteCard()).getContent());
+
+				Button submit = (Button) findViewById(R.id.buttonSubmit);
+				submit.setVisibility(View.GONE);
+			}
+		}
+
+	};
+
+	private OnClickListener cardListener = new OnClickListener() {
+		public void onClick(View v) {
+			// turn the visibility of the "submit" button to TRUE
+			Button buttonSubmit = (Button) findViewById(R.id.buttonSubmit);
+
+			if (buttonSubmit.getVisibility() == View.GONE) {
+				buttonSubmit.setVisibility(View.VISIBLE);
+			} else {
+				buttonSubmit.setVisibility(View.GONE);
+			}
+			
+			// Call the listener of the button
+			buttonSubmit.setOnClickListener(submitListener);
+		}
+	};
+	
+	private OnClickListener submitListener = new OnClickListener() {
 		public void onClick(View arg0) {
 			Toast.makeText(getBaseContext(), "You clicked submit on: " + Globals.getPlayers().get(0).getMyHand().get(Globals.getIndexWhiteCard()).getContent(), Toast.LENGTH_SHORT).show();
 		}
-		
 	};
+	
+	// ========================================================================
+	//                                OPTIONS
+	// ========================================================================
 	
 	// Show menu
 	@Override

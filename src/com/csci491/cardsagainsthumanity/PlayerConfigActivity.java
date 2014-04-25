@@ -18,13 +18,13 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-public class PlayerActivity extends Activity {
+public class PlayerConfigActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_player);
+		setContentView(R.layout.activity_player_config);
 		// rest of the code
 
 		// Find Tablelayout defined in xml
@@ -52,7 +52,7 @@ public class PlayerActivity extends Activity {
 
 		buttonStartNewGame.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(PlayerActivity.this,
+				Intent intent = new Intent(PlayerConfigActivity.this,
 						StartNewRoundActivity.class);
 				startActivity(intent);
 				// finish();
@@ -75,7 +75,7 @@ public class PlayerActivity extends Activity {
 		/////////////////////////
 		/// SKIPPING
 		
-		Intent intent = new Intent(PlayerActivity.this,
+		Intent intent = new Intent(PlayerConfigActivity.this,
 				StartNewRoundActivity.class);
 		startActivity(intent);
 	}

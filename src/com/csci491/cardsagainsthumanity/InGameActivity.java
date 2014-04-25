@@ -95,7 +95,15 @@ public class InGameActivity extends Activity {
 	
 	private OnClickListener submitListener = new OnClickListener() {
 		public void onClick(View arg0) {
-			Toast.makeText(getBaseContext(), "You clicked submit on: " + Globals.getPlayers().get(0).getMyHand().get(Globals.getIndexWhiteCard()).getContent(), Toast.LENGTH_SHORT).show();
+			//Toast.makeText(getBaseContext(), "You clicked submit on: " + Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()).getContent(), Toast.LENGTH_SHORT).show();
+			
+			//Add current white card (actual card in had) to the list of cards played this round (plays)
+			Globals.getPlays().add(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()));
+			
+			//redirec to Player Turn screen
+			Intent intent = new Intent(InGameActivity.this,
+					PlayerTurnActivity.class);
+			startActivity(intent);
 		}
 	};
 	

@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.csci491.cardsagainsthumanity.PlayerActivity"
+            android:name="com.csci491.cardsagainsthumanity.PlayerConfigActivity"
             android:label="@string/players" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -51,6 +51,15 @@
         </activity>
         <activity
             android:name="com.csci491.cardsagainsthumanity.InGameActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.csci491.cardsagainsthumanity.PlayerTurnActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

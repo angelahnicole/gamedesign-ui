@@ -23,6 +23,7 @@ public class Globals extends Application {
 	private static int indexWhiteCard = 0;
 	private static int indexHumanPlayer = 0;
 	private static FileIO cardMaker = new FileIO();
+	private static boolean changeWhiteCard;
 
 	private Globals() {
 		resetGlobals();
@@ -34,7 +35,8 @@ public class Globals extends Application {
 		Globals.userName = new String();
 		Globals.roundNum = ROUND;
 		Globals.players = new ArrayList<Player>();
-		cardMaker = new FileIO();
+		Globals.cardMaker = new FileIO();
+		Globals.changeWhiteCard = false;
 	}
 	
 	static String generateRandomName() {
@@ -135,6 +137,14 @@ public class Globals extends Application {
 	
 	static void setIndexHumanPlayer(int indexHumanPlayer) {
 		Globals.indexHumanPlayer = indexHumanPlayer;
+	}
+
+	public static boolean changeWhiteCard() {
+		return changeWhiteCard;
+	}
+
+	public static void setChangeWhiteCard(boolean changeWhiteCard) {
+		Globals.changeWhiteCard = changeWhiteCard;
 	}
 
 }

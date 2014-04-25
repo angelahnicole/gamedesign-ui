@@ -14,6 +14,7 @@ public class Player extends Activity {
 	private ArrayList<WhiteCard> myHand;
 	private String name;
 	private boolean isHuman;
+	private boolean isCzar;
 	private int score;
 	private int numPlayers; // awareness of other players
 	private Context c;
@@ -25,16 +26,19 @@ public class Player extends Activity {
 	public Player(boolean isHuman) {
 		setHuman(isHuman);
 		myHand = new ArrayList<WhiteCard>();
+		isCzar = false;
 	}
 	
 	public Player(String name) {
 		setName(name);
 		myHand = new ArrayList<WhiteCard>();
+		isCzar = false;
 	}
 	
-	public Player(String name, boolean isHuman) {
+	public Player(String name, boolean isHuman, boolean isCzar) {
 		setName(name);
 		setHuman(isHuman);
+		this.isCzar = isCzar;
 		myHand = new ArrayList<WhiteCard>();
 	}
 	
@@ -107,6 +111,14 @@ public class Player extends Activity {
 //		FileIO myFileIO = new FileIO();
 		Globals.setWhiteCards(myFileIO.hardCodedWhiteCards());
 		Collections.shuffle(Globals.getWhiteCards());
+	}
+
+	public boolean isCzar() {
+		return isCzar;
+	}
+
+	public void setCzar(boolean isCzar) {
+		this.isCzar = isCzar;
 	}
 	
 }

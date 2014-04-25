@@ -30,6 +30,7 @@
     <string name="helperInGame">Tap arrows to scroll through your cards. Tap a card to select it to play.</string>
     <string name="submit">Submit</string>
 
+
     <color name="white">#FFFFFF</color>
     <color name="whiteT">#99FFFFFF</color>
     <color name="black">#000000</color>

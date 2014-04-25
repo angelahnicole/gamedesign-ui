@@ -53,12 +53,13 @@ public class StartNewGameActivity extends Activity {
 				} else if (Integer.parseInt(editTextPlayers.getText()
 						.toString()) > 10) {
 					Toast.makeText(getBaseContext(),
-							"There's too many players! The limit is 10.", Toast.LENGTH_SHORT)
-							.show();
+							"There's too many players! The limit is 10.",
+							Toast.LENGTH_SHORT).show();
 				} else {
-					//Reset everything, to make sure there is nothing from a possible previous game
+					// Reset everything, to make sure there is nothing from a
+					// possible previous game
 					Globals.resetGlobals();
-					
+
 					// store variables and create a game
 					Globals.setPointLimit(Integer.parseInt(editTextPointLimit
 							.getText().toString()));
@@ -80,40 +81,49 @@ public class StartNewGameActivity extends Activity {
 
 		// creating players
 		System.out.println("Creating the players...");
-		
-		for (int i = 0; i < Globals.getNumPlayers(); i++) {			
+
+		for (int i = 0; i < Globals.getNumPlayers(); i++) {
 			// if the parameter being passed into the Player
 			// constructor is true,
 			// then the player is a human player.
 
-			// else if the parameter in the Player constructor is
-			// false,
+			// else if the parameter in the Player constructor is false,
 			// then the player is a computer
 			if (i == 0) {
-				Globals.getPlayers().add(new Player("You", true));
+				// First player is always "You"
+				Globals.getPlayers().add(new Player("You", true, false));
+			} else if (i == Globals.getNumPlayers() - 1) {
+				// last player is by default Czar
+				//Globals.getPlayers().add(new Player(Globals.generateRandomName(), true, true));
+				Globals.getPlayers().add(new Player("Player " +i, true, true));
 			} else {
-				Globals.getPlayers().add(new Player(Globals.generateRandomName(), false));
+				//other players
+				//Globals.getPlayers().add(new Player(Globals.generateRandomName(), true, false));
+				Globals.getPlayers().add(new Player("Player " + i, true, false));
 			}
 		}
 		System.out.println("Players successfully created!");
-		
-		Intent intent = new Intent(StartNewGameActivity.this, PlayerConfigActivity.class);
+
+		Intent intent = new Intent(StartNewGameActivity.this,
+				PlayerConfigActivity.class);
 		startActivity(intent);
 		// finish();
 
 	}
-	
-	private void createCards(){
+
+	private void createCards() {
 		Globals.getCardMaker().setContext(this);
 		Globals.setWhiteCards(Globals.getCardMaker().readWhiteCards());
 		Globals.setBlackCards(Globals.getCardMaker().readBlackCards());
-		
+
 		// Shuffles the decks of cards
 		Collections.shuffle(Globals.getWhiteCards());
 		Collections.shuffle(Globals.getBlackCards());
-		
-		System.out.println("Num White Cards: " + Globals.getWhiteCards().size());
-		System.out.println("Num Black Cards: " + Globals.getBlackCards().size());
+
+		System.out
+				.println("Num White Cards: " + Globals.getWhiteCards().size());
+		System.out
+				.println("Num Black Cards: " + Globals.getBlackCards().size());
 	}
 
 }

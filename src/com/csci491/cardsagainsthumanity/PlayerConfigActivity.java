@@ -78,6 +78,7 @@ public class PlayerConfigActivity extends Activity {
 		Intent intent = new Intent(PlayerConfigActivity.this,
 				StartNewRoundActivity.class);
 		startActivity(intent);
+		finish();
 	}
 
 	private TextView CreateEditText(int i) {

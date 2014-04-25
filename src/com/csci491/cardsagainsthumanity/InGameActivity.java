@@ -24,9 +24,17 @@ public class InGameActivity extends Activity {
 		System.out.println("InGameActivity: WhiteCards: " + Globals.getWhiteCards().size());
 		System.out.println("InGameActivity: BlackCards: " + Globals.getBlackCards().size());
 
-		// Set question and make sure it won't appear again in the same game
+		// Set question
 		TextView question = (TextView) findViewById(R.id.textViewQuestion);
-		question.setText(Globals.getBlackCards().remove(0).getContent());		
+		question.setText(Globals.getBlackCards().get(0).getContent());
+		
+		// If this screen is displayed again for another player but in the same round the question
+		// must not change. Change only if it's another round. Property "NewWhiteCard" defines
+		// whether it's a new round or not.
+		if (Globals.changeWhiteCard()){
+		Globals.getBlackCards().remove(0);
+		Globals.setChangeWhiteCard(false);
+		}
 		
 		// Set Card based on player's hand
 		Button buttonCard = (Button) findViewById(R.id.buttonCard);

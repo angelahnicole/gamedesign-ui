@@ -43,7 +43,7 @@ public class PlayerTurnActivity extends Activity {
 			public void onClick(View v) {
 				Intent intent = new Intent(PlayerTurnActivity.this, InGameActivity.class);
 				startActivity(intent);
-				// finish();
+				finish();
 			}
 		});	
 		

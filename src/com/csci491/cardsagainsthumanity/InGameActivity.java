@@ -108,10 +108,11 @@ public class InGameActivity extends Activity {
 			//Add current white card (actual card in had) to the list of cards played this round (plays)
 			Globals.getPlays().add(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()));
 			
-			//redirec to Player Turn screen
+			//Redirect to Player Turn screen
 			Intent intent = new Intent(InGameActivity.this,
 					PlayerTurnActivity.class);
 			startActivity(intent);
+			finish();
 		}
 	};
 	

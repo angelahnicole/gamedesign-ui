@@ -12,7 +12,7 @@
 
         <TableRow
             android:id="@+id/tableRow1"
-            android:layout_width="fill_parent">
+            android:layout_width="fill_parent" >
 
             <TextView
                 android:id="@+id/textView1"
@@ -29,6 +29,19 @@
                 android:text="1"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
         </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="fill_parent"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/buttonSkip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/greenT"
+                android:text="@string/skip" />
+        </TableRow>
     </TableLayout>
 
     <TableLayout
@@ -38,11 +51,5 @@
         android:layout_alignParentBottom="true"
         android:stretchColumns="*" >
     </TableLayout>
-
-    <Button
-        android:id="@+id/buttonSkip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/skip" />
 
 </RelativeLayout>

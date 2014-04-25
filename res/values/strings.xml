@@ -22,14 +22,13 @@
 
     <!-- New Round screen -->
     <string name="round">Round</string>
-    <string name="skip">Skip</string>
+    <string name="skip">Continue</string>
 
     <!-- In-game screen -->
     <string name="left">&lt;</string>
     <string name="right">&gt;</string>
     <string name="helperInGame">Tap arrows to scroll through your cards. Tap a card to select it to play.</string>
     <string name="submit">Submit</string>
-
 
     <color name="white">#FFFFFF</color>
     <color name="whiteT">#99FFFFFF</color>

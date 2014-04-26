@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.view.Display;
-import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
@@ -20,6 +19,7 @@ import android.widget.TextView;
 
 public class PlayerConfigActivity extends Activity {
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -82,6 +82,7 @@ public class PlayerConfigActivity extends Activity {
 		finish();
 	}
 
+	@SuppressWarnings("unused")
 	private TextView CreateEditText(int i) {
 		EditText editText = new EditText(getApplicationContext());
 		editText.setTextAppearance(getApplicationContext(),
@@ -99,6 +100,7 @@ public class PlayerConfigActivity extends Activity {
 		return editText;
 	}
 
+	@SuppressWarnings({ "unused", "deprecation" })
 	private Spinner CreateSpinner(int i) {
 		Spinner spinner = new Spinner(this);
 		ArrayList<String> spinnerArray = new ArrayList<String>();

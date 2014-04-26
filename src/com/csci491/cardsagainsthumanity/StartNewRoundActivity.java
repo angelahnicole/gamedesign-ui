@@ -12,6 +12,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 public class StartNewRoundActivity extends Activity {
+	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 

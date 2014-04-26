@@ -29,9 +29,9 @@ public class InGameActivity extends Activity {
 		// If this screen is displayed again for another player but in the same round the question
 		// must not change. Change only if it's another round. Property "NewWhiteCard" defines
 		// whether it's a new round or not.
-		if (Globals.changeWhiteCard()){
-		Globals.getBlackCards().remove(0);
-		Globals.setChangeWhiteCard(false);
+		if (Globals.changeWhiteCard()) {
+			Globals.getBlackCards().remove(0);
+			Globals.setChangeWhiteCard(false);
 		}
 		
 		// Set Card based on player's hand
@@ -59,8 +59,7 @@ public class InGameActivity extends Activity {
 			if (Globals.getIndexWhiteCard() > 0) {
 				Globals.setIndexWhiteCard(Globals.getIndexWhiteCard() - 1);
 				Button card = (Button) findViewById(R.id.buttonCard);
-				card.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand()
-						.get(Globals.getIndexWhiteCard()).getContent());
+				card.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()).getContent());
 
 				Button submit = (Button) findViewById(R.id.buttonSubmit);
 				submit.setVisibility(View.GONE);
@@ -74,8 +73,7 @@ public class InGameActivity extends Activity {
 			if (Globals.getIndexWhiteCard() < 6) {
 				Button card = (Button) findViewById(R.id.buttonCard);
 				Globals.setIndexWhiteCard(Globals.getIndexWhiteCard() + 1);
-				card.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand()
-						.get(Globals.getIndexWhiteCard()).getContent());
+				card.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()).getContent());
 
 				Button submit = (Button) findViewById(R.id.buttonSubmit);
 				submit.setVisibility(View.GONE);
@@ -101,8 +99,6 @@ public class InGameActivity extends Activity {
 	
 	private OnClickListener submitListener = new OnClickListener() {
 		public void onClick(View arg0) {
-			//Toast.makeText(getBaseContext(), "You clicked submit on: " + Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()).getContent(), Toast.LENGTH_SHORT).show();
-			
 			//Add current white card (actual card in had) to the list of cards played this round (plays)
 			Globals.getPlays().add(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()));
 			

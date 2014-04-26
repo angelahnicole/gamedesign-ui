@@ -19,7 +19,19 @@ public class PlayerTurnActivity extends Activity {
 		
 		//move to next player
 		// CHANGE THIS CODE! IT OVERFLOWS THE INDEX!
-		Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() +1);
+//		Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() + 1);
+		
+		// CODE CHANGED!!!
+		// This code now functions as follows:
+		//
+		// if (Globals.getIndexHumanPlayer() + 1 < Globals.getPlayers()
+		// 		Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() + 1)
+		// else
+		// 		Globals.setIndexHumanPlayer(0);
+		//
+		// It checks to see if adding 1 to the current human index is larger than the Players size,
+		// and if it is it starts back at 0, otherwise it adds 1 to the index.
+		Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() + 1 < Globals.getPlayers().size() ? Globals.getIndexHumanPlayer() + 1 : 0);
 		
 		TextView textViewPlayerIndex = (TextView) findViewById(R.id.textViewPlayerIndex);
 		
@@ -29,8 +41,13 @@ public class PlayerTurnActivity extends Activity {
 			textViewPlayerIndex.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getName()+" You're the card Czar!");
 			//define the new Czar
 			// CHANGE THIS CODE! IT OVERFLOWS THE INDEX!
+			
+			// CODE CHANGED!
+			// The code functions similar as above, but only in the reverse direction
 			Globals.getPlayers().get(Globals.getIndexHumanPlayer()).setCzar(false);
-			Globals.getPlayers().get(Globals.getIndexHumanPlayer()-1).setCzar(true);
+			
+//			Globals.getPlayers().get(Globals.getIndexHumanPlayer()-1).setCzar(true);
+			Globals.getPlayers().get(Globals.getIndexHumanPlayer() - 1 >= 0 ? Globals.getIndexHumanPlayer() - 1 : Globals.getPlayers().size() - 1).setCzar(true);
 		}
 		else
 		{

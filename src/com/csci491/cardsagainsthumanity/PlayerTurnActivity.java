@@ -19,6 +19,7 @@ public class PlayerTurnActivity extends Activity {
 		setContentView(R.layout.activity_player_turn);
 		
 		//move to next player
+		// CHANGE THIS CODE! IT OVERFLOWS THE INDEX!
 		Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() +1);
 		
 		TextView textViewPlayerIndex = (TextView) findViewById(R.id.textViewPlayerIndex);
@@ -28,6 +29,7 @@ public class PlayerTurnActivity extends Activity {
 			//it's Czar
 			textViewPlayerIndex.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getName()+" You're the card Czar!");
 			//define the new Czar
+			// CHANGE THIS CODE! IT OVERFLOWS THE INDEX!
 			Globals.getPlayers().get(Globals.getIndexHumanPlayer()).setCzar(false);
 			Globals.getPlayers().get(Globals.getIndexHumanPlayer()-1).setCzar(true);
 		}

@@ -36,7 +36,7 @@ public class StartNewRoundActivity extends Activity {
 			}
 		});
 
-		// Find Tablelayout defined in xml
+		// Find Table Layout defined in XML
 		TableLayout tl = (TableLayout) findViewById(R.id.tablePlayers);
 		// Create new rows to be added.
 		for (int i = 0; i < Globals.getPlayers().size(); i++) {

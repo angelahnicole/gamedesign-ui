@@ -1,6 +1,5 @@
 package com.csci491.cardsagainsthumanity;
 
-import java.util.ArrayList;
 import java.util.Collections;
 
 import android.app.Activity;

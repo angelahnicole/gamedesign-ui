@@ -27,7 +27,7 @@ public class PlayerConfigActivity extends Activity {
 		setContentView(R.layout.activity_player_config);
 		// rest of the code
 
-		// Find Tablelayout defined in xml
+		// Find Table layout defined in XML
 		TableLayout tl = (TableLayout) findViewById(R.id.Table1);
 		// Create new rows to be added.
 		for (int i = 0; i < Globals.getPlayers().size(); i++) {
@@ -36,8 +36,8 @@ public class PlayerConfigActivity extends Activity {
 					TableRow.LayoutParams.FILL_PARENT,
 					TableRow.LayoutParams.WRAP_CONTENT));
 			// Add controls to row
-			tr.addView(CreateEditText(i + 1));
-			tr.addView(CreateSpinner(i));
+			//tr.addView(CreateEditText(i + 1));
+			//tr.addView(CreateSpinner(i));
 			// Add row to TableLayout
 			// tr.setBackgroundResource(R.drawable.sf_gradient_03);
 			tl.addView(tr, new TableLayout.LayoutParams(
@@ -74,6 +74,7 @@ public class PlayerConfigActivity extends Activity {
 		
 		/////////////////////////
 		/// SKIPPING
+		/// (there's 2 lines that must be uncommented close to "Add controls to row")ß
 		
 		Intent intent = new Intent(PlayerConfigActivity.this,
 				StartNewRoundActivity.class);
@@ -91,7 +92,7 @@ public class PlayerConfigActivity extends Activity {
 		Point size = new Point();
 		display.getSize(size);
 		int width = size.x;
-		int height = size.y;
+		//int height = size.y;
 
 		editText.setWidth(width / 2);
 

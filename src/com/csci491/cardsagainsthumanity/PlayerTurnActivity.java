@@ -38,6 +38,8 @@ public class PlayerTurnActivity extends Activity {
 		}
 
 		// Goes to next player
+		// KNOW BUG 2nd round and so on:
+		// The Czar turn is coming before than all other players could play!
 		Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() + 1 < Globals
 				.getPlayers().size() ? Globals.getIndexHumanPlayer() + 1 : 0);
 

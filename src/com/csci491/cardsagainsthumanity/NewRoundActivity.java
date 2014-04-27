@@ -11,7 +11,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-public class StartNewRoundActivity extends Activity {
+public class NewRoundActivity extends Activity {
 	@SuppressWarnings("deprecation")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class StartNewRoundActivity extends Activity {
 		Button buttonSkip = (Button) findViewById(R.id.buttonSkip);
 		buttonSkip.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(StartNewRoundActivity.this,
+				Intent intent = new Intent(NewRoundActivity.this,
 						InGameActivity.class);
 				startActivity(intent);
 				finish();

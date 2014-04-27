@@ -53,7 +53,7 @@ public class PlayerConfigActivity extends Activity {
 		buttonStartNewGame.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Intent intent = new Intent(PlayerConfigActivity.this,
-						StartNewRoundActivity.class);
+						NewRoundActivity.class);
 				startActivity(intent);
 				// finish();
 			}
@@ -77,7 +77,7 @@ public class PlayerConfigActivity extends Activity {
 		/// (there's 2 lines that must be uncommented close to "Add controls to row")ß
 		
 		Intent intent = new Intent(PlayerConfigActivity.this,
-				StartNewRoundActivity.class);
+				NewRoundActivity.class);
 		startActivity(intent);
 		finish();
 	}

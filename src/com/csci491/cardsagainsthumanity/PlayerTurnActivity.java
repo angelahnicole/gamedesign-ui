@@ -16,6 +16,13 @@ public class PlayerTurnActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_player_turn);
 
+		changePlayer();
+		
+		lookForWinner();
+
+	}
+
+	public void changePlayer() {
 		TextView textViewPlayerTurnMessage = (TextView) findViewById(R.id.textViewPlayerTurnMessage);
 		Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
 
@@ -44,7 +51,7 @@ public class PlayerTurnActivity extends Activity {
 			buttonContinue.setOnClickListener(new OnClickListener() {
 				public void onClick(View v) {
 					Intent intent = new Intent(PlayerTurnActivity.this,
-							czarActivity.class);
+							CzarActivity.class);
 					startActivity(intent);
 					finish();
 				}
@@ -75,6 +82,24 @@ public class PlayerTurnActivity extends Activity {
 		// It checks to see if adding 1 to the current human index is larger
 		// than the Players size,
 		// and if it is it starts back at 0, otherwise it adds 1 to the index.
-
+	}
+	
+	public void lookForWinner(){
+		TextView textViewPlayerTurnMessage = (TextView) findViewById(R.id.textViewPlayerTurnMessage);
+		Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
+		
+		if (Globals.isWinner()){
+			textViewPlayerTurnMessage.setText(Globals.getWinnerName() + " won this round!");
+			
+			buttonContinue.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					Intent intent = new Intent(PlayerTurnActivity.this,
+							NewRoundActivity.class);
+					startActivity(intent);
+					finish();
+				}
+			});
+			Globals.setIsWinner(false);
+		}
 	}
 }

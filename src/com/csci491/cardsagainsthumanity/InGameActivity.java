@@ -27,11 +27,11 @@ public class InGameActivity extends Activity {
 		question.setText(Globals.getBlackCards().get(0).getContent());
 		
 		// If this screen is displayed again for another player but in the same round the question
-		// must not change. Change only if it's another round. Property "NewWhiteCard" defines
+		// must not change. Change only if it's another round. Property "NewBlackCard" defines
 		// whether it's a new round or not.
-		if (Globals.changeWhiteCard()) {
+		if (Globals.changeBlackCard()) {
 			Globals.getBlackCards().remove(0);
-			Globals.setChangeWhiteCard(false);
+			Globals.setChangeBlackCard(false);
 		}
 		
 		// Set Card based on player's hand

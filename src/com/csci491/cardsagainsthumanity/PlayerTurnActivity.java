@@ -1,6 +1,5 @@
 package com.csci491.cardsagainsthumanity;
 
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,54 +15,60 @@ public class PlayerTurnActivity extends Activity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_player_turn);
-		
-		//move to next player
-		// CHANGE THIS CODE! IT OVERFLOWS THE INDEX!
-//		Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() + 1);
-		
-		// CODE CHANGED!!!
-		// This code now functions as follows:
-		//
-		// if (Globals.getIndexHumanPlayer() + 1 < Globals.getPlayers()
-		// 		Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() + 1)
-		// else
-		// 		Globals.setIndexHumanPlayer(0);
-		//
-		// It checks to see if adding 1 to the current human index is larger than the Players size,
-		// and if it is it starts back at 0, otherwise it adds 1 to the index.
-		Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() + 1 < Globals.getPlayers().size() ? Globals.getIndexHumanPlayer() + 1 : 0);
-		
+
 		TextView textViewPlayerIndex = (TextView) findViewById(R.id.textViewPlayerIndex);
-		
-		//Verify if the next player is a normal one or Czar
-		if (Globals.getPlayers().get(Globals.getIndexHumanPlayer()).isCzar()){
-			//it's Czar
-			textViewPlayerIndex.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getName()+" You're the card Czar!");
-			//define the new Czar
-			// CHANGE THIS CODE! IT OVERFLOWS THE INDEX!
-			
-			// CODE CHANGED!
-			// The code functions similar as above, but only in the reverse direction
-			Globals.getPlayers().get(Globals.getIndexHumanPlayer()).setCzar(false);
-			
-//			Globals.getPlayers().get(Globals.getIndexHumanPlayer()-1).setCzar(true);
-			Globals.getPlayers().get(Globals.getIndexHumanPlayer() - 1 >= 0 ? Globals.getIndexHumanPlayer() - 1 : Globals.getPlayers().size() - 1).setCzar(true);
+
+		if (Globals.getPlayers().get(Globals.getIndexHumanPlayer()).isCzar()) {
+			// if player was Czar, now set as normal player
+			Globals.getPlayers().get(Globals.getIndexHumanPlayer())
+					.setCzar(false);
+			// choose the new Czar
+			Globals.getPlayers()
+					.get(Globals.getIndexHumanPlayer() - 1 >= 0 ? Globals
+							.getIndexHumanPlayer() - 1 : Globals
+							.getNumPlayers() - 1).setCzar(true);
 		}
-		else
-		{
-			//it's a normal player
-			textViewPlayerIndex.setText("It's your turn " + Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getName()+" !");
+
+		// Goes to next player
+		Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() + 1 < Globals
+				.getPlayers().size() ? Globals.getIndexHumanPlayer() + 1 : 0);
+		
+		// if this next player is Czar
+		if (Globals.getPlayers().get(Globals.getIndexHumanPlayer()).isCzar()) {
+			// next player is Czar
+			textViewPlayerIndex.setText(Globals.getPlayers()
+					.get(Globals.getIndexHumanPlayer()).getName()
+					+ " You're the card Czar!");
+		} else {
+			// next player is a normal player
+			textViewPlayerIndex.setText("It's your turn "
+					+ Globals.getPlayers().get(Globals.getIndexHumanPlayer())
+							.getName() + " !");
 		}
-		
-		
+
 		Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
 		buttonContinue.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(PlayerTurnActivity.this, InGameActivity.class);
-				startActivity(intent);
-				finish();
+				//if (!Globals.getPlayers().get(Globals.getIndexHumanPlayer())
+				//		.isCzar()) {
+					Intent intent = new Intent(PlayerTurnActivity.this,
+							InGameActivity.class);
+					startActivity(intent);
+					finish();
+				//}
 			}
-		});	
-		
+		});
+
+		// move to next player now functions as follows:
+		//
+		// if (Globals.getIndexHumanPlayer() + 1 < Globals.getPlayers()
+		// Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() + 1)
+		// else
+		// Globals.setIndexHumanPlayer(0);
+		//
+		// It checks to see if adding 1 to the current human index is larger
+		// than the Players size,
+		// and if it is it starts back at 0, otherwise it adds 1 to the index.
+
 	}
 }

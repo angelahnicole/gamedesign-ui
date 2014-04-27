@@ -22,7 +22,7 @@ public class InGameActivity extends Activity {
 		System.out.println("InGameActivity: WhiteCards: " + Globals.getWhiteCards().size());
 		System.out.println("InGameActivity: BlackCards: " + Globals.getBlackCards().size());
 
-		// Set question
+		// Set question (Black card)
 		TextView question = (TextView) findViewById(R.id.textViewQuestion);
 		question.setText(Globals.getBlackCards().get(0).getContent());
 		
@@ -34,12 +34,13 @@ public class InGameActivity extends Activity {
 			Globals.setChangeBlackCard(false);
 		}
 		
-		// Set Card based on player's hand
+		// Set white cards based on player's hand
 		Button buttonCard = (Button) findViewById(R.id.buttonCard);
 		buttonCard.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(0).getContent());
 		buttonCard.setOnClickListener(cardListener);
 
 		// navigation (white cards)
+		Globals.setIndexWhiteCard(0);
 		Button buttonLeft = (Button) findViewById(R.id.buttonLeft);
 		Button buttonRight = (Button) findViewById(R.id.buttonRight);
 		

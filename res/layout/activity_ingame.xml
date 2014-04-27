@@ -17,7 +17,7 @@
     </TableRow>
 
     <TextView
-        android:id="@+id/textView3.1"
+        android:id="@+id/textViewHelper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/helperInGame"

@@ -1,5 +1,6 @@
 package com.csci491.cardsagainsthumanity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class InGameActivity extends Activity {
+//	@SuppressLint("ResourceAsColor")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -33,8 +35,6 @@ public class InGameActivity extends Activity {
 		// Set question (Black card)
 		TextView question = (TextView) findViewById(R.id.textViewQuestion);
 		question.setText(Globals.getBlackCards().get(0).getContent());
-		
-		
 		
 		// Set white cards based on player's hand
 		Button buttonCard = (Button) findViewById(R.id.buttonCard);

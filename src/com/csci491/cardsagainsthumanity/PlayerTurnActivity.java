@@ -16,7 +16,15 @@ public class PlayerTurnActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_player_turn);
 
-		TextView textViewPlayerIndex = (TextView) findViewById(R.id.textViewPlayerIndex);
+		changePlayer();
+		
+		lookForWinner();
+
+	}
+
+	public void changePlayer() {
+		TextView textViewPlayerTurnMessage = (TextView) findViewById(R.id.textViewPlayerTurnMessage);
+		Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
 
 		if (Globals.getPlayers().get(Globals.getIndexHumanPlayer()).isCzar()) {
 			// if player was Czar, now set as normal player
@@ -30,34 +38,41 @@ public class PlayerTurnActivity extends Activity {
 		}
 
 		// Goes to next player
+		// KNOW BUG 2nd round and so on:
+		// The Czar turn is coming before than all other players could play!
 		Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() + 1 < Globals
 				.getPlayers().size() ? Globals.getIndexHumanPlayer() + 1 : 0);
-		
+
 		// if this next player is Czar
 		if (Globals.getPlayers().get(Globals.getIndexHumanPlayer()).isCzar()) {
 			// next player is Czar
-			textViewPlayerIndex.setText(Globals.getPlayers()
+			textViewPlayerTurnMessage.setText(Globals.getPlayers()
 					.get(Globals.getIndexHumanPlayer()).getName()
 					+ " You're the card Czar!");
+
+			buttonContinue.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					Intent intent = new Intent(PlayerTurnActivity.this,
+							CzarActivity.class);
+					startActivity(intent);
+					finish();
+				}
+			});
 		} else {
 			// next player is a normal player
-			textViewPlayerIndex.setText("It's your turn "
+			textViewPlayerTurnMessage.setText("It's your turn "
 					+ Globals.getPlayers().get(Globals.getIndexHumanPlayer())
 							.getName() + " !");
-		}
 
-		Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
-		buttonContinue.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				//if (!Globals.getPlayers().get(Globals.getIndexHumanPlayer())
-				//		.isCzar()) {
+			buttonContinue.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
 					Intent intent = new Intent(PlayerTurnActivity.this,
 							InGameActivity.class);
 					startActivity(intent);
 					finish();
-				//}
-			}
-		});
+				}
+			});
+		}
 
 		// move to next player now functions as follows:
 		//
@@ -69,6 +84,24 @@ public class PlayerTurnActivity extends Activity {
 		// It checks to see if adding 1 to the current human index is larger
 		// than the Players size,
 		// and if it is it starts back at 0, otherwise it adds 1 to the index.
-
+	}
+	
+	public void lookForWinner(){
+		TextView textViewPlayerTurnMessage = (TextView) findViewById(R.id.textViewPlayerTurnMessage);
+		Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
+		
+		if (Globals.isWinner()){
+			textViewPlayerTurnMessage.setText(Globals.getWinnerName() + " won this round!");
+			
+			buttonContinue.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					Intent intent = new Intent(PlayerTurnActivity.this,
+							NewRoundActivity.class);
+					startActivity(intent);
+					finish();
+				}
+			});
+			Globals.setIsWinner(false);
+		}
 	}
 }

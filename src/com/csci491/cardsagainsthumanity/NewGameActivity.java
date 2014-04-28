@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class StartNewGameActivity extends Activity {
+public class NewGameActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -21,7 +21,7 @@ public class StartNewGameActivity extends Activity {
 		Button buttonCancel = (Button) findViewById(R.id.buttonCancel);
 		buttonCancel.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				Intent intent = new Intent(StartNewGameActivity.this,
+				Intent intent = new Intent(NewGameActivity.this,
 						MainActivity.class);
 				startActivity(intent);
 				// finish();
@@ -103,7 +103,7 @@ public class StartNewGameActivity extends Activity {
 		}
 		System.out.println("Players successfully created!");
 
-		Intent intent = new Intent(StartNewGameActivity.this,
+		Intent intent = new Intent(NewGameActivity.this,
 				PlayerConfigActivity.class);
 		startActivity(intent);
 		// finish();

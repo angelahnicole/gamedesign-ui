@@ -61,9 +61,9 @@ public final class R {
         public static final int textView1=0x7f0a000f;
         public static final int textView2=0x7f0a0011;
         public static final int textView3=0x7f0a0012;
-        public static final int textView3_1=0x7f0a0002;
         public static final int textView4=0x7f0a0014;
-        public static final int textViewPlayerIndex=0x7f0a000c;
+        public static final int textViewHelper=0x7f0a0002;
+        public static final int textViewPlayerTurnMessage=0x7f0a000c;
         public static final int textViewQuestion=0x7f0a0001;
     }
     public static final class layout {
@@ -86,7 +86,10 @@ public final class R {
         public static final int app_name=0x7f060000;
         public static final int cancel=0x7f06000d;
         public static final int hello_world=0x7f060002;
-        public static final int helperInGame=0x7f060014;
+        public static final int helperInGame=0x7f060015;
+        /**  In-game screen 
+         */
+        public static final int helperInGameCzar=0x7f060016;
         public static final int how_to_play=0x7f060004;
         public static final int leave_game=0x7f060007;
         public static final int leave_game_message=0x7f060008;
@@ -109,7 +112,7 @@ public final class R {
         public static final int start_new_game=0x7f060003;
         public static final int start_new_game_max_players_description=0x7f06000f;
         public static final int start_new_game_point_limit_description=0x7f06000e;
-        public static final int submit=0x7f060015;
+        public static final int submit=0x7f060014;
     }
     public static final class style {
         /** 

@@ -1,6 +1,5 @@
 package com.csci491.cardsagainsthumanity;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -14,25 +13,15 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class InGameActivity extends Activity {
-	@SuppressLint("ResourceAsColor")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ingame);
 
-		// navigation (white cards) and the card itself
-		Button buttonLeft = (Button) findViewById(R.id.buttonLeft);
-		Button buttonRight = (Button) findViewById(R.id.buttonRight);
-		Button buttonCard = (Button) findViewById(R.id.buttonCard);
-
 		System.out.println("InGameActivity: WhiteCards: " + Globals.getWhiteCards().size());
 		System.out.println("InGameActivity: BlackCards: " + Globals.getBlackCards().size());
-		
-		// Set question
-		TextView question = (TextView) findViewById(R.id.textViewQuestion);
-		question.setText(Globals.getBlackCards().get(0).getContent());
-		
+
 		// If this screen is displayed again for another player but in the same round the question
 		// must not change. Change only if it's another round. Property "NewBlackCard" defines
 		// whether it's a new round or not.
@@ -41,10 +30,22 @@ public class InGameActivity extends Activity {
 			Globals.setChangeBlackCard(false);
 		}
 		
-		// Set Card based on player's hand
+		// Set question (Black card)
+		TextView question = (TextView) findViewById(R.id.textViewQuestion);
+		question.setText(Globals.getBlackCards().get(0).getContent());
+		
+		
+		
+		// Set white cards based on player's hand
+		Button buttonCard = (Button) findViewById(R.id.buttonCard);
 		buttonCard.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(0).getContent());
 		buttonCard.setOnClickListener(cardListener);
 
+		// navigation (white cards)
+		Globals.setIndexWhiteCard(0);
+		Button buttonLeft = (Button) findViewById(R.id.buttonLeft);
+		Button buttonRight = (Button) findViewById(R.id.buttonRight);
+		
 		// Set listeners on navigation
 		buttonLeft.setOnClickListener(leftListener);
 		buttonRight.setOnClickListener(rightListener);
@@ -101,8 +102,16 @@ public class InGameActivity extends Activity {
 	
 	private OnClickListener submitListener = new OnClickListener() {
 		public void onClick(View arg0) {
+			//stores who submitted this card in the property "owner"
+			Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()).setOwner(Globals.getPlayers().get(Globals.getIndexHumanPlayer()));
 			//Add current white card (actual card in had) to the list of cards played this round (plays)
 			Globals.getPlays().add(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()));
+			
+			//Remove the card just played from player's hand
+			Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().remove(0);
+			
+			//Add a new card in order to substitute the one that was just removed
+			//NOT SURE IF WE HAVE TO IMPLEMENT THIS!
 			
 			//Redirect to Player Turn screen
 			Intent intent = new Intent(InGameActivity.this,

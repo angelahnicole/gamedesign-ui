@@ -27,9 +27,12 @@
     <!-- In-game screen -->
     <string name="left">&lt;</string>
     <string name="right">&gt;</string>
-    <string name="helperInGame">Tap arrows to scroll through your cards. Tap a card to select it to play.</string>
     <string name="submit">Submit</string>
+    <string name="helperInGame">Tap arrows to scroll through your cards. Tap a card to select it to play.</string>
 
+    <!-- In-game screen -->
+    <string name="helperInGameCzar">Tap arrows to scroll through cards. Tap a card to choose it as the winner.</string>
+    
     <color name="white">#FFFFFF</color>
     <color name="whiteT">#99FFFFFF</color>
     <color name="black">#000000</color>

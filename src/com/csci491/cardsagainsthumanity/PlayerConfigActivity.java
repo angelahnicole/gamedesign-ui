@@ -37,7 +37,7 @@ public class PlayerConfigActivity extends Activity {
 					TableRow.LayoutParams.WRAP_CONTENT));
 			// Add controls to row
 			//tr.addView(CreateEditText(i + 1));
-			//tr.addView(CreateSpinner(i));
+			tr.addView(CreateSpinner(i));
 			// Add row to TableLayout
 			// tr.setBackgroundResource(R.drawable.sf_gradient_03);
 			tl.addView(tr, new TableLayout.LayoutParams(
@@ -53,7 +53,7 @@ public class PlayerConfigActivity extends Activity {
 		buttonStartNewGame.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Intent intent = new Intent(PlayerConfigActivity.this,
-						StartNewRoundActivity.class);
+						NewRoundActivity.class);
 				startActivity(intent);
 				// finish();
 			}
@@ -77,7 +77,7 @@ public class PlayerConfigActivity extends Activity {
 		/// (there's 2 lines that must be uncommented close to "Add controls to row")ß
 		
 		Intent intent = new Intent(PlayerConfigActivity.this,
-				StartNewRoundActivity.class);
+				NewRoundActivity.class);
 		startActivity(intent);
 		finish();
 	}
@@ -100,7 +100,7 @@ public class PlayerConfigActivity extends Activity {
 		return editText;
 	}
 
-	@SuppressWarnings({ "unused", "deprecation" })
+	@SuppressWarnings({ "deprecation" })
 	private Spinner CreateSpinner(int i) {
 		Spinner spinner = new Spinner(this);
 		ArrayList<String> spinnerArray = new ArrayList<String>();

@@ -104,6 +104,8 @@ public class InGameActivity extends Activity {
 		public void onClick(View arg0) {
 			//stores who submitted this card in the property "owner"
 			Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()).setOwner(Globals.getPlayers().get(Globals.getIndexHumanPlayer()));
+
+			/*
 			//Add current white card (actual card in had) to the list of cards played this round (plays)
 			Globals.getPlays().add(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()));
 			
@@ -112,6 +114,9 @@ public class InGameActivity extends Activity {
 			
 			//Add a new card in order to substitute the one that was just removed
 			//NOT SURE IF WE HAVE TO IMPLEMENT THIS!
+			*/
+			
+			Globals.getPlays().add(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).playWhiteCard(Globals.getIndexWhiteCard()));
 			
 			//Redirect to Player Turn screen
 			Intent intent = new Intent(InGameActivity.this,

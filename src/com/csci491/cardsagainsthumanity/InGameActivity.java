@@ -1,5 +1,6 @@
 package com.csci491.cardsagainsthumanity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -13,15 +14,21 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class InGameActivity extends Activity {
+	@SuppressLint("ResourceAsColor")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ingame);
 
+		// navigation (white cards) and the card itself
+		Button buttonLeft = (Button) findViewById(R.id.buttonLeft);
+		Button buttonRight = (Button) findViewById(R.id.buttonRight);
+		Button buttonCard = (Button) findViewById(R.id.buttonCard);
+
 		System.out.println("InGameActivity: WhiteCards: " + Globals.getWhiteCards().size());
 		System.out.println("InGameActivity: BlackCards: " + Globals.getBlackCards().size());
-
+		
 		// Set question
 		TextView question = (TextView) findViewById(R.id.textViewQuestion);
 		question.setText(Globals.getBlackCards().get(0).getContent());
@@ -35,14 +42,9 @@ public class InGameActivity extends Activity {
 		}
 		
 		// Set Card based on player's hand
-		Button buttonCard = (Button) findViewById(R.id.buttonCard);
 		buttonCard.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(0).getContent());
 		buttonCard.setOnClickListener(cardListener);
 
-		// navigation (white cards)
-		Button buttonLeft = (Button) findViewById(R.id.buttonLeft);
-		Button buttonRight = (Button) findViewById(R.id.buttonRight);
-		
 		// Set listeners on navigation
 		buttonLeft.setOnClickListener(leftListener);
 		buttonRight.setOnClickListener(rightListener);

@@ -116,6 +116,8 @@ public class InGameActivity extends Activity {
 			//NOT SURE IF WE HAVE TO IMPLEMENT THIS!
 			*/
 			
+			// Calling this method will remove the card from the players hand and make the player draw a new card from the white pile
+			// additionally, if the white pile is empty, the player will re-shuffle the white deck and draw from it
 			Globals.getPlays().add(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).playWhiteCard(Globals.getIndexWhiteCard()));
 			
 			//Redirect to Player Turn screen

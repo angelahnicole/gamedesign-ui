@@ -37,9 +37,7 @@ public final class R {
     }
     public static final class id {
         public static final int Table1=0x7f09000b;
-        public static final int action_endgame=0x7f09001c;
-        public static final int action_leavegame=0x7f09001b;
-        public static final int action_settings=0x7f09001a;
+        public static final int action_leavegame=0x7f09001a;
         public static final int buttonCancel=0x7f090015;
         public static final int buttonCard=0x7f090004;
         public static final int buttonContinue=0x7f09000e;

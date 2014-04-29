@@ -25,7 +25,6 @@ public class PlayerConfigActivity extends Activity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_player_config);
-		// rest of the code
 
 		// Find Table layout defined in XML
 		final TableLayout tl = (TableLayout) findViewById(R.id.Table1);
@@ -86,12 +85,12 @@ public class PlayerConfigActivity extends Activity {
 
 	}
 
-	@SuppressWarnings("unused")
 	private TextView CreateEditText(int i) {
 		EditText editText = new EditText(getApplicationContext());
 		editText.setTextAppearance(getApplicationContext(),
 				android.R.style.TextAppearance_Medium);
 		editText.setText("Player " + i);
+		editText.setSelectAllOnFocus(true);
 
 		Display display = getWindowManager().getDefaultDisplay();
 		Point size = new Point();
@@ -104,7 +103,6 @@ public class PlayerConfigActivity extends Activity {
 		return editText;
 	}
 
-	@SuppressWarnings({ "deprecation" })
 	private Spinner CreateSpinner(int i) {
 		Spinner spinner = new Spinner(this);
 		ArrayList<String> spinnerArray = new ArrayList<String>();

@@ -24,7 +24,7 @@ public class NewGameActivity extends Activity {
 				Intent intent = new Intent(NewGameActivity.this,
 						MainActivity.class);
 				startActivity(intent);
-				// finish();
+				finish();
 			}
 		});
 

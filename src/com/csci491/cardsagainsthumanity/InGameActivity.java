@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class InGameActivity extends Activity {
+//	@SuppressLint("ResourceAsColor")
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 
@@ -33,8 +34,6 @@ public class InGameActivity extends Activity {
 		// Set question (Black card)
 		TextView question = (TextView) findViewById(R.id.textViewQuestion);
 		question.setText(Globals.getBlackCards().get(0).getContent());
-		
-		
 		
 		// Set white cards based on player's hand
 		Button buttonCard = (Button) findViewById(R.id.buttonCard);
@@ -104,6 +103,8 @@ public class InGameActivity extends Activity {
 		public void onClick(View arg0) {
 			//stores who submitted this card in the property "owner"
 			Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()).setOwner(Globals.getPlayers().get(Globals.getIndexHumanPlayer()));
+
+			/*
 			//Add current white card (actual card in had) to the list of cards played this round (plays)
 			Globals.getPlays().add(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()));
 			
@@ -112,6 +113,11 @@ public class InGameActivity extends Activity {
 			
 			//Add a new card in order to substitute the one that was just removed
 			//NOT SURE IF WE HAVE TO IMPLEMENT THIS!
+			*/
+			
+			// Calling this method will remove the card from the players hand and make the player draw a new card from the white pile
+			// additionally, if the white pile is empty, the player will re-shuffle the white deck and draw from it
+			Globals.getPlays().add(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).playWhiteCard(Globals.getIndexWhiteCard()));
 			
 			//Redirect to Player Turn screen
 			Intent intent = new Intent(InGameActivity.this,

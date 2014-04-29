@@ -2,10 +2,12 @@ package com.csci491.cardsagainsthumanity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 public class CzarActivity extends Activity {
@@ -30,9 +32,10 @@ public class CzarActivity extends Activity {
 
 		// Set white cards based on other players' submission
 		Button buttonCard = (Button) findViewById(R.id.buttonCard);
+		buttonCard.setTextColor(getApplication().getResources().getColor(R.color.white));
+		buttonCard.setBackgroundColor(getApplication().getResources().getColor(R.color.black));
 		buttonCard.setOnClickListener(cardListener);
-		buttonCard.setText(Globals.getPlays().get(Globals.getIndexWhiteCard())
-				.getContent());
+		buttonCard.setText(Globals.getPlays().get(Globals.getIndexWhiteCard()).getContent());
 
 		// navigation (white cards)
 		Globals.setIndexWhiteCard(0);

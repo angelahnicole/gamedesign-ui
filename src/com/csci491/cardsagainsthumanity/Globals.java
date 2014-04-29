@@ -40,6 +40,8 @@ public class Globals extends Application {
 		Globals.players = new ArrayList<Player>();
 		Globals.cardMaker = new FileIO();
 		Globals.changeBlackCard = false;
+		Globals.indexHumanPlayer=0;
+		Globals.getPlays().clear();
 	}
 	
 	static String generateRandomName() {

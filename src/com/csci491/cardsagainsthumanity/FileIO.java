@@ -58,35 +58,12 @@ public class FileIO extends Activity {
 		ArrayList<WhiteCard> whiteCards = new ArrayList<WhiteCard>();
 		
 		try {
-		    // Various methods to try to get something to read in...
-			
-//			InputStream in = getAssets().open("whitecards.txt");
-			
-//			AssetManager assetManager = getApplicationContext().getAssets();
-//			InputStream in = assetManager.open("whitecards.txt");
-			
-			/* If I pass in this input stream from the calling class (MainActivity.java)
-			 * and pass it as a parameter in the InputStreamReader, it will actually work.
-			 * The problem with that is my Player class also calls the FileIO class to 
-			 * re-read in the deck and shuffle it (when the deck is empty).  So, if I do
-			 * it the way that works, I'll have to pass in this InputStream to each player
-			 * to pass in to their instances of the FileIO class for the thing to work.
-			 * It needs to be more decoupled. 
-			 */
-//		    InputStream in = getResources().openRawResource(R.raw.whitecards);
-			
-//			AssetManager assetManager = getResources().getAssets();
-//			InputStream in = assetManager.open("whitecards.txt");
-			
-//			Context c = getApplicationContext();
-			
 			AssetManager assetManager = c.getAssets();
 			InputStream in = assetManager.open("whitecards.txt");
 			
 		    InputStreamReader isr = new InputStreamReader(in);
 		    BufferedReader reader = new BufferedReader(isr);
 			
-		    // do reading, usually loop until end of file reading
 		    String mLine;
 		    while ((mLine = reader.readLine()) != null) {
 		    	whiteCards.add(new WhiteCard(mLine,null));
@@ -111,7 +88,6 @@ public class FileIO extends Activity {
 		    InputStreamReader isr = new InputStreamReader(in);
 		    BufferedReader reader = new BufferedReader(isr);
 			
-		    // do reading, usually loop until end of file reading
 		    String mLine;
 		    while ((mLine = reader.readLine()) != null) {
 		    	blackCards.add(new BlackCard(mLine));

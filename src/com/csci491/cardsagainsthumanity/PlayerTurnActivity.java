@@ -36,10 +36,9 @@ public class PlayerTurnActivity extends Activity {
 							.getNumPlayers() - 1).setCzar(true);
 		}
 
-<<<<<<< HEAD
 		// Is there a Czar skipped?
 		if (Globals.getIndexHumanPlayer() == indexCzarSkipped) {
-			//Yes, make him play and finalize this round
+			// Yes, make him play and finalize this round
 			indexCzarSkipped = -1;
 			playCzarPlayer();
 
@@ -53,7 +52,7 @@ public class PlayerTurnActivity extends Activity {
 			Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() + 1 < Globals
 					.getPlayers().size() ? Globals.getIndexHumanPlayer() + 1
 					: 0);
-		
+
 			for (int i = 0; i < Globals.getNumPlayers(); i++) {
 				// this one already played?
 				if (!Globals.getPlayers().get(i).isPlayedAlready()) {
@@ -92,43 +91,6 @@ public class PlayerTurnActivity extends Activity {
 				Globals.getPlayers().get(Globals.getIndexHumanPlayer())
 						.setPlayedAlready(false);
 			}
-=======
-		// Goes to next player
-		// KNOW BUG 2nd round and so on:
-		// The Czar turn is coming before than all other players could play!
-		Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() + 1 < Globals
-				.getPlayers().size() ? Globals.getIndexHumanPlayer() + 1 : 0);
-
-		for (int i = 0; i < Globals.getNumPlayers(); i++) {
-			// this one already played?
-			if (!Globals.getPlayers().get(i).isPlayedAlready()) {
-				// is Czar?
-				if (!Globals.getPlayers().get(Globals.getIndexHumanPlayer())
-						.isCzar()) {
-					// no, so play!
-					playNormalPlayer();
-				} else {
-					// yes it's Czar
-					if (Globals.getIndexHumanPlayer() == Globals
-							.getNumPlayers() - 1) {
-						// it's the last one to play, so play!
-						playCzarPlayer();
-					} else {
-						// store his index
-						indexCzarSkipped = Globals.getIndexHumanPlayer();
-
-						// it's not the last, so skip!
-						Globals.setIndexHumanPlayer(Globals
-								.getIndexHumanPlayer() + 1);
-					}
-				}
-			}
-
-			if (i == Globals.getNumPlayers() - 1 && indexCzarSkipped != -1) {
-				Globals.setIndexHumanPlayer(indexCzarSkipped);
-			}
-
->>>>>>> 5dcb32afa4f06b4336ec95427c0ca871ccb889e3
 		}
 	}
 
@@ -140,7 +102,6 @@ public class PlayerTurnActivity extends Activity {
 				.get(Globals.getIndexHumanPlayer()).getName()
 				+ " You're the card Czar!");
 
-<<<<<<< HEAD
 		Globals.getPlayers().get(Globals.getIndexHumanPlayer())
 				.setPlayedAlready(true);
 
@@ -158,35 +119,6 @@ public class PlayerTurnActivity extends Activity {
 		TextView textViewPlayerTurnMessage = (TextView) findViewById(R.id.textViewPlayerTurnMessage);
 		Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
 
-=======
-	}
-
-	public void playCzarPlayer() {
-		TextView textViewPlayerTurnMessage = (TextView) findViewById(R.id.textViewPlayerTurnMessage);
-		Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
-
-		textViewPlayerTurnMessage.setText(Globals.getPlayers()
-				.get(Globals.getIndexHumanPlayer()).getName()
-				+ " You're the card Czar!");
-
-		Globals.getPlayers().get(Globals.getIndexHumanPlayer())
-				.setPlayedAlready(true);
-
-		buttonContinue.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				Intent intent = new Intent(PlayerTurnActivity.this,
-						CzarActivity.class);
-				startActivity(intent);
-				finish();
-			}
-		});
-	}
-
-	public void playNormalPlayer() {
-		TextView textViewPlayerTurnMessage = (TextView) findViewById(R.id.textViewPlayerTurnMessage);
-		Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
-
->>>>>>> 5dcb32afa4f06b4336ec95427c0ca871ccb889e3
 		textViewPlayerTurnMessage.setText("It's your turn "
 				+ Globals.getPlayers().get(Globals.getIndexHumanPlayer())
 						.getName() + " !");
@@ -221,14 +153,14 @@ public class PlayerTurnActivity extends Activity {
 				}
 			});
 			Globals.setIsWinner(false);
-			
+
 			for (int i = 0; i < Globals.getNumPlayers(); i++) {
 				Globals.getPlayers().get(Globals.getIndexHumanPlayer())
 						.setPlayedAlready(false);
 			}
 
 			Globals.getPlays().clear();
-			
+
 			Globals.setIndexHumanPlayer(0);
 		}
 	}
@@ -242,8 +174,4 @@ public class PlayerTurnActivity extends Activity {
 //
 // It checks to see if adding 1 to the current human index is larger
 // than the Players size,
-<<<<<<< HEAD
 // and if it is it starts back at 0, otherwise it adds 1 to the index.
-=======
-// and if it is it starts back at 0, otherwise it adds 1 to the index.
->>>>>>> 5dcb32afa4f06b4336ec95427c0ca871ccb889e3

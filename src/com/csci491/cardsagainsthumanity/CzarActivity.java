@@ -53,31 +53,38 @@ public class CzarActivity extends Activity {
 
 	private OnClickListener leftListener = new OnClickListener() {
 		public void onClick(View v) {
+			Button card = (Button) findViewById(R.id.buttonCard);
+			Button submit = (Button) findViewById(R.id.buttonSubmit);
+			submit.setVisibility(View.GONE);
 			// verify if it's possible to go back
 			if (Globals.getIndexWhiteCard() > 0) {
 				Globals.setIndexWhiteCard(Globals.getIndexWhiteCard() - 1);
-				Button card = (Button) findViewById(R.id.buttonCard);
-				card.setText(Globals.getPlays()
-						.get(Globals.getIndexWhiteCard()).getContent());
-
-				Button submit = (Button) findViewById(R.id.buttonSubmit);
-				submit.setVisibility(View.GONE);
 			}
+			else
+			{
+				Globals.setIndexWhiteCard(Globals.getNumPlayers() - 2);
+			}
+			card.setText(Globals.getPlays()
+					.get(Globals.getIndexWhiteCard()).getContent());
 		}
 	};
 
 	private OnClickListener rightListener = new OnClickListener() {
 		public void onClick(View v) {
+			Button card = (Button) findViewById(R.id.buttonCard);
+			
+			Button submit = (Button) findViewById(R.id.buttonSubmit);
+			submit.setVisibility(View.GONE);
 			// verify if it's possible to go further
 			if (Globals.getIndexWhiteCard() < Globals.getNumPlayers() - 2) {
-				Button card = (Button) findViewById(R.id.buttonCard);
 				Globals.setIndexWhiteCard(Globals.getIndexWhiteCard() + 1);
-				card.setText(Globals.getPlays()
-						.get(Globals.getIndexWhiteCard()).getContent());
-
-				Button submit = (Button) findViewById(R.id.buttonSubmit);
-				submit.setVisibility(View.GONE);
 			}
+			else
+			{
+				Globals.setIndexWhiteCard(0);
+			}
+			card.setText(Globals.getPlays()
+					.get(Globals.getIndexWhiteCard()).getContent());
 		}
 	};
 	

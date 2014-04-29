@@ -28,7 +28,7 @@ public class PlayerConfigActivity extends Activity {
 		// rest of the code
 
 		// Find Table layout defined in XML
-		TableLayout tl = (TableLayout) findViewById(R.id.Table1);
+		final TableLayout tl = (TableLayout) findViewById(R.id.Table1);
 		// Create new rows to be added.
 		for (int i = 0; i < Globals.getPlayers().size(); i++) {
 			TableRow tr = new TableRow(this);
@@ -53,6 +53,17 @@ public class PlayerConfigActivity extends Activity {
 
 		buttonStartNewGame.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
+				
+		        for (int i = 0; i < Globals.getPlayers().size(); i++) {
+		        	TableRow r = (TableRow) tl.getChildAt(i);
+		        	EditText et = (EditText) r.getChildAt(0);
+		        	String name = et.getText().toString();
+		        	
+		        	System.out.println(name);
+		        	
+		        	Globals.getPlayers().get(i).setName(name);
+		        }
+				
 				Intent intent = new Intent(PlayerConfigActivity.this,
 						NewRoundActivity.class);
 				startActivity(intent);

@@ -17,6 +17,7 @@ public class Player extends Activity {
 	private boolean isCzar;
 	private int score;
 	private int numPlayers; // awareness of other players
+	private boolean playedAlready = false;
 	private Context c;
 	
 	public Player() {
@@ -119,6 +120,14 @@ public class Player extends Activity {
 
 	public void setCzar(boolean isCzar) {
 		this.isCzar = isCzar;
+	}
+
+	public boolean isPlayedAlready() {
+		return playedAlready;
+	}
+
+	public void setPlayedAlready(boolean playedAlready) {
+		this.playedAlready = playedAlready;
 	}
 	
 }

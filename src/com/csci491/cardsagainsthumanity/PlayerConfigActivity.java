@@ -67,7 +67,7 @@ public class PlayerConfigActivity extends Activity {
 				Intent intent = new Intent(PlayerConfigActivity.this,
 						NewRoundActivity.class);
 				startActivity(intent);
-				// finish();
+				finish();
 			}
 		});
 		tl.addView(buttonStartNewGame, new TableLayout.LayoutParams(

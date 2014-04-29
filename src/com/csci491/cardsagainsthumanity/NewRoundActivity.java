@@ -24,6 +24,10 @@ public class NewRoundActivity extends Activity {
 
 		Globals.setRoundNum(Globals.getRoundNum() + 1);
 
+		TextView textViewPlayerName = (TextView) findViewById(R.id.textViewPlayerName);
+		textViewPlayerName.setText(" " + Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getName());
+		
+		
 		System.out.println("Next Round Number: " + Globals.getRoundNum());
 
 		Button buttonSkip = (Button) findViewById(R.id.buttonSkip);

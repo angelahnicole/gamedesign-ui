@@ -47,12 +47,12 @@ public class NewGameActivity extends Activity {
 				} else if (Integer.parseInt(editTextPlayers.getText()
 						.toString()) < 3) {
 					Toast.makeText(getBaseContext(),
-							R.string.min_players_toast_toast, Toast.LENGTH_SHORT)
+							R.string.min_players_toast, Toast.LENGTH_SHORT)
 							.show();
 				} else if (Integer.parseInt(editTextPlayers.getText()
 						.toString()) > 10) {
 					Toast.makeText(getBaseContext(),
-							R.string.max_players_toast_toast,
+							R.string.max_players_toast,
 							Toast.LENGTH_SHORT).show();
 				} else {
 					// Reset everything, to make sure there is nothing from a

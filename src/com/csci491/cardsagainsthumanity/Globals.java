@@ -25,7 +25,8 @@ public class Globals extends Application {
 	private static int indexHumanPlayer = 0;
 	private static FileIO cardMaker = new FileIO();
 	private static boolean changeBlackCard;
-	private static boolean isWinner;
+	private static boolean isRoundWinner;
+	private static boolean isGameWinner;
 	private static String winnerName;
 
 	private Globals() {
@@ -152,12 +153,20 @@ public class Globals extends Application {
 		Globals.changeBlackCard = changeBlackCard;
 	}
 	
-	public static boolean isWinner() {
-		return isWinner;
+	public static boolean isRoundWinner() {
+		return isRoundWinner;
 	}
 
-	public static void setIsWinner(boolean isWinner) {
-		Globals.isWinner = isWinner;
+	public static void setIsRoundWinner(boolean isRoundWinner) {
+		Globals.isRoundWinner = isRoundWinner;
+	}
+	
+	public static boolean isGameWinner() {
+		return isGameWinner;
+	}
+
+	public static void setIsGameWinner(boolean isGameWinner) {
+		Globals.isGameWinner = isGameWinner;
 	}
 
 	public static String getWinnerName() {
@@ -175,5 +184,6 @@ public class Globals extends Application {
 	public static void setORIGINALplayers(ArrayList<Player> oRIGINALplayers) {
 		ORIGINALplayers = oRIGINALplayers;
 	}
+
 
 }

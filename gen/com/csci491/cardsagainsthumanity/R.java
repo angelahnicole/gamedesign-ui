@@ -37,32 +37,34 @@ public final class R {
     }
     public static final class id {
         public static final int Table1=0x7f09000b;
-        public static final int action_leavegame=0x7f09001b;
-        public static final int buttonCancel=0x7f090015;
+        public static final int action_leavegame=0x7f09001d;
+        public static final int buttonCancel=0x7f090017;
         public static final int buttonCard=0x7f090004;
-        public static final int buttonContinue=0x7f09000e;
+        public static final int buttonContinue=0x7f090010;
         public static final int buttonHow=0x7f090009;
         public static final int buttonLeft=0x7f090003;
-        public static final int buttonNext=0x7f090016;
+        public static final int buttonNext=0x7f090018;
         public static final int buttonRight=0x7f090006;
-        public static final int buttonSkip=0x7f090019;
+        public static final int buttonSkip=0x7f09001b;
         public static final int buttonStart=0x7f090007;
         public static final int buttonSubmit=0x7f090005;
-        public static final int editTextPlayers=0x7f090013;
-        public static final int editTextPointLimit=0x7f090010;
+        public static final int editTextPlayers=0x7f090015;
+        public static final int editTextPointLimit=0x7f090012;
         public static final int imageViewLogo=0x7f09000a;
-        public static final int lblRoundNum=0x7f090017;
-        public static final int tablePlayers=0x7f09001a;
+        public static final int lblRoundNum=0x7f090019;
+        public static final int tableLayout1=0x7f09000c;
+        public static final int tablePlayers=0x7f09001c;
         public static final int tableRow1=0x7f090000;
-        public static final int tableRow2=0x7f09000d;
+        public static final int tableRow2=0x7f09000e;
         public static final int tableRow3=0x7f090008;
-        public static final int textView1=0x7f09000f;
-        public static final int textView2=0x7f090011;
-        public static final int textView3=0x7f090012;
-        public static final int textView4=0x7f090014;
+        public static final int textView1=0x7f090011;
+        public static final int textView2=0x7f090013;
+        public static final int textView3=0x7f090014;
+        public static final int textView4=0x7f090016;
         public static final int textViewHelper=0x7f090002;
-        public static final int textViewPlayerName=0x7f090018;
-        public static final int textViewPlayerTurnMessage=0x7f09000c;
+        public static final int textViewPlayerName=0x7f09001a;
+        public static final int textViewPlayerTurnMessage=0x7f09000d;
+        public static final int textViewPlayerTurnWinnerMessage=0x7f09000f;
         public static final int textViewQuestion=0x7f090001;
     }
     public static final class layout {
@@ -83,9 +85,12 @@ public final class R {
         public static final int blank_player_name_toast=0x7f050012;
         public static final int blank_point_limit_toast=0x7f050010;
         public static final int cancel=0x7f05000d;
+        /**  Player Turn 
+         */
+        public static final int game_winner=0x7f05001d;
         public static final int hello_world=0x7f050002;
         public static final int helperInGame=0x7f05001b;
-        /**  In-game screen 
+        /**  In-game screen - Czar 
          */
         public static final int helperInGameCzar=0x7f05001c;
         public static final int how_to_play=0x7f050004;
@@ -97,8 +102,8 @@ public final class R {
         public static final int left=0x7f050018;
         public static final int logo=0x7f050005;
         public static final int max_players=0x7f05000a;
-        public static final int max_players_toast_toast=0x7f050014;
-        public static final int min_players_toast_toast=0x7f050013;
+        public static final int max_players_toast=0x7f050014;
+        public static final int min_players_toast=0x7f050013;
         public static final int next=0x7f05000c;
         public static final int players=0x7f050006;
         /**  Start New Game screen 
@@ -108,6 +113,7 @@ public final class R {
         /**  New Round screen 
          */
         public static final int round=0x7f050015;
+        public static final int round_winner=0x7f05001e;
         public static final int skip=0x7f050016;
         public static final int start_game=0x7f05000b;
         public static final int start_new_game=0x7f050003;

@@ -13,6 +13,10 @@ public class PlayerTurnActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
+		// this method is the fist thing to do because
+		// it may change the theme if there's a winner for the game.
+		// remember: changing themes must be the very first thing to do
+		changeThemeIfWinnerGame();
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_player_turn);
@@ -137,10 +141,15 @@ public class PlayerTurnActivity extends Activity {
 	}
 
 	public void lookForWinner() {
+		lookForWinnerRound();
+		lookForWinnerGame();
+	}
+
+	public void lookForWinnerRound() {
 		TextView textViewPlayerTurnMessage = (TextView) findViewById(R.id.textViewPlayerTurnMessage);
 		Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
 
-		if (Globals.isWinner()) {
+		if (Globals.isRoundWinner()) {
 			textViewPlayerTurnMessage.setText(Globals.getWinnerName()
 					+ " won this round!");
 
@@ -152,7 +161,7 @@ public class PlayerTurnActivity extends Activity {
 					finish();
 				}
 			});
-			Globals.setIsWinner(false);
+			Globals.setIsRoundWinner(false);
 
 			for (int i = 0; i < Globals.getNumPlayers(); i++) {
 				Globals.getPlayers().get(Globals.getIndexHumanPlayer())
@@ -163,6 +172,53 @@ public class PlayerTurnActivity extends Activity {
 
 			Globals.setIndexHumanPlayer(0);
 		}
+	}
+
+	public void changeThemeIfWinnerGame() {
+
+		// Look for a game winner and, if found, apply a different theme
+		for (int i = 0; i < Globals.getNumPlayers(); i++) {
+			if (Globals.getPlayers().get(i).getScore() == Globals
+					.getPointLimit()) {
+				setTheme(android.R.style.Theme_Holo_Light);
+				Globals.setIsGameWinner(true);
+			}
+
+		}
+
+	}
+
+	public void lookForWinnerGame() {
+
+		// Game winner after changing theme
+		if (Globals.isGameWinner()) {
+			TextView textViewPlayerTurnMessage = (TextView) findViewById(R.id.textViewPlayerTurnMessage);
+			TextView textViewPlayerTurnWinnerMessage = (TextView) findViewById(R.id.textViewPlayerTurnWinnerMessage);
+			Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
+
+			for (int i = 0; i < Globals.getNumPlayers(); i++) {
+				if (Globals.getPlayers().get(i).getScore() == Globals
+						.getPointLimit()) {
+					textViewPlayerTurnMessage.setText("Congratulations "
+							+ Globals.getPlayers().get(i).getName() + "!");
+					textViewPlayerTurnWinnerMessage
+							.setText(R.string.game_winner);
+					Globals.setIsGameWinner(false);
+				}
+
+			}
+
+			buttonContinue.setText("Back to main Screen");
+			buttonContinue.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					Intent intent = new Intent(PlayerTurnActivity.this,
+							MainActivity.class);
+					startActivity(intent);
+					finish();
+				}
+			});
+		}
+
 	}
 }
 // move to next player now functions as follows:

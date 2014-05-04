@@ -22,8 +22,8 @@
     <string name="blank_point_limit_toast">Point limit cannot be left blank!</string>
     <string name="blank_player_limit_toast">Player limit cannot be left blank!</string>
     <string name="blank_player_name_toast">All players must have a name!</string>
-    <string name="min_players_toast_toast">You need at least 3 players.</string>
-    <string name="max_players_toast_toast">There\'s too many players! The limit is 10.</string>
+    <string name="min_players_toast">You need at least 3 players.</string>
+    <string name="max_players_toast">There\'s too many players! The limit is 10.</string>
 
     <!-- New Round screen -->
     <string name="round">Round</string>
@@ -36,8 +36,12 @@
     <string name="submit">Submit</string>
     <string name="helperInGame">Tap arrows to scroll through your cards. Tap a card to select it to play.</string>
 
-    <!-- In-game screen -->
+    <!-- In-game screen - Czar -->
     <string name="helperInGameCzar">Tap arrows to scroll through cards. Tap a card to choose it as the winner.</string>
+    
+    <!-- Player Turn -->
+    <string name="game_winner">You won the game!</string>
+    <string name="round_winner">won this round!</string>
     
     <color name="white">#FFFFFF</color>
     <color name="whiteT">#99FFFFFF</color>

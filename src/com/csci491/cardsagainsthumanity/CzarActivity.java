@@ -116,7 +116,7 @@ public class CzarActivity extends Activity {
 			Globals.setChangeBlackCard(true);
 			
 			// Changes the player
-			Globals.setIsWinner(true);
+			Globals.setIsRoundWinner(true);
 			
 			// Redirect to PlayerTurnActivity, now with a message for the winner
 			// Later in that class player will be redirected to NewRoundActivity

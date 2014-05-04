@@ -153,7 +153,9 @@ public class InGameActivity extends Activity {
 					Globals.getPlayers().get(Globals.getIndexHumanPlayer())
 							.playWhiteCard(Globals.getIndexWhiteCard()));
 
-			// Redirect to Player Turn screen
+			Globals.setIndexWhiteCard(0);
+			
+			// Redirect to Player Turn screen			
 			Intent intent = new Intent(InGameActivity.this,
 					PlayerTurnActivity.class);
 			startActivity(intent);

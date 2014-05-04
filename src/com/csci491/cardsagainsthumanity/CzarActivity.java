@@ -118,12 +118,15 @@ public class CzarActivity extends Activity {
 			// Changes the player
 			Globals.setIsRoundWinner(true);
 			
+			Globals.setIndexWhiteCard(0);
+			
 			// Redirect to PlayerTurnActivity, now with a message for the winner
 			// Later in that class player will be redirected to NewRoundActivity
 			Intent intent = new Intent(CzarActivity.this,
 					PlayerTurnActivity.class);
 			startActivity(intent);
 			finish();
+			
 		}
 	};
 }

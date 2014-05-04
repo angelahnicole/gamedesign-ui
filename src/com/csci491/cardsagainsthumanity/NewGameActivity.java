@@ -38,21 +38,21 @@ public class NewGameActivity extends Activity {
 				// verify integrity of data
 				if (editTextPointLimit.getText().toString().length() == 0) {
 					Toast.makeText(getBaseContext(),
-							"Point limit cannot be left blank!",
+							R.string.blank_point_limit_toast,
 							Toast.LENGTH_SHORT).show();
 				} else if (editTextPlayers.getText().toString().length() == 0) {
 					Toast.makeText(getBaseContext(),
-							"Player limit cannot be left blank!",
+							R.string.blank_player_limit_toast,
 							Toast.LENGTH_SHORT).show();
 				} else if (Integer.parseInt(editTextPlayers.getText()
 						.toString()) < 3) {
 					Toast.makeText(getBaseContext(),
-							"You need at least 3 players.", Toast.LENGTH_SHORT)
+							R.string.min_players_toast_toast, Toast.LENGTH_SHORT)
 							.show();
 				} else if (Integer.parseInt(editTextPlayers.getText()
 						.toString()) > 10) {
 					Toast.makeText(getBaseContext(),
-							"There's too many players! The limit is 10.",
+							R.string.max_players_toast_toast,
 							Toast.LENGTH_SHORT).show();
 				} else {
 					// Reset everything, to make sure there is nothing from a

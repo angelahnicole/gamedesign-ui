@@ -19,6 +19,11 @@
     <string name="cancel">Cancel</string>
     <string name="start_new_game_point_limit_description">The game is over once a player reaches this score. Tap the button to change the point limit.</string>
     <string name="start_new_game_max_players_description">How many players will be playing (include all players).</string>
+    <string name="blank_point_limit_toast">Point limit cannot be left blank!</string>
+    <string name="blank_player_limit_toast">Player limit cannot be left blank!</string>
+    <string name="blank_player_name_toast">All players must have a name!</string>
+    <string name="min_players_toast_toast">You need at least 3 players.</string>
+    <string name="max_players_toast_toast">There\'s too many players! The limit is 10.</string>
 
     <!-- New Round screen -->
     <string name="round">Round</string>

@@ -10,7 +10,7 @@ public class Globals extends Application {
 
 	private final static String[] names = {"Collen", "Catarina", "Haydee", "Russell", "Prince", "Tarra", "Cara", "Christopher", "Don", "Larae", "Hye", "Sharee", "Ellen", "Pearline", "Yun", "Marna", "Rosia", "Brittanie", "Terrence", "Tamara", "Dennise", "Houston", "Korey", "Mollie", "Sherron", "Gerard", "Clare", "Jason", "Jasmin", "Karlene", "Irvin", "Wilber", "Mignon", "Willis", "Shela", "Bobby", "Susana", "Kristel", "Harriett", "Katrice", "Elfrieda", "Yvonne", "Krystyna", "Tyrone", "Randa", "Ying", "Annemarie", "Zoila", "Adalberto", "Monika", "Halley", "Thora", "Melodi", "Zetta", "Nicola", "Jan", "Alethea", "Hoa", "Theo", "Annie", "Dean", "Kaitlyn", "Stephani", "Hilton", "Valery", "Elke", "Kimber", "Muoi", "Effie", "Daphine", "Olive", "Carolyne", "Ashlea", "Casandra", "May", "Marvin", "Pansy", "Viola", "Ai", "Cecily", "Leone", "Jeff", "Karolyn", "Delcie", "Linsey", "Shawnee", "Tiffaney", "Coleman", "Dusty", "Len", "Collin", "Paula", "Carmella", "Trina", "Jolynn", "Cedric", "Lashandra", "Kittie", "Temeka", "Verdell"};
 	private final static Random myRand = new Random();
-	private final static int ROUND = 1;
+	private final static int ROUND = 0;
 	private final static int HANDSIZE = 7;
 	private static ArrayList<BlackCard> blackCards = new ArrayList<BlackCard>();
 	private static ArrayList<WhiteCard> whiteCards = new ArrayList<WhiteCard>();

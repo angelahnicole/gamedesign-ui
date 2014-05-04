@@ -147,29 +147,27 @@ public class PlayerTurnActivity extends Activity {
 
 	public void lookForWinnerRound() {
 		TextView textViewPlayerTurnMessage = (TextView) findViewById(R.id.textViewPlayerTurnMessage);
-		Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
 
 		if (Globals.isRoundWinner()) {
 			textViewPlayerTurnMessage.setText(Globals.getWinnerName()
 					+ " won this round!");
-
-			buttonContinue.setOnClickListener(new OnClickListener() {
-				public void onClick(View v) {
-					Intent intent = new Intent(PlayerTurnActivity.this,
-							NewRoundActivity.class);
-					startActivity(intent);
-					finish();
-				}
-			});
-			Globals.setIsRoundWinner(false);
 
 			for (int i = 0; i < Globals.getNumPlayers(); i++) {
 				Globals.getPlayers().get(Globals.getIndexHumanPlayer())
 						.setPlayedAlready(false);
 			}
 
-			Globals.getPlays().clear();
-
+			Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
+			buttonContinue.setText("Review all cards played this round");
+			buttonContinue.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					Intent intent = new Intent(PlayerTurnActivity.this,
+							CzarActivity.class);
+					startActivity(intent);
+					finish();
+				}
+			});
+			
 			Globals.setIndexHumanPlayer(0);
 		}
 	}
@@ -194,7 +192,6 @@ public class PlayerTurnActivity extends Activity {
 		if (Globals.isGameWinner()) {
 			TextView textViewPlayerTurnMessage = (TextView) findViewById(R.id.textViewPlayerTurnMessage);
 			TextView textViewPlayerTurnWinnerMessage = (TextView) findViewById(R.id.textViewPlayerTurnWinnerMessage);
-			Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
 
 			for (int i = 0; i < Globals.getNumPlayers(); i++) {
 				if (Globals.getPlayers().get(i).getScore() == Globals
@@ -203,20 +200,21 @@ public class PlayerTurnActivity extends Activity {
 							+ Globals.getPlayers().get(i).getName() + "!");
 					textViewPlayerTurnWinnerMessage
 							.setText(R.string.game_winner);
-					Globals.setIsGameWinner(false);
 				}
 
 			}
-
-			buttonContinue.setText("Back to main Screen");
+			
+			Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
+			buttonContinue.setText("Review all cards played this round");
 			buttonContinue.setOnClickListener(new OnClickListener() {
 				public void onClick(View v) {
 					Intent intent = new Intent(PlayerTurnActivity.this,
-							MainActivity.class);
+							CzarActivity.class);
 					startActivity(intent);
 					finish();
 				}
 			});
+
 		}
 
 	}

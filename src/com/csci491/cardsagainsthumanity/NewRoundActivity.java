@@ -19,17 +19,26 @@ public class NewRoundActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_start_new_round);
 
-		//display round #
+		// Assign Round #
+		Globals.setRoundNum(Globals.getRoundNum() + 1);
+
+		// display round #
 		TextView round = (TextView) findViewById(R.id.lblRoundNum);
 		round.setText(" " + Globals.getRoundNum());
 
-		Globals.setRoundNum(Globals.getRoundNum() + 1);
-
-		//display player name
+		// display player name
 		TextView textViewPlayerName = (TextView) findViewById(R.id.textViewPlayerName);
-		textViewPlayerName.setText(" " + Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getName());
+		textViewPlayerName.setText(" "
+				+ Globals.getPlayers().get(Globals.getIndexHumanPlayer())
+						.getName());
+
+		// Clean plays (from previous rounds)
+		Globals.getPlays().clear();
 		
-		
+		// Clean winners from precious rounds
+		Globals.setIsRoundWinner(false);
+		Globals.setIsGameWinner(false);
+
 		System.out.println("Next Round Number: " + Globals.getRoundNum());
 
 		Button buttonSkip = (Button) findViewById(R.id.buttonSkip);

@@ -38,6 +38,7 @@
 
     <!-- In-game screen - Czar -->
     <string name="helperInGameCzar">Tap arrows to scroll through cards. Tap a card to choose it as the winner.</string>
+     <string name="helperInGameReview">These are the cards submited by all players this round. Tap arrows to scroll through cards.</string>
     
     <!-- Player Turn -->
     <string name="game_winner">You won the game!</string>

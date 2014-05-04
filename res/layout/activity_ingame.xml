@@ -59,10 +59,23 @@
             <Button
                 android:id="@+id/buttonSubmit"
                 android:layout_width="200dip"
-                android:layout_height="wrap_content"
+                android:layout_height="50dip"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:background="@color/green"
+                android:paddingLeft="15dip"
+                android:paddingRight="15dip"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/textViewOwner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="55dp"
                 android:paddingLeft="15dip"
                 android:paddingRight="15dip"
                 android:text="@string/submit"

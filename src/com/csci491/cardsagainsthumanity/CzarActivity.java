@@ -28,9 +28,9 @@ public class CzarActivity extends Activity {
 			submit.setText("Continue");
 
 			// set owner name
-			TextView textViewOwner = (TextView) findViewById(R.id.textViewOwner);
-			textViewOwner.setVisibility(0);
-			textViewOwner.setText(Globals.getPlays()
+			TextView textViewAditionalInfo = (TextView) findViewById(R.id.textViewAditionalInfo);
+			textViewAditionalInfo.setVisibility(0);
+			textViewAditionalInfo.setText(Globals.getPlays()
 					.get(Globals.getIndexWhiteCard()).getOwner().getName());
 
 			// display helper
@@ -101,8 +101,8 @@ public class CzarActivity extends Activity {
 				submit.setVisibility(View.GONE);
 
 			else {
-				TextView textViewOwner = (TextView) findViewById(R.id.textViewOwner);
-				textViewOwner.setText(Globals.getPlays()
+				TextView textViewAditionalInfo = (TextView) findViewById(R.id.textViewAditionalInfo);
+				textViewAditionalInfo.setText(Globals.getPlays()
 						.get(Globals.getIndexWhiteCard()).getOwner().getName());
 			}
 		}
@@ -126,8 +126,8 @@ public class CzarActivity extends Activity {
 				submit.setVisibility(View.GONE);
 
 			else {
-				TextView textViewOwner = (TextView) findViewById(R.id.textViewOwner);
-				textViewOwner.setText(Globals.getPlays()
+				TextView textViewAditionalInfo = (TextView) findViewById(R.id.textViewAditionalInfo);
+				textViewAditionalInfo.setText(Globals.getPlays()
 						.get(Globals.getIndexWhiteCard()).getOwner().getName());
 			}
 		}

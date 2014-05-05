@@ -51,6 +51,11 @@ public class InGameActivity extends Activity {
 		Button buttonLeft = (Button) findViewById(R.id.buttonLeft);
 		Button buttonRight = (Button) findViewById(R.id.buttonRight);
 
+		// display card #
+		TextView textViewAditionalInfo = (TextView) findViewById(R.id.textViewAditionalInfo);
+		textViewAditionalInfo.setVisibility(0);
+		textViewAditionalInfo.setText(Globals.getIndexWhiteCard() +1 +" / 7");
+
 		// Set listeners on navigation
 		buttonLeft.setOnClickListener(leftListener);
 		buttonRight.setOnClickListener(rightListener);
@@ -70,15 +75,18 @@ public class InGameActivity extends Activity {
 
 			// verify if it's possible to go back
 			if (Globals.getIndexWhiteCard() > 0) {
-				//yes, so go back
+				// yes, so go back
 				Globals.setIndexWhiteCard(Globals.getIndexWhiteCard() - 1);
 			} else {
-				//no, so go to last card
+				// no, so go to last card
 				Globals.setIndexWhiteCard(6);
 			}
 			card.setText(Globals.getPlayers()
 					.get(Globals.getIndexHumanPlayer()).getMyHand()
 					.get(Globals.getIndexWhiteCard()).getContent());
+			
+			TextView textViewAditionalInfo = (TextView) findViewById(R.id.textViewAditionalInfo);
+			textViewAditionalInfo.setText(Globals.getIndexWhiteCard() +1 +" / 7");
 
 		}
 	};
@@ -100,6 +108,9 @@ public class InGameActivity extends Activity {
 			card.setText(Globals.getPlayers()
 					.get(Globals.getIndexHumanPlayer()).getMyHand()
 					.get(Globals.getIndexWhiteCard()).getContent());
+			
+			TextView textViewAditionalInfo = (TextView) findViewById(R.id.textViewAditionalInfo);
+			textViewAditionalInfo.setText(Globals.getIndexWhiteCard() +1 +" / 7");
 		}
 	};
 
@@ -154,8 +165,8 @@ public class InGameActivity extends Activity {
 							.playWhiteCard(Globals.getIndexWhiteCard()));
 
 			Globals.setIndexWhiteCard(0);
-			
-			// Redirect to Player Turn screen			
+
+			// Redirect to Player Turn screen
 			Intent intent = new Intent(InGameActivity.this,
 					PlayerTurnActivity.class);
 			startActivity(intent);

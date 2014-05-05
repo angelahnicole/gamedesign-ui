@@ -7,8 +7,8 @@ import android.app.Application;
 import android.content.Context;
 
 public class Globals extends Application {
-
-	private final static String[] names = {"Collen", "Catarina", "Haydee", "Russell", "Prince", "Tarra", "Cara", "Christopher", "Don", "Larae", "Hye", "Sharee", "Ellen", "Pearline", "Yun", "Marna", "Rosia", "Brittanie", "Terrence", "Tamara", "Dennise", "Houston", "Korey", "Mollie", "Sherron", "Gerard", "Clare", "Jason", "Jasmin", "Karlene", "Irvin", "Wilber", "Mignon", "Willis", "Shela", "Bobby", "Susana", "Kristel", "Harriett", "Katrice", "Elfrieda", "Yvonne", "Krystyna", "Tyrone", "Randa", "Ying", "Annemarie", "Zoila", "Adalberto", "Monika", "Halley", "Thora", "Melodi", "Zetta", "Nicola", "Jan", "Alethea", "Hoa", "Theo", "Annie", "Dean", "Kaitlyn", "Stephani", "Hilton", "Valery", "Elke", "Kimber", "Muoi", "Effie", "Daphine", "Olive", "Carolyne", "Ashlea", "Casandra", "May", "Marvin", "Pansy", "Viola", "Ai", "Cecily", "Leone", "Jeff", "Karolyn", "Delcie", "Linsey", "Shawnee", "Tiffaney", "Coleman", "Dusty", "Len", "Collin", "Paula", "Carmella", "Trina", "Jolynn", "Cedric", "Lashandra", "Kittie", "Temeka", "Verdell"};
+	
+	private final static String[] names = { "Collen", "Catarina", "Haydee", "Russell", "Prince", "Tarra", "Cara", "Christopher", "Don", "Larae", "Hye", "Sharee", "Ellen", "Pearline", "Yun", "Marna", "Rosia", "Brittanie", "Terrence", "Tamara", "Dennise", "Houston", "Korey", "Mollie", "Sherron", "Gerard", "Clare", "Jason", "Jasmin", "Karlene", "Irvin", "Wilber", "Mignon", "Willis", "Shela", "Bobby", "Susana", "Kristel", "Harriett", "Katrice", "Elfrieda", "Yvonne", "Krystyna", "Tyrone", "Randa", "Ying", "Annemarie", "Zoila", "Adalberto", "Monika", "Halley", "Thora", "Melodi", "Zetta", "Nicola", "Jan", "Alethea", "Hoa", "Theo", "Annie", "Dean", "Kaitlyn", "Stephani", "Hilton", "Valery", "Elke", "Kimber", "Muoi", "Effie", "Daphine", "Olive", "Carolyne", "Ashlea", "Casandra", "May", "Marvin", "Pansy", "Viola", "Ai", "Cecily", "Leone", "Jeff", "Karolyn", "Delcie", "Linsey", "Shawnee", "Tiffaney", "Coleman", "Dusty", "Len", "Collin", "Paula", "Carmella", "Trina", "Jolynn", "Cedric", "Lashandra", "Kittie", "Temeka", "Verdell" };
 	private final static Random myRand = new Random();
 	private final static int ROUND = 0;
 	private final static int HANDSIZE = 7;
@@ -28,7 +28,7 @@ public class Globals extends Application {
 	private static boolean isRoundWinner;
 	private static boolean isGameWinner;
 	private static String winnerName;
-
+	
 	private Globals() {
 		resetGlobals();
 	}
@@ -41,7 +41,7 @@ public class Globals extends Application {
 		Globals.players = new ArrayList<Player>();
 		Globals.cardMaker = new FileIO();
 		Globals.changeBlackCard = false;
-		Globals.indexHumanPlayer=0;
+		Globals.indexHumanPlayer = 0;
 		Globals.getPlays().clear();
 	}
 	
@@ -52,59 +52,59 @@ public class Globals extends Application {
 	static FileIO getCardMaker() {
 		return cardMaker;
 	}
-
+	
 	static void setCardMaker(FileIO cardMaker) {
 		Globals.cardMaker = cardMaker;
 	}
-
+	
 	static void setCardMakerContext(Context c) {
 		Globals.cardMaker.setContext(c);
 	}
-
+	
 	static int getHandSize() {
 		return HANDSIZE;
 	}
-
+	
 	static int getRoundNum() {
 		return roundNum;
 	}
-
+	
 	static void setRoundNum(int roundNum) {
 		Globals.roundNum = roundNum;
 	}
-
+	
 	static int getNumPlayers() {
 		return numPlayers;
 	}
-
+	
 	static void setNumPlayers(int numPlayers) {
 		Globals.numPlayers = numPlayers;
 	}
-
+	
 	static int getPointLimit() {
 		return pointLimit;
 	}
-
+	
 	static void setPointLimit(int pointLimit) {
 		Globals.pointLimit = pointLimit;
 	}
-
+	
 	static String getUserName() {
 		return userName;
 	}
-
+	
 	static void setUserName(String userName) {
 		Globals.userName = userName;
 	}
-
+	
 	static ArrayList<Player> getPlayers() {
 		return players;
 	}
-
+	
 	static void setPlayers(ArrayList<Player> players) {
 		Globals.players = players;
 	}
-
+	
 	static ArrayList<WhiteCard> getPlays() {
 		return plays;
 	}
@@ -116,23 +116,23 @@ public class Globals extends Application {
 	static ArrayList<BlackCard> getBlackCards() {
 		return blackCards;
 	}
-
+	
 	static void setBlackCards(ArrayList<BlackCard> blackCards) {
 		Globals.blackCards = blackCards;
 	}
-
+	
 	static ArrayList<WhiteCard> getWhiteCards() {
 		return whiteCards;
 	}
-
+	
 	static void setWhiteCards(ArrayList<WhiteCard> whiteCards) {
 		Globals.whiteCards = whiteCards;
 	}
-
+	
 	static int getIndexWhiteCard() {
 		return indexWhiteCard;
 	}
-
+	
 	static void setIndexWhiteCard(int indexWhiteCard) {
 		Globals.indexWhiteCard = indexWhiteCard;
 	}
@@ -144,11 +144,11 @@ public class Globals extends Application {
 	static void setIndexHumanPlayer(int indexHumanPlayer) {
 		Globals.indexHumanPlayer = indexHumanPlayer;
 	}
-
+	
 	public static boolean changeBlackCard() {
 		return changeBlackCard;
 	}
-
+	
 	public static void setChangeBlackCard(boolean changeBlackCard) {
 		Globals.changeBlackCard = changeBlackCard;
 	}
@@ -156,7 +156,7 @@ public class Globals extends Application {
 	public static boolean isRoundWinner() {
 		return isRoundWinner;
 	}
-
+	
 	public static void setIsRoundWinner(boolean isRoundWinner) {
 		Globals.isRoundWinner = isRoundWinner;
 	}
@@ -164,26 +164,25 @@ public class Globals extends Application {
 	public static boolean isGameWinner() {
 		return isGameWinner;
 	}
-
+	
 	public static void setIsGameWinner(boolean isGameWinner) {
 		Globals.isGameWinner = isGameWinner;
 	}
-
+	
 	public static String getWinnerName() {
 		return winnerName;
 	}
-
+	
 	public static void setWinnerName(String winnerName) {
 		Globals.winnerName = winnerName;
 	}
-
+	
 	public static ArrayList<Player> getORIGINALplayers() {
 		return ORIGINALplayers;
 	}
-
+	
 	public static void setORIGINALplayers(ArrayList<Player> oRIGINALplayers) {
 		ORIGINALplayers = oRIGINALplayers;
 	}
-
-
+	
 }

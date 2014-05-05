@@ -75,7 +75,7 @@ public class InGameActivity extends Activity {
 				Globals.setIndexWhiteCard(Globals.getIndexWhiteCard() - 1);
 			} else {
 				// no, so go to last card
-				Globals.setIndexWhiteCard(6);
+				Globals.setIndexWhiteCard(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().size() - 1);
 			}
 			card.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()).getContent());
 			

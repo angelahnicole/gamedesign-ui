@@ -127,14 +127,6 @@ public class InGameActivity extends Activity {
 			// stores who submitted this card in the property "owner"
 			Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()).setOwner(Globals.getPlayers().get(Globals.getIndexHumanPlayer()));
 			
-			/*
-			 * //Add current white card (actual card in had) to the list of cards played this round (plays) Globals.getPlays().add(Globals.getPlayers ().get(Globals.getIndexHumanPlayer ()).getMyHand().get(Globals.getIndexWhiteCard()));
-			 * 
-			 * //Remove the card just played from player's hand Globals.getPlayers ().get(Globals.getIndexHumanPlayer()).getMyHand().remove(0);
-			 * 
-			 * //Add a new card in order to substitute the one that was just removed //NOT SURE IF WE HAVE TO IMPLEMENT THIS!
-			 */
-			
 			// Calling this method will remove the card from the players hand
 			// and make the player draw a new card from the white pile
 			// additionally, if the white pile is empty, the player will

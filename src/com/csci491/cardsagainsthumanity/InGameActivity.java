@@ -92,7 +92,7 @@ public class InGameActivity extends Activity {
 			submit.setVisibility(View.GONE);
 			
 			// verify if it's possible to go further
-			if (Globals.getIndexWhiteCard() < 6) {
+			if (Globals.getIndexWhiteCard() < Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().size() - 1) {
 				// yes, so go further
 				Globals.setIndexWhiteCard(Globals.getIndexWhiteCard() + 1);
 			} else {
@@ -102,7 +102,7 @@ public class InGameActivity extends Activity {
 			card.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()).getContent());
 			
 			TextView textViewAditionalInfo = (TextView) findViewById(R.id.textViewAditionalInfo);
-			textViewAditionalInfo.setText(Globals.getIndexWhiteCard() + 1 + " / 7");
+			textViewAditionalInfo.setText(Globals.getIndexWhiteCard() + 1 + " / " + Globals.getHandSize());
 		}
 	};
 	

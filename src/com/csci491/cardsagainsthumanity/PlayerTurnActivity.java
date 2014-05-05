@@ -33,7 +33,7 @@ public class PlayerTurnActivity extends Activity {
 			// if player was Czar, now set as normal player
 			Globals.getPlayers().get(Globals.getIndexHumanPlayer()).setCzar(false);
 			// choose the new Czar
-			Globals.getPlayers().get(Globals.getIndexHumanPlayer() - 1 >= 0 ? Globals.getIndexHumanPlayer() - 1 : Globals.getNumPlayers() - 1).setCzar(true);
+			Globals.getPlayers().get(Globals.getIndexHumanPlayer() - 1 >= 0 ? Globals.getIndexHumanPlayer() - 1 : Globals.getPlayers().size() - 1).setCzar(true);
 		}
 		
 		// Is there a Czar skipped?

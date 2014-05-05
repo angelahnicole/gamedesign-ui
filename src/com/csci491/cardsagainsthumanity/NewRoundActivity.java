@@ -77,8 +77,7 @@ public class NewRoundActivity extends Activity {
 		textView.setTextAppearance(getApplicationContext(),
 				android.R.style.TextAppearance_Medium);
 		if (showName) {
-			// textView.setText("Player " + i);
-			textView.setText(" " + Globals.getPlayers().get(i - 1).getName());
+			textView.setText(" " + Globals.getPlayers().get(i - 1).getName() + " " + (Globals.getPlayers().get(i - 1).isCzar() ? "(Czar)" : ""));
 
 		} else {
 			textView.setText(Globals.getPlayers().get(i).getScore()

@@ -80,7 +80,7 @@ public class InGameActivity extends Activity {
 			card.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()).getContent());
 			
 			TextView textViewAditionalInfo = (TextView) findViewById(R.id.textViewAditionalInfo);
-			textViewAditionalInfo.setText(Globals.getIndexWhiteCard() + 1 + " / 7");
+			textViewAditionalInfo.setText(Globals.getIndexWhiteCard() + 1 + " / " + Globals.getHandSize());
 			
 		}
 	};

@@ -73,6 +73,11 @@ public class CzarActivity extends Activity {
 		// Set listeners on navigation
 		buttonLeft.setOnClickListener(leftListener);
 		buttonRight.setOnClickListener(rightListener);
+		
+		for (int i = 0; i < Globals.getPlays().size(); i++) {
+			System.out.println(Globals.getPlays().get(i).getOwner().getName() + " owns " + Globals.getPlays().get(i).getContent());
+		}
+		
 	}
 	
 	// ========================================================================
@@ -156,8 +161,10 @@ public class CzarActivity extends Activity {
 				// add point to the player who chose the card
 				Player player = Globals.getPlays().get(Globals.getIndexWhiteCard()).getOwner();
 				int newScore = player.getScore() + 1;
-				Globals.getPlays().get(Globals.getIndexWhiteCard()).getOwner().setScore(newScore);				
+				Globals.getPlays().get(Globals.getIndexWhiteCard()).getOwner().setScore(newScore);
 				Globals.setWinnerName(player.getName());
+				
+				System.out.println(player.getName());
 				
 				// allows to set a new black card
 				Globals.setChangeBlackCard(true);

@@ -20,8 +20,18 @@ public class InGameActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_ingame);
 		
-		System.out.println("InGameActivity: WhiteCards: " + Globals.getWhiteCards().size());
-		System.out.println("InGameActivity: BlackCards: " + Globals.getBlackCards().size());
+//		System.out.println("InGameActivity: WhiteCards: " + Globals.getWhiteCards().size());
+//		System.out.println("InGameActivity: BlackCards: " + Globals.getBlackCards().size());
+		
+//		for (int i = 0; i < Globals.getNumPlayers(); i++) {
+//			for (int j = 0 ; j < Globals.getPlayers().get(i).getMyHand().size(); j++) {
+//				System.out.println(Globals.getPlayers().get(i).getMyHand().get(j).getOwner())
+//			}
+//		}
+		
+		for (int i = 0; i < Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().size(); i++) {
+			System.out.println(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(i).getOwner().getName() + " owns " + Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(i).getContent());
+		}
 		
 		// If this screen is displayed again for another player but in the same
 		// round the question
@@ -120,6 +130,8 @@ public class InGameActivity extends Activity {
 			} else {
 				buttonSubmit.setVisibility(View.GONE);
 			}
+			
+			System.out.println(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(Globals.getIndexWhiteCard()).getContent());
 			
 			// Call the listener of the button
 			buttonSubmit.setOnClickListener(submitListener);

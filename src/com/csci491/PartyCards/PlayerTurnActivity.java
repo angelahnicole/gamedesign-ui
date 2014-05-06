@@ -66,34 +66,35 @@ public class PlayerTurnActivity extends Activity {
 				if (!Globals.getPlayers().get(i).isPlayedAlready()) {
 				
 					// is Czar?
-					if (!Globals.getPlayers().get(Globals.getIndexHumanPlayer()).isCzar()) {
+					if (!Globals.getPlayers().get(i).isCzar()) {
 						
 						// no, so play!
+						Globals.setIndexHumanPlayer(i);
 						playNormalPlayer();
-
+						
 					} else {
 						
 						// yes it's Czar
-						if (Globals.getIndexHumanPlayer() == Globals.getNumPlayers() - 1) {
+						if (i == Globals.getNumPlayers() - 1) {
 							
 							// it's the last one to play, so play!
+							Globals.setIndexHumanPlayer(i);
 							playCzarPlayer();
 						} else {
 							
 							// it's not the last to play, so store his index to play later
 							indexCzarSkipped = Globals.getIndexHumanPlayer();
-
+							
 							// skip him for now!
-							changePlayer();
+							//changePlayer();
 
 						}
 					}
 				}
 			}
 
-			if (indexCzarSkipped != -1) {
+			if (indexCzarSkipped != -1 && !Globals.getPlayers().get(indexCzarSkipped).isPlayedAlready()) {
 				Globals.setIndexHumanPlayer(indexCzarSkipped);
-
 			}
 		}
 	}

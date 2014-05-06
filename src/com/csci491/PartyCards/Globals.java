@@ -15,7 +15,6 @@ public class Globals extends Application {
 	private static ArrayList<BlackCard> blackCards = new ArrayList<BlackCard>();
 	private static ArrayList<WhiteCard> whiteCards = new ArrayList<WhiteCard>();
 	private static ArrayList<Player> players = new ArrayList<Player>();
-	private static ArrayList<Player> ORIGINALplayers = new ArrayList<Player>();
 	private static ArrayList<WhiteCard> plays = new ArrayList<WhiteCard>();
 	private static String userName = new String();
 	private static int pointLimit;
@@ -176,14 +175,6 @@ public class Globals extends Application {
 	
 	public static void setWinnerName(String winnerName) {
 		Globals.winnerName = winnerName;
-	}
-	
-	public static ArrayList<Player> getORIGINALplayers() {
-		return ORIGINALplayers;
-	}
-	
-	public static void setORIGINALplayers(ArrayList<Player> oRIGINALplayers) {
-		ORIGINALplayers = oRIGINALplayers;
 	}
 	
 }

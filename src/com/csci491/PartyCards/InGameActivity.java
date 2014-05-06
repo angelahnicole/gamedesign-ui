@@ -25,12 +25,6 @@ public class InGameActivity extends Activity {
 //		System.out.println("InGameActivity: WhiteCards: " + Globals.getWhiteCards().size());
 //		System.out.println("InGameActivity: BlackCards: " + Globals.getBlackCards().size());
 		
-//		for (int i = 0; i < Globals.getNumPlayers(); i++) {
-//			for (int j = 0 ; j < Globals.getPlayers().get(i).getMyHand().size(); j++) {
-//				System.out.println(Globals.getPlayers().get(i).getMyHand().get(j).getOwner())
-//			}
-//		}
-		
 		for (int i = 0; i < Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().size(); i++) {
 			System.out.println(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(i).getOwner().getName() + " owns " + Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getMyHand().get(i).getContent());
 		}

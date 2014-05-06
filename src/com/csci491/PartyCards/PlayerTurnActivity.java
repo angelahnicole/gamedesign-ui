@@ -47,7 +47,7 @@ public class PlayerTurnActivity extends Activity {
 	// ========================================================================
 
 	public void nextPlayer() {
-
+		
 		// Is there a Czar skipped?
 		if (Globals.getIndexHumanPlayer() == indexCzarSkipped) {
 			
@@ -111,7 +111,7 @@ public class PlayerTurnActivity extends Activity {
 
 		textViewPlayerTurnMessage.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getName() + " You're the card Czar!");
 
-		Globals.getPlayers().get(Globals.getIndexHumanPlayer()).setPlayedAlready(true);
+//		Globals.getPlayers().get(Globals.getIndexHumanPlayer()).setPlayedAlready(true);
 
 		buttonContinue.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {

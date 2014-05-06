@@ -76,7 +76,6 @@ public class PlayerTurnActivity extends Activity {
 			
 			if (indexCzarSkipped != -1) {
 				Globals.setIndexHumanPlayer(indexCzarSkipped);
-				
 			}
 			
 			for (int i = 0; i < Globals.getNumPlayers(); i++) {

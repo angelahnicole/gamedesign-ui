@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class PlayerTurnActivity extends Activity {
-	public static int indexCzarSkipped = -1;
+	private static int indexCzarSkipped = -1;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,9 @@ public class PlayerTurnActivity extends Activity {
 
 	}
 
+	// ========================================================================
+	// ALMOST SURE THE PROBLEM WITH CZAR IS IN THIS METHOD!
+	// ========================================================================
 	public void changePlayer() {
 
 		if (Globals.getPlayers().get(Globals.getIndexHumanPlayer()).isCzar()) {
@@ -61,6 +64,7 @@ public class PlayerTurnActivity extends Activity {
 					if (!Globals.getPlayers().get(Globals.getIndexHumanPlayer()).isCzar()) {
 						// no, so play!
 						playNormalPlayer();
+
 					} else {
 						// yes it's Czar
 						if (Globals.getIndexHumanPlayer() == Globals.getNumPlayers() - 1) {
@@ -83,10 +87,7 @@ public class PlayerTurnActivity extends Activity {
 
 			if (indexCzarSkipped != -1) {
 				Globals.setIndexHumanPlayer(indexCzarSkipped);
-			}
 
-			for (int i = 0; i < Globals.getNumPlayers(); i++) {
-				Globals.getPlayers().get(Globals.getIndexHumanPlayer()).setPlayedAlready(false);
 			}
 		}
 	}
@@ -98,7 +99,7 @@ public class PlayerTurnActivity extends Activity {
 		textViewPlayerTurnMessage.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getName() + " You're the card Czar!");
 
 		Globals.getPlayers().get(Globals.getIndexHumanPlayer()).setPlayedAlready(true);
-		
+
 		buttonContinue.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				Intent intent = new Intent(PlayerTurnActivity.this, CzarActivity.class);
@@ -125,6 +126,17 @@ public class PlayerTurnActivity extends Activity {
 		});
 	}
 
+	public void changeThemeIfWinnerGame() {
+
+		// Look for a game winner and, if found, apply a different theme
+		for (int i = 0; i < Globals.getNumPlayers(); i++) {
+			if (Globals.getPlayers().get(i).getScore() == Globals.getPointLimit()) {
+				setTheme(android.R.style.Theme_Holo_Light);
+				Globals.setIsGameWinner(true);
+			}
+		}
+	}
+
 	public void lookForWinner() {
 		lookForWinnerRound();
 		lookForWinnerGame();
@@ -136,8 +148,9 @@ public class PlayerTurnActivity extends Activity {
 		if (Globals.isRoundWinner()) {
 			textViewPlayerTurnMessage.setText(Globals.getWinnerName() + " won this round!");
 
+			//reset control for players that already played in a round
 			for (int i = 0; i < Globals.getNumPlayers(); i++) {
-				Globals.getPlayers().get(Globals.getIndexHumanPlayer()).setPlayedAlready(false);
+				Globals.getPlayers().get(i).setPlayedAlready(false);
 			}
 
 			Button buttonContinue = (Button) findViewById(R.id.buttonContinue);
@@ -152,19 +165,6 @@ public class PlayerTurnActivity extends Activity {
 
 			Globals.setIndexHumanPlayer(0);
 		}
-	}
-
-	public void changeThemeIfWinnerGame() {
-
-		// Look for a game winner and, if found, apply a different theme
-		for (int i = 0; i < Globals.getNumPlayers(); i++) {
-			if (Globals.getPlayers().get(i).getScore() == Globals.getPointLimit()) {
-				setTheme(android.R.style.Theme_Holo_Light);
-				Globals.setIsGameWinner(true);
-			}
-
-		}
-
 	}
 
 	public void lookForWinnerGame() {

@@ -78,19 +78,20 @@ public class NewGameActivity extends Activity {
 			if (i == 0) {
 				// First player is always "You"
 				Globals.getPlayers().add(new Player("You", true, false));
+				Globals.getORIGINALplayers().add(new Player("You", true, false));
 			} else if (i == Globals.getNumPlayers() - 1) {
 				// last player is by default Czar
-				// Globals.getPlayers().add(new Player(Globals.generateRandomName(), true, true));
-				Globals.getPlayers().add(new Player("Player " + i, true, true));
+				Globals.getPlayers().add(new Player("Player " + (i + 1), true, true));
+				Globals.getORIGINALplayers().add(new Player("Player " + (i + 1), true, true));
 			} else {
 				// other players
-				// Globals.getPlayers().add(new Player(Globals.generateRandomName(), true, false));
-				Globals.getPlayers().add(new Player("Player " + i, true, false));
+				Globals.getPlayers().add(new Player("Player " + (i + 1), true, false));
+				Globals.getORIGINALplayers().add(new Player("Player " + (i + 1), true, false));
 			}
 		}
 		// make a copy of the players
 		// useful when dealing with Czar
-		Globals.setORIGINALplayers(Globals.getPlayers());
+//		Globals.setORIGINALplayers(Globals.getPlayers());
 		
 		System.out.println("Players successfully created!");
 		

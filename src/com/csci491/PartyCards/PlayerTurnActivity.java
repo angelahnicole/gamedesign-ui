@@ -66,19 +66,17 @@ public class PlayerTurnActivity extends Activity {
 				if (!Globals.getPlayers().get(i).isPlayedAlready()) {
 				
 					// is Czar?
-					if (!Globals.getPlayers().get(i).isCzar()) {
+					if (!Globals.getPlayers().get(Globals.getIndexHumanPlayer()).isCzar()) {
 						
 						// no, so play!
-						Globals.setIndexHumanPlayer(i);
 						playNormalPlayer();
 						
 					} else {
 						
 						// yes it's Czar
-						if (i == Globals.getNumPlayers() - 1) {
+						if (Globals.getIndexHumanPlayer() == Globals.getNumPlayers() - 1) {
 							
 							// it's the last one to play, so play!
-							Globals.setIndexHumanPlayer(i);
 							playCzarPlayer();
 						} else {
 							
@@ -86,7 +84,7 @@ public class PlayerTurnActivity extends Activity {
 							indexCzarSkipped = Globals.getIndexHumanPlayer();
 							
 							// skip him for now!
-							//changePlayer();
+							changePlayer();
 
 						}
 					}
@@ -112,7 +110,7 @@ public class PlayerTurnActivity extends Activity {
 
 		textViewPlayerTurnMessage.setText(Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getName() + " You're the card Czar!");
 
-//		Globals.getPlayers().get(Globals.getIndexHumanPlayer()).setPlayedAlready(true);
+		Globals.getPlayers().get(Globals.getIndexHumanPlayer()).setPlayedAlready(true);
 
 		buttonContinue.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {

@@ -1,4 +1,4 @@
-package com.csci491.cardsagainsthumanity;
+package com.csci491.PartyCards;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/android:Theme.Holo" >
         <activity
-            android:name="com.csci491.cardsagainsthumanity.MainActivity"
+            android:name="com.csci491.PartyCards.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.csci491.cardsagainsthumanity.NewGameActivity"
+            android:name="com.csci491.PartyCards.NewGameActivity"
             android:label="Setting up a new game" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -32,7 +32,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.csci491.cardsagainsthumanity.PlayerConfigActivity"
+            android:name="com.csci491.PartyCards.PlayerConfigActivity"
             android:label="@string/players" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -41,7 +41,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.csci491.cardsagainsthumanity.NewRoundActivity"
+            android:name="com.csci491.PartyCards.NewRoundActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -50,7 +50,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.csci491.cardsagainsthumanity.InGameActivity"
+            android:name="com.csci491.PartyCards.InGameActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -59,7 +59,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.csci491.cardsagainsthumanity.PlayerTurnActivity"
+            android:name="com.csci491.PartyCards.PlayerTurnActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -68,7 +68,7 @@
             </intent-filter>
         </activity>
                 <activity
-            android:name="com.csci491.cardsagainsthumanity.CzarActivity"
+            android:name="com.csci491.PartyCards.CzarActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />

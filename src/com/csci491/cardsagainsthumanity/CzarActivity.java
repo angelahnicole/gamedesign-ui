@@ -156,7 +156,7 @@ public class CzarActivity extends Activity {
 				// add point to the player who chose the card
 				Player player = Globals.getPlays().get(Globals.getIndexWhiteCard()).getOwner();
 				int newScore = player.getScore() + 1;
-				Globals.getPlays().get(Globals.getIndexWhiteCard()).getOwner().setScore(newScore);
+				Globals.getPlays().get(Globals.getIndexWhiteCard()).getOwner().setScore(newScore);				
 				Globals.setWinnerName(player.getName());
 				
 				// allows to set a new black card

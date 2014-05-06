@@ -62,7 +62,6 @@ public class CzarActivity extends Activity {
 		// Call the listener of the button
 		Button buttonSubmit = (Button) findViewById(R.id.buttonSubmit);
 		buttonSubmit.setOnClickListener(submitListener);
-		buttonSubmit.setText("Choose");
 
 		Button buttonCard = (Button) findViewById(R.id.buttonCard);
 		buttonCard.setTextColor(getApplication().getResources().getColor(R.color.white));

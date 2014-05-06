@@ -33,7 +33,7 @@
     <!-- In-game screen -->
     <string name="left">&lt;</string>
     <string name="right">&gt;</string>
-    <string name="submit">Submit</string>
+    <string name="choose">Choose</string>
     <string name="helperInGame">Tap arrows to scroll through your cards. Tap a card to select it to play.</string>
 
     <!-- In-game screen - Czar -->

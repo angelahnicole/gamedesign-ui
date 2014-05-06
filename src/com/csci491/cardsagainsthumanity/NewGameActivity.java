@@ -77,16 +77,16 @@ public class NewGameActivity extends Activity {
 			// then the player is a computer
 			if (i == 0) {
 				// First player is always "You"
-				Globals.getPlayers().add(new Player("You", true, false));
-				Globals.getORIGINALplayers().add(new Player("You", true, false));
+				Globals.getPlayers().add(new Player(i, "You", true, false));
+				Globals.getORIGINALplayers().add(new Player(i, "You", true, false));
 			} else if (i == Globals.getNumPlayers() - 1) {
 				// last player is by default Czar
-				Globals.getPlayers().add(new Player("Player " + (i + 1), true, true));
-				Globals.getORIGINALplayers().add(new Player("Player " + (i + 1), true, true));
+				Globals.getPlayers().add(new Player(i, "Player " + (i + 1), true, true));
+				Globals.getORIGINALplayers().add(new Player(i, "Player " + (i + 1), true, true));
 			} else {
 				// other players
-				Globals.getPlayers().add(new Player("Player " + (i + 1), true, false));
-				Globals.getORIGINALplayers().add(new Player("Player " + (i + 1), true, false));
+				Globals.getPlayers().add(new Player(i, "Player " + (i + 1), true, false));
+				Globals.getORIGINALplayers().add(new Player(i, "Player " + (i + 1), true, false));
 			}
 		}
 		// make a copy of the players

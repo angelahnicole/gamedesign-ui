@@ -12,14 +12,6 @@ public class Player extends Activity {
 	// private ArrayList<BlackCard> blackCards;
 	private ArrayList<WhiteCard> myHand;
 	private int myIndex;
-	public int getMyIndex() {
-		return myIndex;
-	}
-
-	public void setMyIndex(int myIndex) {
-		this.myIndex = myIndex;
-	}
-
 	private String name;
 	private boolean isHuman;
 	private boolean isCzar;
@@ -59,6 +51,14 @@ public class Player extends Activity {
 		myHand = new ArrayList<WhiteCard>();
 	}
 	
+	public int getMyIndex() {
+		return myIndex;
+	}
+
+	public void setMyIndex(int myIndex) {
+		this.myIndex = myIndex;
+	}
+
 	public boolean isHuman() {
 		return isHuman;
 	}

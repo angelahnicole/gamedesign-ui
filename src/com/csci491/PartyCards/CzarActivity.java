@@ -33,10 +33,7 @@ public class CzarActivity extends Activity {
 			submit.setVisibility(0);
 			submit.setText("Continue");
 
-			// set owner name
-			TextView textViewAditionalInfo = (TextView) findViewById(R.id.textViewAditionalInfo);
-			textViewAditionalInfo.setVisibility(0);
-			textViewAditionalInfo.setText(Globals.getPlays().get(Globals.getIndexWhiteCard()).getOwner().getName());
+			setOwnerNameOnCard();
 
 			// display helper
 			TextView textViewHelper = (TextView) findViewById(R.id.textViewHelper);
@@ -65,6 +62,7 @@ public class CzarActivity extends Activity {
 		// Call the listener of the button
 		Button buttonSubmit = (Button) findViewById(R.id.buttonSubmit);
 		buttonSubmit.setOnClickListener(submitListener);
+		buttonSubmit.setText("Choose");
 
 		Button buttonCard = (Button) findViewById(R.id.buttonCard);
 		buttonCard.setTextColor(getApplication().getResources().getColor(R.color.white));
@@ -79,11 +77,20 @@ public class CzarActivity extends Activity {
 		// Set listeners on navigation
 		buttonLeft.setOnClickListener(leftListener);
 		buttonRight.setOnClickListener(rightListener);
-		
+
 		for (int i = 0; i < Globals.getPlays().size(); i++) {
 			System.out.println(Globals.getPlays().get(i).getOwner().getName() + " owns " + Globals.getPlays().get(i).getContent());
 		}
-		
+
+	}
+
+	private void setOwnerNameOnCard() {
+		TextView textViewAditionalInfo = (TextView) findViewById(R.id.textViewAditionalInfo);
+		textViewAditionalInfo.setVisibility(0);
+		Player owner = Globals.getPlays().get(Globals.getIndexWhiteCard()).getOwner();
+		textViewAditionalInfo.setText(owner.getName());
+		if (owner.getName() == Globals.getWinnerName())
+			textViewAditionalInfo.setText(textViewAditionalInfo.getText() + " (winner)");
 	}
 
 	// ========================================================================
@@ -107,8 +114,7 @@ public class CzarActivity extends Activity {
 				submit.setVisibility(View.GONE);
 
 			else {
-				TextView textViewAditionalInfo = (TextView) findViewById(R.id.textViewAditionalInfo);
-				textViewAditionalInfo.setText(Globals.getPlays().get(Globals.getIndexWhiteCard()).getOwner().getName());
+				setOwnerNameOnCard();
 			}
 		}
 	};
@@ -130,8 +136,7 @@ public class CzarActivity extends Activity {
 				submit.setVisibility(View.GONE);
 
 			else {
-				TextView textViewAditionalInfo = (TextView) findViewById(R.id.textViewAditionalInfo);
-				textViewAditionalInfo.setText(Globals.getPlays().get(Globals.getIndexWhiteCard()).getOwner().getName());
+				setOwnerNameOnCard();
 			}
 		}
 	};
@@ -169,7 +174,7 @@ public class CzarActivity extends Activity {
 				int newScore = player.getScore() + 1;
 				Globals.getPlays().get(Globals.getIndexWhiteCard()).getOwner().setScore(newScore);
 				Globals.setWinnerName(player.getName());
-				
+
 				// allows to set a new black card
 				Globals.setChangeBlackCard(true);
 

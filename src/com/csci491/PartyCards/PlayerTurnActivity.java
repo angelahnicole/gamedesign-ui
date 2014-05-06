@@ -15,25 +15,22 @@ public class PlayerTurnActivity extends Activity {
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		// this method is the fist thing to do because
-		// it may change the theme if there's a winner for the game.
+		// this method may change the theme if there's a winner for the game.
 		// remember: changing themes must be the very first thing to do
 		changeThemeIfWinnerGame();
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_player_turn);
 
-		changePlayer();
+		nextCzar();
+
+		nextPlayer();
 
 		lookForWinner();
 
 	}
 
-	// ========================================================================
-	// ALMOST SURE THE PROBLEM WITH CZAR IS IN THIS METHOD!
-	// ========================================================================
-	public void changePlayer() {
-
+	public void nextCzar() {
 		if (Globals.getPlayers().get(Globals.getIndexHumanPlayer()).isCzar()) {
 			Globals.getPlayers().get(Globals.getIndexHumanPlayer()).setCzar(false);
 
@@ -43,42 +40,51 @@ public class PlayerTurnActivity extends Activity {
 			else
 				Globals.getPlayers().get(Globals.getNumPlayers() - 1).setCzar(true);
 		}
+	}
+	
+	// ========================================================================
+	// ALMOST SURE THE PROBLEM WITH CZAR IS IN THIS METHOD! nextPlayer()
+	// ========================================================================
+
+	public void nextPlayer() {
 
 		// Is there a Czar skipped?
 		if (Globals.getIndexHumanPlayer() == indexCzarSkipped) {
+			
 			// Yes, make him play and finalize this round
 			indexCzarSkipped = -1;
 			playCzarPlayer();
 
 		} else {
+			
 			// No, go to next player
-			if (Globals.getIndexHumanPlayer() < Globals.getNumPlayers() - 1)
-				Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() + 1);
-			else
-				Globals.setIndexHumanPlayer(0);
+			changePlayer();
 
 			for (int i = 0; i < Globals.getNumPlayers(); i++) {
+				
 				// this one already played?
 				if (!Globals.getPlayers().get(i).isPlayedAlready()) {
+				
 					// is Czar?
 					if (!Globals.getPlayers().get(Globals.getIndexHumanPlayer()).isCzar()) {
+						
 						// no, so play!
 						playNormalPlayer();
 
 					} else {
+						
 						// yes it's Czar
 						if (Globals.getIndexHumanPlayer() == Globals.getNumPlayers() - 1) {
+							
 							// it's the last one to play, so play!
 							playCzarPlayer();
 						} else {
-							// store his index
+							
+							// it's not the last to play, so store his index to play later
 							indexCzarSkipped = Globals.getIndexHumanPlayer();
 
-							// it's not the last, so skip!
-							if (Globals.getIndexHumanPlayer() < Globals.getNumPlayers() - 1)
-								Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() + 1);
-							else
-								Globals.setIndexHumanPlayer(0);
+							// skip him for now!
+							changePlayer();
 
 						}
 					}
@@ -90,6 +96,13 @@ public class PlayerTurnActivity extends Activity {
 
 			}
 		}
+	}
+
+	public void changePlayer() {
+		if (Globals.getIndexHumanPlayer() < Globals.getNumPlayers() - 1)
+			Globals.setIndexHumanPlayer(Globals.getIndexHumanPlayer() + 1);
+		else
+			Globals.setIndexHumanPlayer(0);
 	}
 
 	public void playCzarPlayer() {
@@ -148,7 +161,7 @@ public class PlayerTurnActivity extends Activity {
 		if (Globals.isRoundWinner()) {
 			textViewPlayerTurnMessage.setText(Globals.getWinnerName() + " won this round!");
 
-			//reset control for players that already played in a round
+			// reset control for players that already played in a round
 			for (int i = 0; i < Globals.getNumPlayers(); i++) {
 				Globals.getPlayers().get(i).setPlayedAlready(false);
 			}

@@ -11,6 +11,15 @@ public class Player extends Activity {
 	// private ArrayList<WhiteCard> whiteCards;
 	// private ArrayList<BlackCard> blackCards;
 	private ArrayList<WhiteCard> myHand;
+	private int myIndex;
+	public int getMyIndex() {
+		return myIndex;
+	}
+
+	public void setMyIndex(int myIndex) {
+		this.myIndex = myIndex;
+	}
+
 	private String name;
 	private boolean isHuman;
 	private boolean isCzar;
@@ -36,6 +45,14 @@ public class Player extends Activity {
 	}
 	
 	public Player(String name, boolean isHuman, boolean isCzar) {
+		setName(name);
+		setHuman(isHuman);
+		this.isCzar = isCzar;
+		myHand = new ArrayList<WhiteCard>();
+	}
+	
+	public Player(int index, String name, boolean isHuman, boolean isCzar) {
+		setMyIndex(index);
 		setName(name);
 		setHuman(isHuman);
 		this.isCzar = isCzar;

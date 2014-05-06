@@ -95,10 +95,11 @@ public class Player extends Activity {
 	}
 	
 	public void draw() {
-		// System.out.println("In Player: WhiteCards: " + Globals.getWhiteCards().size());
-		
 		if (!Globals.getWhiteCards().isEmpty()) {
-			myHand.add(Globals.getWhiteCards().remove(0));
+			WhiteCard newCard = Globals.getWhiteCards().remove(0);
+			newCard.setOwner(this);
+			myHand.add(newCard);
+//			myHand.add(Globals.getWhiteCards().remove(0));
 		} else {
 			shuffleWhiteCards();
 			draw();

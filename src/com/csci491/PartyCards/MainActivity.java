@@ -7,9 +7,9 @@
  * |=========================================================================== 
  */
 
-package com.csci491.cardsagainsthumanity;
+package com.csci491.PartyCards;
 
-import com.csci491.cardsagainsthumanity.R;
+import com.csci491.PartyCards.R;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -1,4 +1,4 @@
-package com.csci491.cardsagainsthumanity;
+package com.csci491.PartyCards;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -22,7 +22,7 @@ public class Globals extends Application {
 	private static int numPlayers;
 	private static int roundNum = ROUND;
 	private static int indexWhiteCard = 0;
-	private static int indexHumanPlayer = 0;
+	private static int indexHumanPlayer;
 	private static FileIO cardMaker = new FileIO();
 	private static boolean changeBlackCard;
 	private static boolean isRoundWinner;
@@ -42,6 +42,7 @@ public class Globals extends Application {
 		Globals.cardMaker = new FileIO();
 		Globals.changeBlackCard = false;
 		Globals.indexHumanPlayer = 0;
+		Globals.indexWhiteCard = 0;
 		Globals.getPlays().clear();
 	}
 	

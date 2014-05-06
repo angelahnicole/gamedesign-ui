@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.csci491.cardsagainsthumanity;
+package com.csci491.PartyCards;
 
 public final class R {
     public static final class attr {

@@ -1,4 +1,4 @@
-package com.csci491.cardsagainsthumanity;
+package com.csci491.PartyCards;
 
 public class WhiteCard extends Card {
 	private Player owner;

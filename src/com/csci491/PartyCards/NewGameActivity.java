@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,38 +32,31 @@ public class NewGameActivity extends Activity {
 				finish();
 			}
 		});
+		NumberPicker numberPickerPlayers = (NumberPicker) findViewById(R.id.numberPickerPlayers);
+		NumberPicker numberPickerPointLimit = (NumberPicker) findViewById(R.id.numberPickerPointLimit);
+		numberPickerPlayers.setMinValue(3);
+		numberPickerPlayers.setMaxValue(10);
+		numberPickerPlayers.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+
+		numberPickerPointLimit.setMinValue(2);
+		numberPickerPointLimit.setMaxValue(9);
+		numberPickerPointLimit.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
 
 		Button buttonNext = (Button) findViewById(R.id.buttonNext);
 		buttonNext.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				// find controls
-				EditText editTextPointLimit = (EditText) findViewById(R.id.editTextPointLimit);
-				EditText editTextPlayers = (EditText) findViewById(R.id.editTextPlayers);
+				NumberPicker numberPickerPlayers = (NumberPicker) findViewById(R.id.numberPickerPlayers);
+				NumberPicker numberPickerPointLimit = (NumberPicker) findViewById(R.id.numberPickerPointLimit);
 
-				// verify integrity of data
-				if (editTextPlayers.getText().toString().length() == 0) {
-					alert(getResources().getString(R.string.blank_player_limit_toast));
-					editTextPlayers.requestFocus();
-				} else if (editTextPointLimit.getText().toString().length() == 0) {
-					alert(getResources().getString(R.string.blank_point_limit_toast));
-					editTextPointLimit.requestFocus();
-				} else if (Integer.parseInt(editTextPlayers.getText().toString()) < 3) {
-					alert(getResources().getString(R.string.min_players_toast));
-					editTextPlayers.requestFocus();
-				} else if (Integer.parseInt(editTextPlayers.getText().toString()) > 10) {
-					alert(getResources().getString(R.string.max_players_toast));
-					editTextPlayers.requestFocus();
-				} else {
-					// Reset everything, to make sure there is nothing from a
-					// possible previous game
-					Globals.resetGlobals();
+				// Reset everything, to make sure there is nothing from a possible previous game
+				Globals.resetGlobals();
 
-					// store variables and create a game
-					Globals.setPointLimit(Integer.parseInt(editTextPointLimit.getText().toString()));
-					Globals.setNumPlayers(Integer.parseInt(editTextPlayers.getText().toString()));
-					createCards();
-					createGame();
-				}
+				// store variables and create a game
+				Globals.setPointLimit(numberPickerPointLimit.getValue());
+				Globals.setNumPlayers(numberPickerPlayers.getValue());
+				createCards();
+				createGame();
 			}
 
 		});

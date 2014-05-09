@@ -49,8 +49,16 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
         </TableRow>
 
+        <TextView
+            android:id="@+id/textViewPass"
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:gravity="center"
+            android:text="@string/pass_device"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
         <TableRow
-            android:id="@+id/tableRow3"
+            android:id="@+id/tableRow4"
             android:layout_width="fill_parent"
             android:gravity="center" >
 

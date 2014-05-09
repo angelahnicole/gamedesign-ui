@@ -44,12 +44,12 @@
             android:id="@+id/buttonContinue"
             android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:background="@color/greenT"
-            android:layout_weight="1"
-            android:text="@string/skip" 
-            android:layout_marginTop="5dip"
             android:layout_marginLeft="5dip"
-            android:layout_marginRight="5dip"/>
+            android:layout_marginRight="5dip"
+            android:layout_marginTop="5dip"
+            android:layout_weight="1"
+            android:background="@color/greenT"
+            android:text="@string/skip" />
     </TableRow>
 
 </TableLayout>

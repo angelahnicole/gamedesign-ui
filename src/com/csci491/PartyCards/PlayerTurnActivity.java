@@ -205,6 +205,5 @@ public class PlayerTurnActivity extends Activity {
 			});
 
 		}
-
 	}
 }

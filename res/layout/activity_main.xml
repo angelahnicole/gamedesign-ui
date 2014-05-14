@@ -22,6 +22,7 @@
                 android:id="@+id/buttonStart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/greenT"                
                 android:text="@string/start_new_game" />
         </TableRow>
 
@@ -30,11 +31,13 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
 
+            <!-- 
             <Button
                 android:id="@+id/buttonHow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/how_to_play" />
+                android:background="@color/green"
+                android:text="@string/how_to_play" />  -->
         </TableRow>
     </TableLayout>
 

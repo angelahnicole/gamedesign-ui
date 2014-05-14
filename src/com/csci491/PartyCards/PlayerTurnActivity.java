@@ -47,7 +47,6 @@ public class PlayerTurnActivity extends Activity {
 	// ========================================================================
 
 	public void nextPlayer() {
-		
 		// Is there a Czar skipped?
 		if (Globals.getIndexHumanPlayer() == indexCzarSkipped) {
 			
@@ -76,16 +75,15 @@ public class PlayerTurnActivity extends Activity {
 						// yes it's Czar
 						if (Globals.getIndexHumanPlayer() == Globals.getNumPlayers() - 1) {
 							
-							// it's the last one to play, so play!
+							// if it's the last one to play, play!
 							playCzarPlayer();
 						} else {
 							
-							// it's not the last to play, so store his index to play later
+							// it's not the last one to play, so store his index to play later
 							indexCzarSkipped = Globals.getIndexHumanPlayer();
 							
 							// skip him for now!
 							changePlayer();
-
 						}
 					}
 				}

@@ -89,7 +89,7 @@ public class CzarActivity extends Activity {
 		Player owner = Globals.getPlays().get(Globals.getIndexWhiteCard()).getOwner();
 		textViewAditionalInfo.setText(owner.getName());
 		if (owner.getName() == Globals.getWinnerName())
-			textViewAditionalInfo.setText(textViewAditionalInfo.getText() + " (winner)");
+			textViewAditionalInfo.setText(textViewAditionalInfo.getText() + " " + getResources().getString(R.string.winner));
 	}
 
 	// ========================================================================

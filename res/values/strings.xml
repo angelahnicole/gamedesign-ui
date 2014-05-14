@@ -44,6 +44,7 @@
     <!-- Player Turn -->
     <string name="game_winner">You won the game!</string>
     <string name="round_winner">won this round!</string>
+    <string name="winner">&#9733; (winner)</string>
 
     <color name="white">#FFFFFF</color>
     <color name="whiteT">#99FFFFFF</color>

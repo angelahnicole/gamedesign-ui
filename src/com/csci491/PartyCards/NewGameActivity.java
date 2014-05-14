@@ -23,43 +23,16 @@ public class NewGameActivity extends Activity {
 
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_start_new_game);
-
+		
+		//Set listeners on buttons
 		Button buttonCancel = (Button) findViewById(R.id.buttonCancel);
-		buttonCancel.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				Intent intent = new Intent(NewGameActivity.this, MainActivity.class);
-				startActivity(intent);
-				finish();
-			}
-		});
-		NumberPicker numberPickerPlayers = (NumberPicker) findViewById(R.id.numberPickerPlayers);
-		NumberPicker numberPickerPointLimit = (NumberPicker) findViewById(R.id.numberPickerPointLimit);
-		numberPickerPlayers.setMinValue(3);
-		numberPickerPlayers.setMaxValue(10);
-		numberPickerPlayers.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
-
-		numberPickerPointLimit.setMinValue(2);
-		numberPickerPointLimit.setMaxValue(9);
-		numberPickerPointLimit.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+		buttonCancel.setOnClickListener(cancelListener);
 
 		Button buttonNext = (Button) findViewById(R.id.buttonNext);
-		buttonNext.setOnClickListener(new OnClickListener() {
-			public void onClick(View v) {
-				// find controls
-				NumberPicker numberPickerPlayers = (NumberPicker) findViewById(R.id.numberPickerPlayers);
-				NumberPicker numberPickerPointLimit = (NumberPicker) findViewById(R.id.numberPickerPointLimit);
-
-				// Reset everything, to make sure there is nothing from a possible previous game
-				Globals.resetGlobals();
-
-				// store variables and create a game
-				Globals.setPointLimit(numberPickerPointLimit.getValue());
-				Globals.setNumPlayers(numberPickerPlayers.getValue());
-				createCards();
-				createGame();
-			}
-
-		});
+		buttonNext.setOnClickListener(nextListener);
+		
+		
+		configurePickers();
 
 	}
 
@@ -72,12 +45,6 @@ public class NewGameActivity extends Activity {
 		System.out.println("Creating the players...");
 
 		for (int i = 0; i < Globals.getNumPlayers(); i++) {
-			// if the parameter being passed into the Player
-			// constructor is true,
-			// then the player is a human player.
-
-			// else if the parameter in the Player constructor is false,
-			// then the player is a computer
 			if (i == 0) {
 				// First player is always "You"
 				Globals.getPlayers().add(new Player(i, "You", true, false));
@@ -110,8 +77,20 @@ public class NewGameActivity extends Activity {
 		System.out.println("Num White Cards: " + Globals.getWhiteCards().size());
 		System.out.println("Num Black Cards: " + Globals.getBlackCards().size());
 	}
+	
+	private void configurePickers(){
+		NumberPicker numberPickerPlayers = (NumberPicker) findViewById(R.id.numberPickerPlayers);
+		NumberPicker numberPickerPointLimit = (NumberPicker) findViewById(R.id.numberPickerPointLimit);
+		numberPickerPlayers.setMinValue(3);
+		numberPickerPlayers.setMaxValue(7); //more than 7 requires changes in design (newRound)
+		numberPickerPlayers.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
 
-	private void alert(String message) {
+		numberPickerPointLimit.setMinValue(2);
+		numberPickerPointLimit.setMaxValue(9);
+		numberPickerPointLimit.setDescendantFocusability(NumberPicker.FOCUS_BLOCK_DESCENDANTS);
+	}
+
+	private void showAlert(String message) {
 		AlertDialog.Builder builder = new AlertDialog.Builder(NewGameActivity.this);
 		builder.setTitle(message);
 		// Add the buttons
@@ -124,5 +103,35 @@ public class NewGameActivity extends Activity {
 		AlertDialog dialog = builder.create();
 		dialog.show();
 	}
+	
+	// ========================================================================
+	// BUTTON LISTENERS
+	// ========================================================================
+	
+	private OnClickListener cancelListener = new OnClickListener() {
+		public void onClick(View v) {
+			Intent intent = new Intent(NewGameActivity.this, MainActivity.class);
+			startActivity(intent);
+			finish();
+		}
+	};
+	
+	private OnClickListener nextListener = new OnClickListener() {
+		public void onClick(View v) {
+			// find controls
+			NumberPicker numberPickerPlayers = (NumberPicker) findViewById(R.id.numberPickerPlayers);
+			NumberPicker numberPickerPointLimit = (NumberPicker) findViewById(R.id.numberPickerPointLimit);
+
+			// Reset everything, to make sure there is nothing from a possible previous game
+			Globals.resetGlobals();
+
+			// store variables and create a game
+			Globals.setPointLimit(numberPickerPointLimit.getValue());
+			Globals.setNumPlayers(numberPickerPlayers.getValue());
+			createCards();
+			createGame();
+		}
+
+	};
 
 }

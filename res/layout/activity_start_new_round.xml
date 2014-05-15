@@ -34,28 +34,21 @@
             android:layout_width="fill_parent" >
 
             <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="50dip"
-                android:gravity="right"
-                android:text="@string/its_your_turn"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <TextView
                 android:id="@+id/textViewPlayerName"
                 android:layout_width="wrap_content"
                 android:layout_height="50dip"
-                android:text="@string/round"
+                android:gravity="right"
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge" />
-        </TableRow>
+            
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="50dip"
+                android:text="@string/its_your_turn"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <TextView
-            android:id="@+id/textViewPass"
-            android:layout_width="wrap_content"
-            android:layout_height="50dip"
-            android:gravity="center"
-            android:text="@string/pass_device"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
+        </TableRow>
 
         <TableRow
             android:id="@+id/tableRow4"

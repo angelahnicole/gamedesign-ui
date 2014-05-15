@@ -30,11 +30,7 @@ public class NewRoundActivity extends Activity {
 
 		// display player name
 		TextView textViewPlayerName = (TextView) findViewById(R.id.textViewPlayerName);
-		textViewPlayerName.setText(" " + Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getName());
-
-		// display helper (pass device)
-		TextView textViewPass = (TextView) findViewById(R.id.textViewPass);
-		textViewPass.setText(textViewPass.getText() + " " + Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getName());
+		textViewPlayerName.setText("It's " + Globals.getPlayers().get(Globals.getIndexHumanPlayer()).getName());
 
 		// Clean plays (from previous rounds)
 		Globals.getPlays().clear();
